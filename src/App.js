@@ -1,26 +1,27 @@
 import React from 'react';
-import { Route } from 'react-router-dom';
+// import { Route } from 'react-router-dom';
+import './App.css';
 
-import Header from '../Header';
-import Footer from '../Footer';
-import Welcome from '../Welcome';
-import Register from '../Register'; 
-import Login from '../Login'; 
-import User from '../User'; 
-import MainLists from '../MainLists';
-import Movies from '../Movies';
-import Movie from '../Movie';
-import List from '../List';
+import Header from './Header';
+import Footer from './Footer';
+// import Welcome from './Welcome';
+// import Register from './Register'; 
+// import Login from './Login'; 
+// import User from './User'; 
+// import MainLists from './MainLists';
+// import Movies from './Movies';
+// import Movie from './Movie';
+// import List from './List';
 
 class App extends React.Component {
   state = {
-    mainLists = [],
+    mainLists: [],
     user: { id: null, username: null }
   };
 
   render() {
 
-    const { mainLists, user } = this.state;
+    // const { mainLists, user } = this.state;
 
     return (
       <main className='App'>
@@ -54,7 +55,7 @@ class App extends React.Component {
           <Movie movie={match.params.movie} />
         } /> */}
 
-        {/* <Footer /> */}
+        <Footer />
       </main>
     );
   };

@@ -1,0 +1,12 @@
+.home {
+  height: calc(100% - 110px);
+  overflow: hidden;
+  margin-bottom: 100px;
+}
+
+.home h3 {
+  margin: 0;
+  text-align: center;
+  margin-top: 15px;
+  margin-bottom: 10px;
+}

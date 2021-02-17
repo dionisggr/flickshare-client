@@ -3,7 +3,7 @@ import './Footer.css';
 function Footer() {
   return (
     <footer>
-      <h3>&copy; Dionis González Ramírez</h3>
+      <h2>&copy; Dionis González Ramírez</h2>
     </footer>
   );
 };

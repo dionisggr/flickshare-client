@@ -15,8 +15,6 @@ const validation = {
   validPassword: (user, evt) => {
     const { password, repeat_password } = user;
 
-    console.log(password, repeat_password);
-
     if (
       password.length < 8 ||                  // Less than 8 characters. Validation: Need at least 8 characters.
       password.includes(' ') ||             // Includes a space. Validation: No spaces.

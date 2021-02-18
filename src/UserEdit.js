@@ -62,6 +62,7 @@ class UserEdit extends React.Component {
 
   render() {
     const { first_name, last_name, username, email } = this.state.user;
+    const { user_id, history } = this.props;
 
     return (
       <form
@@ -102,6 +103,12 @@ class UserEdit extends React.Component {
         />
       
         <button type='submit'>Submit</button>
+        <button
+          type='button'
+          onClick={() => history.push(`/users/${user_id}`)}
+        >
+          Back
+        </button>
       </form>
     );
   };

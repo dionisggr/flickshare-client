@@ -8,14 +8,17 @@ import './User.css';
 class User extends React.Component {
   state = { user: {} };
 
-  deleteUser = () => {
-    const { history, user: user_id } = this.props;
+  deleteUser = async () => {
+    const { history, user_id } = this.props;
 
-    api.deleteUser(user_id)
-      .then(() => {
-        return history.push('/');
-      })
-      .catch(error => <Error message={error} />)
+    console.log(user_id);
+
+    await api.deleteUser(user_id)
+      .catch(error => <Error message={error} />);
+    
+    window.localStorage.removeItem('flickshareToken');
+    
+    return history.push('/');
   };
 
   componentDidMount = async () => {
@@ -41,10 +44,10 @@ class User extends React.Component {
 
   render() {
     const {
-      user_id, first_name, last_name, email, username
+      first_name, last_name, email, username
     } = this.state.user;
 
-    const { history } = this.props;
+    const { history, user_id } = this.props;
 
     return (
       <div className='user'>

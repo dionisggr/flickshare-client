@@ -46,10 +46,9 @@ const api = {
   ,
   deleteUser: (user_id) => {
     return fetch(`${API_URL}/users/${user_id}`, {
-      method: 'PATCH',
+      method: 'DELETE',
       headers: { 'Authorization': `Bearer ${API_ADMIN_KEY}` }
-    })
-      .then(api.verifyResponse);
+    });
   }
   ,
   usernameExists: (username) => {

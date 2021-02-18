@@ -1,5 +1,7 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, withRouter } from 'react-router-dom';
+import { JWT_SECRET } from './config';
+import jwt from 'jsonwebtoken';
 import './Header.css';
 
 class Header extends React.Component {
@@ -14,15 +16,22 @@ class Header extends React.Component {
   };
 
   render() {
-    const { loggedIn } = this.props;
+    const flickshareToken = JSON.parse(window.localStorage.getItem('flickshareToken'));
+    
+    const decoded = (flickshareToken)
+      ? jwt.verify(flickshareToken, JWT_SECRET, (error, decoded) => {
+          if (error) return null;
+          return decoded;
+        })
+      : null;
+    
+    const redirect = (decoded) ? '/home' : '/';
 
-    const redirect = (loggedIn) ? '/home' : '/';
-
-    const buttons = (loggedIn)
+    const buttons = (decoded)
       ? <>
-        <li><Link to='/home'>Account</Link></li>
+        <li><Link to={`/users/${decoded.user_id}`}>Account</Link></li>
         <li>
-          <Link to='/home'
+          <Link to='/'
             onClick={this.logout}>Logout
           </Link>
         </li>
@@ -45,4 +54,4 @@ class Header extends React.Component {
   };
 };
 
-export default Header;
+export default withRouter(Header);

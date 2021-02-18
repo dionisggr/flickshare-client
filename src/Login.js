@@ -14,11 +14,11 @@ class Login extends React.Component {
 
     api.login(username, password)
       .then(({ flickshareToken }) => {
-        window.localStorage.setItem('flickshareToken', flickshareToken);
+        window.localStorage.setItem('flickshareToken', JSON.stringify(flickshareToken));
 
         userLogged(true);
 
-        return history.push('/home');
+        history.push('/home');
       })
       .catch(error => <Error message={error} />)
   }
@@ -28,9 +28,15 @@ class Login extends React.Component {
       <form className='login' onSubmit={this.login}>
         <h3>LOGIN</h3>
         <label htmlFor='username'>Username</label>
-        <input type='text' name='username' id='username' />
+        <input
+          type='text' required
+          name='username' id='username'
+        />
         <label htmlFor='password'>Password</label>
-        <input type='text' name='password' id='password' />
+        <input
+          type='text' required
+          name='password' id='password'
+        />
         <button type='submit'>Submit</button>
       </form>
     );

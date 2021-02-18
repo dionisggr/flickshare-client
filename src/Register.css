@@ -19,3 +19,7 @@
   padding: 10px 30px;
   margin-bottom: 100px;
 }
+
+#error_username, #error_password, #error_repeat_password {
+  color: red;
+}

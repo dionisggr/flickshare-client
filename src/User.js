@@ -63,6 +63,13 @@ class User extends React.Component {
         </div>
         <button 
           type='button'
+          className='user-lists'
+          onClick={() => history.push(`/users/${user_id}/lists`)}
+        >
+          Lists
+        </button>
+        <button 
+          type='button'
           onClick={() => history.push(`/edit/users/${user_id}`)}
         >
           EDIT

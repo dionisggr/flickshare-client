@@ -8,10 +8,10 @@ import Register from './Register';
 import Login from './Login'; 
 import User from './User'; 
 import UserEdit from './UserEdit'; 
-import Home from './Home';
+import List from './List';
+import ListPreview from './ListPreview';
 // import Movies from './Movies';
 import Movie from './Movie';
-// import List from './List';
 import Error from './Error';
 import { JWT_SECRET } from './config'
 import api from './api';
@@ -30,6 +30,13 @@ class App extends React.Component {
 
     this.setState(newState);
   }
+
+  setUserLists = (userLists) => {
+    const newState = { ...this.state };
+    newState.userLists = userLists;
+
+    this.setState(newState);
+  };
 
   componentDidMount = async () => {
     const newState = { ...this.state };
@@ -100,7 +107,7 @@ class App extends React.Component {
         <Route
           path='/home'
           render={({ history }) =>
-            <Home
+            <List
               history={history}
               mainLists={mainLists}
             />
@@ -108,11 +115,21 @@ class App extends React.Component {
         />
 
         <Route
-          path='/users/:user'
+          exact path='/users/:user'
           render={({ match, history }) =>
             <User
               history={history}
               user_id={match.params.user}
+            />
+          }
+        />
+
+        <Route
+          path='/users/:user/lists'
+          render={({ match, history }) =>
+            <List
+              user_id={match.params.user}
+              history={history}
             />
           }
         />
@@ -127,9 +144,23 @@ class App extends React.Component {
           }
         />
 
-        {/* <Route exact path='/lists/:list' render={({ match }) =>
-          <List list={match.params.list} />
-        } /> */}
+        <Route
+          exact path='/lists/:list'
+          render={({ match }) =>
+            <ListPreview
+              list_id={match.params.list}
+            />
+          }
+        />
+
+        <Route
+          exact path='/edit/lists/:list'
+          render={({ match }) =>
+            <ListPreview
+              list_id={match.params.list}
+            />
+          }
+        />
 
         {/* <Route path='/lists/:list/movies/:movie' render={({ match }) =>
           <User params={match.params} />

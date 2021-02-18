@@ -13,8 +13,22 @@ const api = {
       .then(api.verifyResponse);
   }
   ,
+  getListById: (id) => {
+    return fetch(`${API_URL}/lists/${id}`, {
+      headers: { 'Authorization': `Bearer ${API_ADMIN_KEY}` }
+    })
+      .then(api.verifyResponse);
+  }
+  ,
   getUserInfo: (user_id) => {
     return fetch(`${API_URL}/users/${user_id}`, {
+      headers: { 'Authorization': `Bearer ${API_ADMIN_KEY}` }
+    })
+      .then(api.verifyResponse);
+  }
+  ,
+  getUserLists: (user_id) => {
+    return fetch(`${API_URL}/lists/users/${user_id}`, {
       headers: { 'Authorization': `Bearer ${API_ADMIN_KEY}` }
     })
       .then(api.verifyResponse);

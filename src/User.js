@@ -51,6 +51,7 @@ class User extends React.Component {
 
     return (
       <div className='user'>
+        <h3>User Account</h3>
         <img
           src={`https://robohash.org/${username}`}
           alt={`${first_name}'s avatar`}

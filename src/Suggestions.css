@@ -1,0 +1,62 @@
+.suggestions {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: calc(100vh - 155px);
+  margin-bottom: 100px;
+}
+
+.suggestion-list {
+  width: 100%;
+}
+
+.suggestions h3 {
+  margin: 0;
+  margin-top: 25px;
+}
+
+.suggestions button {
+  background-color: rgba(2, 214, 2, 0.842);
+  outline: none;
+  border: solid 1px rgba(0, 0, 0, 0.712);
+  border-radius: 5px;
+  margin-top: 35px;
+  padding: 5px 35px;
+  font-weight: bold;
+  color: white;
+  min-width: fit-content;
+  line-height: 1.5em;
+}
+
+.suggestions button:hover {
+  background-color: rgb(25, 231, 25);
+}
+
+.suggestions button:active {
+  transform: scale(0.95);
+}
+
+.scrolling {
+  display: flex;
+  justify-content: space-between;
+  position: absolute;
+  height: 230px;
+  width: 100%;
+  margin-top: 80px;
+  z-index: 2;
+}
+
+.scrolling button {
+  align-self: center;
+  background-color: rgba(0, 0, 0, 0.295);
+  border: none;
+  height: 65%;
+  width: 50px;
+  color: white;
+  outline: none;
+  cursor: pointer;
+}
+
+.scrolling button:hover {
+  background-color: rgba(138, 138, 138, 0.295);
+}

@@ -10,8 +10,8 @@ import Login from './Login';
 import User from './User'; 
 import UserEdit from './UserEdit'; 
 import Lists from './Lists';
+import Suggestions from './Suggestions';
 import List from './List';
-import ListPreview from './ListPreview';
 import Movie from './Movie';
 import MovieSearch from './MovieSearch';
 import Error from './Error';
@@ -50,10 +50,12 @@ class App extends React.Component {
           if (error) return false;
           return true;
         })
-      : null;
+      : false;
     
     if (loggedIn) {
       newState.loggedIn = true;
+    } else {
+      window.localStorage.removeItem('flickshareToken');
     };
     
     newState.mainLists = await api.getMainLists()
@@ -108,7 +110,6 @@ class App extends React.Component {
         />
 
         {/* <Route exact path='/users' component={Users} /> */}
-        {/* <Route path='/suggestions' component={List} /> */}
         {/* <Route path='/friends' component={Friends} /> */}
 
         <Route
@@ -140,8 +141,18 @@ class App extends React.Component {
           path='/users/:user/lists'
           render={({ match, history }) =>
             <Lists
-              user_id={match.params.user}
               history={history}
+              user_id={match.params.user}
+            />
+          }
+        />
+
+        <Route
+          path='/users/:user/suggestions'
+          render={({ match, history }) =>
+            <Suggestions
+              history={history}
+              user_id={match.params.user}
             />
           }
         />
@@ -158,17 +169,9 @@ class App extends React.Component {
 
         <Route
           exact path='/lists/:list'
-          render={({ match }) =>
+          render={({ match, history }) =>
             <List
-              list_id={match.params.list}
-            />
-          }
-        />
-
-        <Route
-          exact path='/edit/lists/:list'
-          render={({ match }) =>
-            <ListPreview
+              history={history}
               list_id={match.params.list}
             />
           }

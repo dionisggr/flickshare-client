@@ -1,0 +1,40 @@
+.movie-preview-options {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  position: absolute;
+  margin-top: 21px;
+  width: 150px;
+  height: 225px;
+  background-color: rgba(73, 73, 73, 0.884);
+}
+
+.movie-preview-options button {
+  height: 60px;
+  width: 60px;
+  border-radius: 50%;
+  background-color: rgba(2, 214, 2, 0.507);
+  border: solid 1px rgba(0, 0, 0, 0.384);
+  font-size: 25px;
+  color: white;
+  cursor: pointer;
+}
+
+.movie-preview-options button:hover {
+  background-color: rgba(2, 214, 2, 0.781);
+}
+
+.movie-preview-options a {
+  font-size: 14px;
+  text-align: center;
+  width: 100px;
+  padding: 5px;
+  background-color: rgba(255, 0, 0, 0.63);
+  border: solid 1px rgba(0, 0, 0, 0.123);
+  border-radius: 45%;
+}
+
+.movie-preview-options a:hover {
+  background-color: rgba(255, 0, 0, 0.877);
+}

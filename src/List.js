@@ -2,6 +2,7 @@ import { Link } from 'react-router-dom';
 import jwt from 'jsonwebtoken';
 import { JWT_SECRET } from './config';
 import MoviePreview from './MoviePreview';
+import MovieService from './services/movie-service';
 import Error from './Error';
 import './List.css';
 
@@ -14,6 +15,30 @@ class ListPreview extends Component {
   };
 
   state = { list: { movies: [] } };
+
+  getSuggestions = async (list) => {
+    const { history } = this.props;
+
+    const data = (await api.getMoviesSuggestions(list.movies))
+      .reduce((total, each) => total.concat(each.results), []);
+      
+    const movies = MovieService.prepare(data)
+      .sort((previous, next) => next.popularity - previous.popularity)
+      .slice(0, 25);
+    
+    if (movies.length < 1) {
+      return this.setState({ list: null });
+    };
+    
+    const newList = {
+      name: `From ${list.name}`, suggestion: true,
+      user_id: list.user_id, movies
+    };
+
+    api.createList(newList)
+      .then(() => history.push(`/users/${list.user_id}/suggestions`))
+      .catch(error => <Error message={error} />)
+  };
 
   componentDidMount() {
     const list_id = parseInt(this.props.list_id);
@@ -40,22 +65,29 @@ class ListPreview extends Component {
     const user_id = (decoded) ? decoded.user_id : null;
     const admin = (decoded) ? decoded.admin : false;
 
-    let { list, list_id } = this.props;
+    let { list, history } = this.props;
 
     if (!list.list_id) {
       list = this.state.list;
     };
 
-    console.log(list);
+    if (!list) {
+      return <Error message={`Wow, you're good! No suggestions.`} />;
+    };
 
     if (list.movies.length < 1) return null;
 
+    if (user_id !== list.user_id && !admin) {
+      return <Error message={'Invalid access'} />
+    };
+
     return (
       <div className='list'>
+        <h3>List Details</h3>
         <Link to={`/lists/${list.list_id}`}>
           <h4>{list.name}</h4>
         </Link>
-       
+        
         <div className='list-movies'>
           {
             list.movies.map(movie =>
@@ -65,6 +97,20 @@ class ListPreview extends Component {
             )
           }
         </div>
+
+        <button
+          type='button'
+          onClick={() => this.getSuggestions(list)}
+        >
+          Get Suggestions
+        </button>
+
+          <button
+            type='button'
+            onClick={() => history.push('/home')}
+          >
+            BACK
+          </button>
       </div>
     );
   }

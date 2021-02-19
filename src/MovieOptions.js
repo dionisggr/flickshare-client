@@ -1,8 +1,10 @@
 import { Link } from 'react-router-dom';
+import './MovieOptions.css';
 
 function MovieOptions(props) {
 
-  const { id } = props;
+  const { movie } = props;
+  const { movie_id } = movie;
 
   return (
     <div className='movie-preview-options'>
@@ -13,7 +15,12 @@ function MovieOptions(props) {
             +
           </button>
   
-          <Link to={`/movies/${id}`}></Link>
+          <Link to={{
+            pathname: `/movies/${movie_id}`,
+            movie
+          }}>
+            More Info
+          </Link>
       </div>
   );
 };

@@ -19,7 +19,7 @@
   width: calc(100% / 3);
   text-align: center;
   height: 45px;
-  border-bottom: solid 1px rgba(255, 255, 255, 0.075);
+  border-bottom: solid 1px rgba(255, 255, 255, 0.137);
 }
 
 .main-menu li + li {
@@ -28,5 +28,5 @@
 
 .main-menu a {
   text-decoration: none;
-  color: rgb(226, 226, 199);
+  color: rgb(241, 241, 227);
 }

@@ -11,7 +11,7 @@ class MoviePreview extends React.Component {
     const { name, poster, movie_id } = movie;
 
     const movieOptions = (this.state.showOptions)
-      ? <MovieOptions key={movie_id} />
+      ? <MovieOptions movie={movie} />
       : null
     
     return (
@@ -20,15 +20,9 @@ class MoviePreview extends React.Component {
         onMouseEnter={() => this.setState({ showOptions: true })}
         onMouseLeave={() => this.setState({ showOptions: false })}
       >
-
         <label>{name}</label>
 
-        <Link to={{
-          pathname: `/movies/${movie_id}`,
-          movie
-        }}>
-          <img src={poster} alt={`${name} poster`} />
-        </Link>
+        <img src={poster} alt={`${name} poster`} />
       
         {movieOptions}
       </div>

@@ -28,7 +28,7 @@ class Lists extends React.Component {
 
     const decoded = (flickshareToken)
       ? jwt.verify(flickshareToken, JWT_SECRET, (error, decoded) => {
-          if (error) console.log(error);
+          if (error) return null;
           return decoded;
         })
       : null;
@@ -48,8 +48,6 @@ class Lists extends React.Component {
       ? userLists
       : mainLists;
     
-    console.log(lists);
-
     return (
       <div className='lists'>
         {header}

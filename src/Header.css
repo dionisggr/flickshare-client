@@ -3,9 +3,7 @@ header {
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
-  border-bottom: solid 1px rgba(255, 255, 255, 0.774);
   height: 85px;
-  padding-bottom: 5px;
 }
 
 header h1 {
@@ -21,6 +19,8 @@ nav {
   display: flex;
   justify-content: center;
   width: 100%;
+  border-bottom: solid 1px rgba(255, 255, 255, 0.397);
+  padding-bottom: 5px;
 }
 
 nav ul {

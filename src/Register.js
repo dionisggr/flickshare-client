@@ -1,6 +1,6 @@
 import React from 'react';
 import Error from './Error';
-import validation from './helpers/validation';
+import validation from './services/validation';
 import api from './api';
 import './Register.css';
 

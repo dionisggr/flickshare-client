@@ -18,6 +18,7 @@
   margin-top: 50px;
   padding: 10px 30px;
   margin-bottom: 100px;
+  background-color: rgba(2, 214, 2, 0.842);
 }
 
 #error_username, #error_password, #error_repeat_password {

@@ -1,0 +1,32 @@
+.main-menu {
+  width: 100%;
+}
+
+.main-menu ul {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  margin: 0;
+  list-style-type: none;
+  padding-left: 0;
+}
+
+.main-menu li {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: calc(100% / 3);
+  text-align: center;
+  height: 45px;
+  border-bottom: solid 1px rgba(255, 255, 255, 0.075);
+}
+
+.main-menu li + li {
+  border-left: solid 1px rgba(255, 255, 255, 0.205);
+}
+
+.main-menu a {
+  text-decoration: none;
+  color: rgb(226, 226, 199);
+}

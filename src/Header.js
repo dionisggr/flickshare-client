@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link, withRouter } from 'react-router-dom';
 import { JWT_SECRET } from './config';
+import MainMenu from './MainMenu';
 import jwt from 'jsonwebtoken';
 import './Header.css';
 
@@ -40,7 +41,7 @@ class Header extends React.Component {
         <li><Link to='/register'>Register</Link></li>
         <li><Link to='/login'>Login</Link></li>
       </>;
-
+    
     return (
       <header>
         <h1><Link to={redirect}>FlickShare</Link></h1>

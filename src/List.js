@@ -1,26 +1,29 @@
-import React from 'react';
-import { JWT_SECRET } from './config';
+import { Link } from 'react-router-dom';
 import jwt from 'jsonwebtoken';
-import ListPreview from './ListPreview';
+import { JWT_SECRET } from './config';
+import MoviePreview from './MoviePreview';
 import Error from './Error';
-import api from './api';
 import './List.css';
-// import api from './api';
 
-class List extends React.Component {
-  static defaultProps = { mainLists: [] };
+import React, { Component } from 'react';
+import api from './api';
 
-  state = { userLists: [] };
+class ListPreview extends Component {
+  static defaultProps = {
+    list: { movies: [] }
+  };
+
+  state = { list: { movies: [] } };
 
   componentDidMount() {
-    const user_id = parseInt(this.props.user_id);
+    const list_id = parseInt(this.props.list_id);
 
-    if (user_id) {
-      api.getUserLists(user_id)
-        .then(userLists => {
-          this.setState({ userLists });
+    if (list_id) {
+      api.getListById(list_id)
+        .then(list => {
+          this.setState({ list });
         })
-        .catch(error => <Error message={error} />)
+        .catch(error => <Error message={error}/>)
     };
   };
 
@@ -29,42 +32,42 @@ class List extends React.Component {
 
     const decoded = (flickshareToken)
       ? jwt.verify(flickshareToken, JWT_SECRET, (error, decoded) => {
-          if (error) console.log(error);
+          if (error) return null;
           return decoded;
         })
       : null;
     
-    const { mainLists } = this.props;
-    const { userLists } = this.state;
+    const user_id = (decoded) ? decoded.user_id : null;
+    const admin = (decoded) ? decoded.admin : false;
 
-    const username = (decoded)
-      ? decoded.username[0].toUpperCase() + decoded.username.slice(1)
-      : null;
-    
-    const header = (mainLists.length > 0)
-      ? <h3>Top <br /> Suggestions</h3>
-      : <h3>{username}'s Lists</h3>
-    
-    const lists = (userLists.length > 1)
-      ? userLists
-      : mainLists;
-    
-    console.log(lists);
+    let { list, list_id } = this.props;
+
+    if (!list.list_id) {
+      list = this.state.list;
+    };
+
+    console.log(list);
+
+    if (list.movies.length < 1) return null;
 
     return (
-      <div className='lists'>
-        {header}
-        {
-          lists.map(list =>  
-            <ListPreview
-              key={list.list_id}
-              list={list}
-            />
-          )
-        }
+      <div className='list'>
+        <Link to={`/lists/${list.list_id}`}>
+          <h4>{list.name}</h4>
+        </Link>
+       
+        <div className='list-movies'>
+          {
+            list.movies.map(movie =>
+              <MoviePreview
+                key={movie.movie_id}
+                movie={movie} />
+            )
+          }
+        </div>
       </div>
     );
-  };
-};
+  }
+}
 
-export default List;
+export default ListPreview;

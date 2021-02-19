@@ -1,9 +1,19 @@
-import { API_URL, API_ADMIN_KEY } from './config';
+import { API_URL, API_ADMIN_KEY, TMDB_API_URL, TMDB_API_KEY } from './config';
 
 const api = {
   verifyResponse: (res) => {
     if (!res.ok) throw new Error('Could not request.');
     return res.json();
+  }
+  ,
+  searchMovie: (movie) => {
+    const searchOptions = '&page=1&include_adult=false';
+    movie = encodeURIComponent(movie);
+    
+    return fetch(
+      `${TMDB_API_URL}?api_key=${TMDB_API_KEY}&language=en-US&query=${movie}${searchOptions}`
+    )
+      .then(api.verifyResponse);
   }
   ,
   getMainLists: () => {

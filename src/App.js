@@ -2,16 +2,18 @@ import React from 'react';
 import { Route } from 'react-router-dom';
 import jwt from 'jsonwebtoken';
 import Header from './Header';
+import MainMenu from './MainMenu';
 import Footer from './Footer';
 import Welcome from './Welcome';
 import Register from './Register'; 
 import Login from './Login'; 
 import User from './User'; 
 import UserEdit from './UserEdit'; 
+import Lists from './Lists';
 import List from './List';
 import ListPreview from './ListPreview';
-// import Movies from './Movies';
 import Movie from './Movie';
+import MovieSearch from './MovieSearch';
 import Error from './Error';
 import { JWT_SECRET } from './config'
 import api from './api';
@@ -67,12 +69,18 @@ class App extends React.Component {
   render() {
     const { mainLists, loggedIn } = this.state;
 
+    const mainMenu = (loggedIn)
+      ? <MainMenu />
+      : null;
+
     return (
       <main className='App'>
         <Header
           loggedIn={loggedIn}
           userLogged={this.userLogged}
         />
+
+        {mainMenu}
 
         <Route
           exact path='/'
@@ -102,12 +110,16 @@ class App extends React.Component {
         {/* <Route exact path='/users' component={Users} /> */}
         {/* <Route path='/suggestions' component={List} /> */}
         {/* <Route path='/friends' component={Friends} /> */}
-        {/* <Route exact path='/movies' component={Movies} /> */}
+
+        <Route
+          path='/movie/search'
+          component={MovieSearch}
+        />
 
         <Route
           path='/home'
           render={({ history }) =>
-            <List
+            <Lists
               history={history}
               mainLists={mainLists}
             />
@@ -127,7 +139,7 @@ class App extends React.Component {
         <Route
           path='/users/:user/lists'
           render={({ match, history }) =>
-            <List
+            <Lists
               user_id={match.params.user}
               history={history}
             />
@@ -147,7 +159,7 @@ class App extends React.Component {
         <Route
           exact path='/lists/:list'
           render={({ match }) =>
-            <ListPreview
+            <List
               list_id={match.params.list}
             />
           }
@@ -162,14 +174,11 @@ class App extends React.Component {
           }
         />
 
-        {/* <Route path='/lists/:list/movies/:movie' render={({ match }) =>
-          <User params={match.params} />
-        } /> */}
-
         <Route
           path='/movies/:movie'
-          render={({ history, location }) =>
+          render={({ history, location, match }) =>
             <Movie
+              movie_id={match.params.movie}
               history={history}
               location={location}
             />

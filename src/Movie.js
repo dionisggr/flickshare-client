@@ -25,12 +25,34 @@ class Movie extends React.Component {
     };
 
     if (!movie) {
+      movie = this.props.movie;
+    }
+
+    if (!movie) {
       return <Error message='Something went wrong.' />
     };
 
     const { name, description, poster, release_date, avg_vote } = movie;
 
     const vote_count = parseInt(movie.vote_count).toLocaleString('en');
+
+    const { movie_id } = this.props;
+
+    console.log(movie_id);
+
+    const button = (!movie_id)
+      ? <button
+          type='button'
+          onClick={history.goBack}
+        >
+          Add to List
+        </button>
+      : <button
+          type='button'
+          onClick={history.goBack}
+        >
+          BACK
+        </button>
 
     return (
       <div className='movie'>
@@ -40,14 +62,9 @@ class Movie extends React.Component {
           <label><b>Description: </b>{description}</label>
           <label><b>Release Date: </b>{release_date}</label>
           <label><b>Average Vote: </b>{avg_vote}</label>
-          <label><b>Vote Count: </b>{vote_count.toLocaleString('en')}</label>
+          <label><b>Vote Count: </b>{vote_count}</label>
         </div>
-        <button
-          type='button'
-          onClick={history.goBack}
-        >
-          BACK
-        </button>
+        {button}
       </div>
     );
   };

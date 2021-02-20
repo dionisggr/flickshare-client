@@ -51,7 +51,7 @@ const api = {
         'Authorization': `Bearer ${API_ADMIN_KEY}`,
         'Content-Type': 'application/json'
       },
-      body: JSON.stringify(movie)
+      body: JSON.stringify({ movie })
     })
       .then(api.verifyResponse);
   }

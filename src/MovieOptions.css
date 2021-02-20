@@ -1,4 +1,4 @@
-.movie-preview-options {
+.movie-preview-options, .movie-list-options, .movie-added {
   display: flex;
   flex-direction: column;
   justify-content: space-around;
@@ -13,7 +13,7 @@
 .movie-preview-options button {
   height: 60px;
   width: 60px;
-  border-radius: 50%;
+  border-radius: 50% !important;
   background-color: rgba(2, 214, 2, 0.507);
   border: solid 1px rgba(0, 0, 0, 0.384);
   font-size: 25px;
@@ -37,4 +37,42 @@
 
 .movie-preview-options a:hover {
   background-color: rgba(255, 0, 0, 0.877);
+}
+
+.movie-list-options {
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+
+.movie-list-options label {
+  margin: 0;
+  min-height: 35px;
+  font-size: 18px !important;
+  font-weight: bold;
+  margin-top: 5px;
+}
+
+.movie-list-options ul {
+  list-style-type: none;
+  padding-left: 0;
+  width: 100%;
+  margin: 0;
+  overflow-y: auto;
+}
+
+.movie-list-options li {
+  border-bottom: solid 1px rgba(255, 255, 255, 0.384);
+  /* text-indent: 10px; */
+}
+
+.movie-list-options li button {
+  display: flex;
+  width: 100%;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.movie-list-options li button:hover {
+  background: rgba(0, 0, 0, 0.253);
 }

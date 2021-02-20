@@ -77,7 +77,7 @@ class ListPreview extends Component {
     return (
       <div className='list-preview'>
         <Link to={`/lists/${list.list_id}`}>
-          <h4>{list.name}</h4>
+          <h3>{list.name}</h3>
         </Link>
      
         <div className='list-preview-movies'>          
@@ -90,7 +90,7 @@ class ListPreview extends Component {
           }
         </div>
 
-        <div className='scrolling'>
+        <div className='scroll-left'>
           <button
             type='button'
             onMouseEnter={(evt) => this.scroll(evt, 'left')}
@@ -98,6 +98,9 @@ class ListPreview extends Component {
           >
             P
           </button>
+        </div>
+
+        <div className='scroll-right'>
           <button
             type='button'
             onMouseEnter={(evt) => this.scroll(evt, 'right')}

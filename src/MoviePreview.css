@@ -4,7 +4,6 @@
   align-items: center;
   min-width: 150px;
   max-width: 150px;
-  overflow: hidden;
 }
 
 .movie-preview label {
@@ -22,6 +21,6 @@
 }
 
 .movie-preview img {
+  display: flex;
   width: 100%;
-  
 }

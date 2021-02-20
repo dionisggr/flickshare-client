@@ -4,8 +4,10 @@
 }
 
 .lists h3 {
-  margin: 0;
   text-align: center;
-  margin-top: 15px;
-  margin-bottom: 10px;
+}
+
+.scroll-left, .scroll-right {
+  position: absolute;
+  margin-top: 140px;
 }

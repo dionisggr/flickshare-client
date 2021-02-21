@@ -1,5 +1,4 @@
 import React from 'react';
-import Error from './Error';
 import api from './api';
 import './Login.css';
 
@@ -12,31 +11,58 @@ class Login extends React.Component {
 
     const { history, userLogged } = this.props;
 
-    const { flickshareToken } = await api.login(username, password)
-      .catch(error => <Error message={error} />);
-     
-    window.localStorage.setItem('flickshareToken', JSON.stringify(flickshareToken));
+    const response = await api.login(username, password)
+      .catch(error => console.log({ error }));
+    
+    if (response) {
+      const { flickshareToken } = response;
 
-    userLogged(true);
+      window.localStorage.setItem('flickshareToken', JSON.stringify(flickshareToken));
+  
+      userLogged(true);
+  
+      history.push('/home');
 
-    history.push('/home');
-  }
+    } else {
+      evt.target.querySelector('#error_login').style.display = 'block';
+      evt.target.querySelector('#username').value = '';
+      evt.target.querySelector('#password').value = '';
+    };
+  };
 
   render() {
     return (
-      <form className='login' onSubmit={this.login}>
+      <form
+        id='login'
+        className='login'
+        onSubmit={this.login}>
+
         <h3>LOGIN</h3>
+
         <label htmlFor='username'>Username</label>
+
         <input
           type='text' required
           name='username' id='username'
         />
+
         <label htmlFor='password'>Password</label>
+
         <input
           type='text' required
           name='password' id='password'
         />
+        <label
+          htmlFor='login'
+          id='error_login'
+          className='error'
+          style={{ display: 'none' }}
+        >
+          <p>Invalid credentials.</p>
+        </label>
+
         <button type='submit'>Submit</button>
+
       </form>
     );
   };

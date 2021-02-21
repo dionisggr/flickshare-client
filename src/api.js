@@ -138,6 +138,17 @@ const api = {
       body: JSON.stringify({ username })
     })
       .then(api.verifyResponse);
+  },
+  changeUserPassword: (user_id, password) => {
+    return fetch(`${API_URL}/users/${user_id}/password`, {
+      method: 'PATCH',
+      headers: {
+        'Authorization': `Bearer ${API_ADMIN_KEY}`,
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({ password })
+    })
+      .then(api.verifyResponse);
   }
   ,
   login: (username, password) => {

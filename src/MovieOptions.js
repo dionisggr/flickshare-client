@@ -82,29 +82,26 @@ class MovieOptions extends React.Component {
 
     const decoded = (flickshareToken)
       ? jwt.verify(flickshareToken, JWT_SECRET, (error, decoded) => {
-          if (error) return null;
-          return decoded;
-        })
+        if (error) return null;
+        return decoded;
+      })
       : null;
     
     const addButton = (decoded)
       ? <button
-          type='button'
-          className='add'
-          onClick={this.getUserLists}
-        >
-          +
+        type='button'
+        className='add'
+        onClick={this.getUserLists}
+      >
+        +
         </button>
       : null;
     
-    const removeButton = (
-      decoded.admin
-      || decoded && list && decoded.user_id === list.user_id
-    )
+    const removeButton = (decoded.admin || (decoded && list && decoded.user_id === list.user_id))
       ? <button
-          className='remove-movie'
-          onClick={() => this.removeMovie(list_id, movie_id)}
-        >
+        className='remove-movie'
+        onClick={() => this.removeMovie(list_id, movie_id)}
+      >
         x
         </button>
       : null;
@@ -115,7 +112,6 @@ class MovieOptions extends React.Component {
         newState.movieWasAdded = null;
         this.setState(newState);
       }, 1500)
-
       return (
         <div className='movie-added'>
           {
@@ -127,9 +123,8 @@ class MovieOptions extends React.Component {
       );
     };
 
-    if (lists) {
-      return (
-        <div className='movie-list-options'>
+    const movieListOptions = (lists)
+      ? <div className='movie-list-options'>
           <label>Lists</label>
           <ul>
             {
@@ -146,11 +141,10 @@ class MovieOptions extends React.Component {
             }
           </ul>
         </div>
-      );
-    } else {
-      return (
-        <div className='movie-preview-options'>
-
+      : null;
+    
+    const moviePreviewOptions = (!lists)
+      ? <div className='movie-preview-options'>
           {removeButton}
           {addButton}
 
@@ -159,11 +153,17 @@ class MovieOptions extends React.Component {
             movie
           }}>
             More Info
-          </Link>
+            </Link>
 
         </div>
-      );
-    };
+      : null;
+    
+    return (
+      <>
+        { movieListOptions}
+        { moviePreviewOptions}
+      </>
+    );
   };
 };
 

@@ -20,7 +20,6 @@ class Admin extends React.Component {
       : null;
 
     const admin = (decoded) ? decoded.admin : false;
-    const user_id = (decoded) ? parseInt(decoded.user_id) : null;
       
     if (admin) {
       api.getAllLists()

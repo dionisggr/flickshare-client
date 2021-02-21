@@ -1,14 +1,31 @@
 import React from 'react';
+import { JWT_SECRET } from './config';
+import jwt from 'jsonwebtoken';
 import { Link } from 'react-router-dom';
 import './Welcome.css';
 
 class Welcome extends React.Component {
-
   componentWillUnmount() {
     window.scroll(0, 0);
   }; 
   
   render() {
+    const flickshareToken = JSON.parse(window.localStorage.getItem('flickshareToken'));
+    
+    const decoded = (flickshareToken)
+      ? jwt.verify(flickshareToken, JWT_SECRET, (error, decoded) => {
+          if (error) return null;
+          return decoded;
+        })
+      : null;
+
+    const buttons = (decoded)
+      ? <Link to='/home'>Home</Link>
+      : <>
+          <Link to='/register'>Create a new account!</Link>
+          <Link to='/home'>I just want to browse.</Link>
+        </>
+
     return (
       <div className='welcome'>
         <h3>Welcome to FlickShare!</h3>
@@ -21,14 +38,16 @@ class Welcome extends React.Component {
         <p>What if we could take this step further, and base suggestions on your friends lists as well?</p>
 
         <label>It's simple:</label>
+
         <ol>
           <li>Create an account.</li>
           <li>Create a list with your favorite movies.</li>
           <li>Make new friends, watch other users' lists and send suggestions!</li>
           <li>Come back for more!</li>
         </ol>
-        <Link to='/register'>Create a new account!</Link>
-        <Link to='/home'>I just want to browse.</Link>
+
+        {buttons}
+
       </div>
     );
   }

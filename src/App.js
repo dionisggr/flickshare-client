@@ -1,5 +1,6 @@
 import React from 'react';
-import { Route } from 'react-router-dom';
+import { Route, Switch } from 'react-router-dom';
+import { JWT_SECRET } from './config'
 import jwt from 'jsonwebtoken';
 import Header from './Header';
 import MainMenu from './MainMenu';
@@ -18,7 +19,7 @@ import Movie from './Movie';
 import MovieSearch from './MovieSearch';
 import Admin from './Admin'
 import Error from './Error';
-import { JWT_SECRET } from './config'
+import ErrorBoundary from './error-handlers/error-boundary';
 import api from './api';
 import './App.css';
 
@@ -77,7 +78,7 @@ class App extends React.Component {
     const mainMenu = (loggedIn)
       ? <MainMenu />
       : null;
-
+    
     return (
       <main className='App'>
         <Header
@@ -85,125 +86,132 @@ class App extends React.Component {
           userLogged={this.userLogged}
         />
 
-        {mainMenu}
+        <ErrorBoundary>
+          {mainMenu}
+        </ErrorBoundary>
 
-        <Route
-          exact path='/'
-          component={Welcome}
-        />
-
-        <Route
-          exact path='/admin'
-          component={Admin}
-        />
-
-        <Route
-          exact path='/admin/users'
-          component={Users}
-        />
-
-        <Route
-          path='/register'
-          render={({ history }) =>
-            <Register
-              history={history}
-              userLogged={this.userLogged}
+        <ErrorBoundary>
+          <Switch>
+            <Route
+              exact path='/'
+              loggedIn={loggedIn}
+              component={Welcome}
             />
-          }
-        />
 
-        <Route
-          path='/login'
-          render={({ history }) =>
-            <Login
-              history={history}
-              userLogged={this.userLogged}
+            <Route
+              exact path='/admin'
+              component={Admin}
             />
-          }
-        />
 
-        <Route
-          path='/users/:user/resetpassword'
-          render={({ history }) =>
-            <ResetPassword history={history} />
-          }
-        />
-
-        <Route
-          path='/movie/search'
-          component={MovieSearch}
-        />
-
-        <Route
-          path='/home'
-          render={({ history }) =>
-            <Lists
-              history={history}
-              mainLists={mainLists}
+            <Route
+              exact path='/admin/users'
+              component={Users}
             />
-          }
-        />
 
-        <Route
-          exact path='/users/:user'
-          render={({ match, history }) =>
-            <User
-              history={history}
-              user_id={match.params.user}
+            <Route
+              path='/register'
+              render={({ history }) =>
+                <Register
+                  history={history}
+                  userLogged={this.userLogged}
+                />
+              }
             />
-          }
-        />
 
-        <Route
-          path='/users/:user/lists'
-          render={({ match, history }) =>
-            <Lists
-              history={history}
-              user_id={match.params.user}
+            <Route
+              path='/login'
+              render={({ history }) =>
+                <Login
+                  history={history}
+                  userLogged={this.userLogged}
+                />
+              }
             />
-          }
-        />
 
-        <Route
-          path='/users/:user/suggestions'
-          render={({ match, history }) =>
-            <Suggestions
-              history={history}
-              user_id={match.params.user}
+            <Route
+              path='/users/:user/resetpassword'
+              render={({ history }) =>
+                <ResetPassword history={history} />
+              }
             />
-          }
-        />
 
-        <Route
-          path='/edit/users/:user'
-          render={({ match, history }) =>
-            <UserEdit
-              history={history}
-              user_id={match.params.user}
+            <Route
+              path='/movie/search'
+              component={MovieSearch}
             />
-          }
-        />
 
-        <Route
-          exact path='/lists/:list'
-          render={({ match, history }) =>
-            <List
-              history={history}
-              list_id={match.params.list}
+            <Route
+              path='/home'
+              render={({ history }) =>
+                <Lists
+                  history={history}
+                  mainLists={mainLists}
+                />
+              }
             />
-          }
-        />
 
-        <Route
-          path='/movies/:movie'
-          render={({ history, location, match }) =>
-            <Movie
-              movie_id={match.params.movie}
-              history={history}
-              location={location}
+            <Route
+              exact path='/users/:user'
+              render={({ match, history }) =>
+                <User
+                  history={history}
+                  user_id={match.params.user}
+                />
+              }
             />
-          }
-        />
+
+            <Route
+              path='/users/:user/lists'
+              render={({ match, history }) =>
+                <Lists
+                  history={history}
+                  user_id={match.params.user}
+                />
+              }
+            />
+
+            <Route
+              path='/users/:user/suggestions'
+              render={({ match, history }) =>
+                <Suggestions
+                  history={history}
+                  user_id={match.params.user}
+                />
+              }
+            />
+
+            <Route
+              path='/edit/users/:user'
+              render={({ match, history }) =>
+                <UserEdit
+                  history={history}
+                  user_id={match.params.user}
+                />
+              }
+            />
+
+            <Route
+              exact path='/lists/:list'
+              render={({ match, history }) =>
+                <List
+                  history={history}
+                  list_id={match.params.list}
+                />
+              }
+            />
+
+            <Route
+              path='/movies/:movie'
+              render={({ history, location, match }) =>
+                <Movie
+                  movie_id={match.params.movie}
+                  history={history}
+                  location={location}
+                />
+              }
+            />
+          </Switch>
+        </ErrorBoundary>  
 
         <Footer />
       </main>

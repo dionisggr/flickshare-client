@@ -23,4 +23,5 @@
 .movie-preview img {
   display: flex;
   width: 100%;
+  min-height: 225px;
 }

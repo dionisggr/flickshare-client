@@ -6,8 +6,7 @@ const TokenService = {
     
     api.refreshToken(flickshareToken)
       .then(({ flickshareToken }) => {
-        console.log(flickshareToken);
-        // window.localStorage.setItem('flickshareToken', flickshareToken)
+        window.localStorage.setItem('flickshareToken', flickshareToken)
       })
       .catch(error => console.log(error));
   }

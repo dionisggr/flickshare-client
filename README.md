@@ -5,14 +5,14 @@ This API stop represents a way for the app to communicate with the list of users
 
 ---
 
-### API URL:
+### Client Live:
 *(Pending)*
 
-### Client Live
-*(Pending)*
+### API URL
+https://cryptic-badlands-24275.herokuapp.com/
 
-### Client GitHub:
-https://github.com/dionisggr/flickshare-client/
+### API GitHub:
+https://github.com/dionisggr/flickshare-api/
 
 ---
 
@@ -100,7 +100,7 @@ The app's functionality includes:
   - email (text, unique)
   - username (text, unique)
   - password (text, hashed)
-  - admin
+  - admin (boolean, default false)
 - Lists (database table)
   - list_id (integer, auto-generated)
   - name (text, not null)
@@ -115,12 +115,6 @@ The app's functionality includes:
   - poster (text, poster image URL)
   - avg_vote (numeric)
   - vote_count (integer)
-- Genres (database table)
-  - genre_id (auto-generated)
-  - name (text, not null)
-- Movie Genres (database table)
-  - genre_id (references genres.genre_id)
-  - movie_id (references movies.movie_id)
 - List Movies (database table)
   - list_id (references lists.list_id)
   - movie_id (references movies.movie_id)

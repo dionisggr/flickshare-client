@@ -5,14 +5,14 @@ This API stop represents a way for the app to communicate with the list of users
 
 ---
 
-### Client URL:
+### API URL:
 *(Pending)*
 
-### API Live
+### Client Live
 *(Pending)*
 
-### API GitHub:
-https://github.com/dionisggr/flickshare-api/
+### Client GitHub:
+https://github.com/dionisggr/flickshare-client/
 
 ---
 
@@ -47,12 +47,48 @@ https://github.com/dionisggr/flickshare-api/
 ---
 
 ### Functionality
-
-
+The app's functionality includes:
+* Every User
+  * May create an account
+  * May browse public suggestion lists
+  * May read full movie information
+* Registered User
+  * May edit and delete their account
+  * May create, edit and delete their lists
+  * May generate suggestions from other lists
+  * May search for any movie
+* Admin
+  * May see a list of all users
+    * May create, edit and delete any user
+  * May see a list of all lists
+    * May create, edit and delete any list
 ---
 
 ### Front-End Structure
-
+* __Index.js__ - (stateless)
+    * __App.js__ - (stateful)
+      * __Header.js__ - (stateless)
+      * __MainMenu.js__ - (stateless)
+      * __Register.js__ - (stateless)
+      * __Login.js__ - (stateless)
+      * __WelcomePage.js__ - (stateful)
+          * __Login.js__ - (stateful)
+          * __Register.js__ - (stateful)
+      * __Lists.js__ - (stateful)
+      * __List.js__ - (stateful)
+      * __Suggestions.js__ - (stateful)
+      * __Movie.js__ - (stateful)
+        * __MoviePreview.js__ - (stateful)
+          * __MovieOptions.js__ - (stateful)
+      * __MovieSearch.js__ - (stateful)
+      * __Admin.js__ - (stateful)
+        * __Users.js__ - (stateful)
+      * __User.js__ - (stateful)
+        * __UserPreview.js__ - (stateless)
+      * __UserEdit.js__ - (stateful)
+      * __Error.js__ - (stateless)
+      * __ErrorBoundary.js__ - (stateful)
+      * __Footer.js__ - (stateless)
 
 ---
 

@@ -4,7 +4,6 @@ import jwt from 'jsonwebtoken';
 import './MainMenu.css';
 
 function MainMenu() {
-
   const flickshareToken = JSON.parse(window.localStorage.getItem('flickshareToken'));
 
   const decoded = (flickshareToken)

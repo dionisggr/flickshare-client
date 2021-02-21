@@ -1,5 +1,4 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 import MovieOptions from './MovieOptions';
 import './MoviePreview.css';
 
@@ -7,11 +6,15 @@ class MoviePreview extends React.Component {
   state = { showOptions: false };
 
   render() {
-    const { movie } = this.props;
-    const { name, poster, movie_id } = movie;
+    const { movie, list, setMovies } = this.props;
+    const { name, poster } = movie;
 
     const movieOptions = (this.state.showOptions)
-      ? <MovieOptions movie={movie} />
+      ? <MovieOptions
+          setMovies={setMovies}
+          list={list}
+          movie={movie}
+        />
       : null
     
     return (

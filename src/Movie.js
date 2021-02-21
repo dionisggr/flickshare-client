@@ -21,12 +21,12 @@ class Movie extends React.Component {
     let { history, location: { movie } } = this.props;
 
     if (!movie) {
-      movie = JSON.parse(window.localStorage.getItem('flickshareMovie'));
+      movie = this.props.movie;
     };
 
     if (!movie) {
-      movie = this.props.movie;
-    }
+      movie = JSON.parse(window.localStorage.getItem('flickshareMovie'));
+    };
 
     if (!movie) {
       return <Error message='Something went wrong.' />
@@ -37,8 +37,6 @@ class Movie extends React.Component {
     const vote_count = parseInt(movie.vote_count).toLocaleString('en');
 
     const { movie_id } = this.props;
-
-    console.log(movie_id);
 
     const button = (!movie_id)
       ? <button

@@ -1,6 +1,6 @@
 import { JWT_SECRET } from './config';
-import jwt from 'jsonwebtoken';
 import { Link } from 'react-router-dom';
+import jwt from 'jsonwebtoken';
 import './MainMenu.css';
 
 function MainMenu() {

@@ -17,17 +17,14 @@ class MovieSearch extends React.Component {
       .catch(error => <Error message={error} />);
     
     const results = MovieService.prepare(response.results);
+    
+    console.log(results);
 
-    console.log(this.state.results);
     this.setState({ results });
-    console.log(this.state.results);
   };
 
   render() {
-    const { results } = this.state;
-
     console.log(this.state.results);
-
     return (
       <div className='movie-search'>
         <form
@@ -45,8 +42,11 @@ class MovieSearch extends React.Component {
         </form>
         <div className='results'>
           {
-            this.state.results.map(movie => 
-              <Movie movie={movie} />
+            this.state.results.map((movie, idx) => 
+              <Movie
+                key={idx}
+                movie={movie}
+              />
             )
           }
         </div>

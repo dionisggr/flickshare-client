@@ -30,13 +30,24 @@ class ListPreview extends Component {
       return this.setState({ list: null });
     };
     
+    const flickshareToken = JSON.parse(window.localStorage.getItem('flickshareToken'));
+
+    const decoded = (flickshareToken)
+      ? jwt.verify(flickshareToken, JWT_SECRET, (error, decoded) => {
+          if (error) return null
+          return decoded;
+        })
+      : null;
+    
+    const user_id = (decoded) ? parseInt(decoded.user_id) : null;
+
     const newList = {
       name: `From ${list.name}`, suggestion: true,
-      user_id: list.user_id, movies
+      user_id, movies
     };
 
     api.createList(newList)
-      .then(() => history.push(`/users/${list.user_id}/suggestions`))
+      .then(() => history.push(`/users/${user_id}/suggestions`))
       .catch(error => <Error message={error} />)
   };
 
@@ -81,6 +92,15 @@ class ListPreview extends Component {
       return <Error message={'Invalid access'} />
     };
 
+    const getSuggestionsButton = (decoded)
+      ? <button
+          type='button'
+          onClick={() => this.getSuggestions(list)}
+        >
+          Get Suggestions
+        </button>
+      : null;
+
     return (
       <div className='list'>
         <h3>List Details</h3>
@@ -98,19 +118,14 @@ class ListPreview extends Component {
           }
         </div>
 
+        {getSuggestionsButton}
+
         <button
           type='button'
-          onClick={() => this.getSuggestions(list)}
+          onClick={() => history.push('/home')}
         >
-          Get Suggestions
+          BACK
         </button>
-
-          <button
-            type='button'
-            onClick={() => history.push('/home')}
-          >
-            BACK
-          </button>
       </div>
     );
   }

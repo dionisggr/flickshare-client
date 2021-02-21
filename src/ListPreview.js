@@ -1,6 +1,4 @@
 import { Link } from 'react-router-dom';
-import jwt from 'jsonwebtoken';
-import { JWT_SECRET } from './config';
 import MoviePreview from './MoviePreview';
 import Error from './Error';
 import './ListPreview.css';
@@ -15,7 +13,8 @@ class ListPreview extends Component {
 
   state = {
     list: { movies: [] },
-    autoScroller: null
+    autoScroller: null,
+    refresh: false
   };
 
   scroll = (evt, direction) => {
@@ -41,6 +40,15 @@ class ListPreview extends Component {
     this.setState(newState);
   };
 
+  setMovies = (movies) => {
+    const newState = { ...this.state };
+
+    newState.list.movies = movies;
+    newState.refresh = true;
+
+    this.setState(newState);
+  };
+
   componentDidMount() {
     const list_id = parseInt(this.props.list_id);
 
@@ -54,18 +62,6 @@ class ListPreview extends Component {
   };
 
   render() {
-    const flickshareToken = JSON.parse(window.localStorage.getItem('flickshareToken'));
-
-    const decoded = (flickshareToken)
-      ? jwt.verify(flickshareToken, JWT_SECRET, (error, decoded) => {
-          if (error) return null;
-          return decoded;
-        })
-      : null;
-    
-    const user_id = (decoded) ? decoded.user_id : null;
-    const admin = (decoded) ? decoded.admin : false;
-
     let { list } = this.props;
 
     if (!list.list_id) {
@@ -73,6 +69,10 @@ class ListPreview extends Component {
     };
 
     if (list.movies.length < 1) return null;
+
+    if (this.state.refresh) {
+      list = this.state.list;
+    };
 
     return (
       <div className='list-preview'>
@@ -84,8 +84,11 @@ class ListPreview extends Component {
           {
             list.movies.map(movie =>
               <MoviePreview
+                setMovies={this.setMovies}
                 key={movie.movie_id}
-                movie={movie} />
+                list={list}
+                movie={movie}
+              />
             )
           }
         </div>

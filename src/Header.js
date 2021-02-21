@@ -1,7 +1,6 @@
 import React from 'react';
 import { Link, withRouter } from 'react-router-dom';
 import { JWT_SECRET } from './config';
-import MainMenu from './MainMenu';
 import jwt from 'jsonwebtoken';
 import './Header.css';
 
@@ -30,17 +29,27 @@ class Header extends React.Component {
 
     const buttons = (decoded)
       ? <>
-        <li><Link to={`/users/${decoded.user_id}`}>Account</Link></li>
-        <li>
-          <Link to='/'
-            onClick={this.logout}>Logout
-          </Link>
-        </li>
-      </>
+          <li><Link to={`/users/${decoded.user_id}`}>Account</Link></li>
+          <li>
+            <Link to='/'
+              onClick={this.logout}>Logout
+            </Link>
+          </li>
+        </>
       : <>
-        <li><Link to='/register'>Register</Link></li>
-        <li><Link to='/login'>Login</Link></li>
-      </>;
+          <li><Link to='/register'>Register</Link></li>
+          <li><Link to='/login'>Login</Link></li>
+        </>;
+      
+    const { pathname } = this.props.location;
+    
+    const adminButton = (decoded && decoded.admin)
+      ? (!pathname.includes('admin'))
+        ? <li><Link to='/admin'>Admin</Link></li>
+        : (pathname === '/admin')
+          ? <li><Link to='/admin/users'>Users</Link></li>
+          : <li><Link to='/admin/users'>Lists</Link></li>
+        : null;
     
     return (
       <header>
@@ -48,6 +57,7 @@ class Header extends React.Component {
         <nav>
           <ul>
             {buttons}
+            {adminButton}
           </ul>
         </nav>
       </header>

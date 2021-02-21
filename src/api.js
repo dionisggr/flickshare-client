@@ -1,6 +1,5 @@
 import { API_URL, API_ADMIN_KEY, TMDB_API_URL, TMDB_API_KEY } from './config';
 import Error from './Error';
-import MovieService from './services/movie-service';
 
 const api = {
   verifyResponse: (res) => {
@@ -15,6 +14,13 @@ const api = {
     return fetch(
       `${TMDB_API_URL}/search/movie?api_key=${TMDB_API_KEY}&language=en-US&query=${movie}${searchOptions}`
     )
+      .then(api.verifyResponse);
+  }
+  ,
+  getAllLists: () => {
+    return fetch(`${API_URL}/lists`, {
+      headers: { 'Authorization': `Bearer ${API_ADMIN_KEY}` }
+    })
       .then(api.verifyResponse);
   }
   ,
@@ -56,6 +62,13 @@ const api = {
       .then(api.verifyResponse);
   }
   ,
+  removeMovieFromList: (list_id, movie_id) => {
+    return fetch(`${API_URL}/movies/${movie_id}/lists/${list_id}`, {
+      method: 'DELETE',
+      headers: { 'Authorization': `Bearer ${API_ADMIN_KEY}` }
+    });
+  }
+  ,
   getUserInfo: (user_id) => {
     return fetch(`${API_URL}/users/${user_id}`, {
       headers: { 'Authorization': `Bearer ${API_ADMIN_KEY}` }
@@ -72,6 +85,13 @@ const api = {
   ,
   getUserSuggestions: (user_id) => {
     return fetch(`${API_URL}/lists/suggestions/users/${user_id}`, {
+      headers: { 'Authorization': `Bearer ${API_ADMIN_KEY}` }
+    })
+      .then(api.verifyResponse);
+  }
+  ,
+  getAllUsers: () => {
+    return fetch(`${API_URL}/users`, {
       headers: { 'Authorization': `Bearer ${API_ADMIN_KEY}` }
     })
       .then(api.verifyResponse);

@@ -15,7 +15,6 @@ class Suggestions extends React.Component {
     if (user_id) {
       api.getUserSuggestions(user_id)
       .then(suggestions => {
-        console.log(suggestions);
         this.setState({ suggestions });
       })
       .catch(error => <Error message={error} />)

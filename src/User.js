@@ -65,6 +65,13 @@ class User extends React.Component {
         <button 
           type='button'
           className='user-lists'
+          onClick={() => history.push(`/users/${user_id}/resetpassword`)}
+        >
+          Reset Password
+        </button>
+        <button 
+          type='button'
+          className='user-lists'
           onClick={() => history.push(`/users/${user_id}/lists`)}
         >
           Lists

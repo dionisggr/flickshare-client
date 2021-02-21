@@ -3,7 +3,7 @@ header {
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
-  height: 85px;
+  height: 90px;
 }
 
 header h1 {
@@ -20,17 +20,23 @@ nav {
   justify-content: center;
   width: 100%;
   border-bottom: solid 1px rgba(255, 255, 255, 0.301);
-  padding-bottom: 5px;
+  padding-bottom: 10px;
 }
 
 nav ul {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   list-style-type: none;
-  font-size: 3.3vh;
+  font-size: 20px;
   margin: 0;
   padding-left: 0;
-  width: 50%;
+  width: 100%;
+  max-width: 400px;
+  padding: 0 6%;
+}
+
+nav li + li {
+  margin-left: 35px;
 }
 
 nav a {

@@ -7,13 +7,16 @@ import Footer from './Footer';
 import Welcome from './Welcome';
 import Register from './Register'; 
 import Login from './Login'; 
+import ResetPassword from './ResetPassword'; 
 import User from './User'; 
+import Users from './Users'; 
 import UserEdit from './UserEdit'; 
 import Lists from './Lists';
 import Suggestions from './Suggestions';
 import List from './List';
 import Movie from './Movie';
 import MovieSearch from './MovieSearch';
+import Admin from './Admin'
 import Error from './Error';
 import { JWT_SECRET } from './config'
 import api from './api';
@@ -90,6 +93,16 @@ class App extends React.Component {
         />
 
         <Route
+          exact path='/admin'
+          component={Admin}
+        />
+
+        <Route
+          exact path='/admin/users'
+          component={Users}
+        />
+
+        <Route
           path='/register'
           render={({ history }) =>
             <Register
@@ -109,8 +122,12 @@ class App extends React.Component {
           }
         />
 
-        {/* <Route exact path='/users' component={Users} /> */}
-        {/* <Route path='/friends' component={Friends} /> */}
+        <Route
+          path='/users/:user/resetpassword'
+          render={({ history }) =>
+            <ResetPassword history={history} />
+          }
+        />
 
         <Route
           path='/movie/search'

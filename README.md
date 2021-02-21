@@ -5,14 +5,14 @@ This API stop represents a way for the app to communicate with the list of users
 
 ---
 
-### API URL:
-https://cryptic-badlands-24275.herokuapp.com/ *(Landing Page)*
-
-### Client Live
+### Client URL:
 *(Pending)*
 
-### Client GitHub:
-https://github.com/dionisggr/flickshare-client/
+### API Live
+*(Pending)*
+
+### API GitHub:
+https://github.com/dionisggr/flickshare-api/
 
 ---
 

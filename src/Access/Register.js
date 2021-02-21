@@ -13,7 +13,7 @@ class Register extends React.Component {
       label.style.display = 'none';
     });
 
-    const { history, userLogged } = this.props;
+    const { history, userLogged, setIdleTimer } = this.props;
 
     const newUser = {
       first_name: evt.target.first_name.value,
@@ -49,7 +49,10 @@ class Register extends React.Component {
     api.addUser(newUser)
       .then(({ flickshareToken }) => {
         window.localStorage.setItem('flickshareToken', JSON.stringify(flickshareToken));
+
         userLogged(true);
+        setIdleTimer();
+        
         history.push(`/home`);
       })
       .catch(error => console.log(error));

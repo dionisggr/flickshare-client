@@ -11,7 +11,7 @@ class Login extends React.Component {
     const username = evt.target.username.value;
     const password = evt.target.password.value;
 
-    const { history, userLogged } = this.props;
+    const { history, userLogged, setIdleTimer } = this.props;
 
     const response = await api.login(username, password)
       .catch(error => console.log({ error }));
@@ -22,6 +22,7 @@ class Login extends React.Component {
       window.localStorage.setItem('flickshareToken', JSON.stringify(flickshareToken));
   
       userLogged(true);
+      setIdleTimer();
   
       history.push('/home');
 

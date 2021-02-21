@@ -1,4 +1,4 @@
-import { API_URL, API_ADMIN_KEY, TMDB_API_URL, TMDB_API_KEY } from '../config';
+import { API_URL, API_KEY, TMDB_API_URL, TMDB_API_KEY } from '../config';
 import Error from '../error-handlers/Error';
 
 const api = {
@@ -19,21 +19,21 @@ const api = {
   ,
   getAllLists: () => {
     return fetch(`${API_URL}/lists`, {
-      headers: { 'Authorization': `Bearer ${API_ADMIN_KEY}` }
+      headers: { 'Authorization': `Bearer ${API_KEY}` }
     })
       .then(api.verifyResponse);
   }
   ,
   getMainLists: () => {
     return fetch(`${API_URL}/lists/main`, {
-      headers: { 'Authorization': `Bearer ${API_ADMIN_KEY}` }
+      headers: { 'Authorization': `Bearer ${API_KEY}` }
     })
       .then(api.verifyResponse);
   }
   ,
   getListById: (id) => {
     return fetch(`${API_URL}/lists/${id}`, {
-      headers: { 'Authorization': `Bearer ${API_ADMIN_KEY}` }
+      headers: { 'Authorization': `Bearer ${API_KEY}` }
     })
       .then(api.verifyResponse);
   }
@@ -42,7 +42,7 @@ const api = {
     return fetch(`${API_URL}/lists`, {
       method: 'POST',
       headers: {
-        'Authorization': `Bearer ${API_ADMIN_KEY}`,
+        'Authorization': `Bearer ${API_KEY}`,
         'Content-Type': 'application/json'
       },
       body: JSON.stringify(list)
@@ -54,7 +54,7 @@ const api = {
     return fetch(`${API_URL}/movies/lists/${list_id}`, {
       method: 'POST',
       headers: {
-        'Authorization': `Bearer ${API_ADMIN_KEY}`,
+        'Authorization': `Bearer ${API_KEY}`,
         'Content-Type': 'application/json'
       },
       body: JSON.stringify({ movie })
@@ -65,34 +65,34 @@ const api = {
   removeMovieFromList: (list_id, movie_id) => {
     return fetch(`${API_URL}/movies/${movie_id}/lists/${list_id}`, {
       method: 'DELETE',
-      headers: { 'Authorization': `Bearer ${API_ADMIN_KEY}` }
+      headers: { 'Authorization': `Bearer ${API_KEY}` }
     });
   }
   ,
   getUserInfo: (user_id) => {
     return fetch(`${API_URL}/users/${user_id}`, {
-      headers: { 'Authorization': `Bearer ${API_ADMIN_KEY}` }
+      headers: { 'Authorization': `Bearer ${API_KEY}` }
     })
       .then(api.verifyResponse);
   }
   ,
   getUserLists: (user_id) => {
     return fetch(`${API_URL}/lists/users/${user_id}`, {
-      headers: { 'Authorization': `Bearer ${API_ADMIN_KEY}` }
+      headers: { 'Authorization': `Bearer ${API_KEY}` }
     })
       .then(api.verifyResponse);
   }
   ,
   getUserSuggestions: (user_id) => {
     return fetch(`${API_URL}/lists/suggestions/users/${user_id}`, {
-      headers: { 'Authorization': `Bearer ${API_ADMIN_KEY}` }
+      headers: { 'Authorization': `Bearer ${API_KEY}` }
     })
       .then(api.verifyResponse);
   }
   ,
   getAllUsers: () => {
     return fetch(`${API_URL}/users`, {
-      headers: { 'Authorization': `Bearer ${API_ADMIN_KEY}` }
+      headers: { 'Authorization': `Bearer ${API_KEY}` }
     })
       .then(api.verifyResponse);
   }
@@ -101,7 +101,7 @@ const api = {
     return fetch(`${API_URL}/users`, {
       method: 'POST',
       headers: {
-        'Authorization': `Bearer ${API_ADMIN_KEY}`,
+        'Authorization': `Bearer ${API_KEY}`,
         'Content-Type': 'application/json'
       },
       body: JSON.stringify(user)
@@ -113,7 +113,7 @@ const api = {
     return fetch(`${API_URL}/users/${user_id}`, {
       method: 'PATCH',
       headers: {
-        'Authorization': `Bearer ${API_ADMIN_KEY}`,
+        'Authorization': `Bearer ${API_KEY}`,
         'Content-Type': 'application/json'
       },
       body: JSON.stringify(values)
@@ -124,7 +124,7 @@ const api = {
   deleteUser: (user_id) => {
     return fetch(`${API_URL}/users/${user_id}`, {
       method: 'DELETE',
-      headers: { 'Authorization': `Bearer ${API_ADMIN_KEY}` }
+      headers: { 'Authorization': `Bearer ${API_KEY}` }
     });
   }
   ,
@@ -132,7 +132,7 @@ const api = {
     return fetch(`${API_URL}/users/username`, {
       method: 'POST',
       headers: {
-        'Authorization': `Bearer ${API_ADMIN_KEY}`,
+        'Authorization': `Bearer ${API_KEY}`,
         'Content-Type': 'application/json'
       },
       body: JSON.stringify({ username })
@@ -143,7 +143,7 @@ const api = {
     return fetch(`${API_URL}/users/${user_id}/password`, {
       method: 'PATCH',
       headers: {
-        'Authorization': `Bearer ${API_ADMIN_KEY}`,
+        'Authorization': `Bearer ${API_KEY}`,
         'Content-Type': 'application/json'
       },
       body: JSON.stringify({ password })
@@ -155,10 +155,22 @@ const api = {
     return fetch(`${API_URL}/login`, {
       method: 'POST',
       headers: {
-        'Authorization': `Bearer ${API_ADMIN_KEY}`,
+        'Authorization': `Bearer ${API_KEY}`,
         'Content-Type': 'application/json'
       },
       body: JSON.stringify({ username, password })
+    })
+      .then(api.verifyResponse);
+  }
+  ,
+  refreshToken: (flickshareToken) => {
+    return fetch(`${API_URL}/login`, {
+      method: 'PATCH',
+      headers: {
+        'Authorization': `Bearer ${API_KEY}`,
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({ flickshareToken })
     })
       .then(api.verifyResponse);
   }

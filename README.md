@@ -6,7 +6,7 @@ This API stop represents a way for the app to communicate with the list of users
 ---
 
 ### Client Live:
-*(Pending)*
+https://flickshare-client.vercel.app/
 
 ### API URL
 https://cryptic-badlands-24275.herokuapp.com/
@@ -21,21 +21,18 @@ https://github.com/dionisggr/flickshare-api/
   - I am landed in the Welcome Page
   - I can see the week's top movie suggestions per category
   - I can navigate to the Register and Login pages
+  - I can see more information about a movie
 - As a registered user
   - I can create and name a list
   - I can search for a movie to select for a list
   - I can search, edit and delete my list
-  - I can browse my friends' top public lists
-  - I can send friends movie suggestions
-  - I can like movies in lists
-  - I can dislike movie suggestions directed to me
-  - I can select a movie to learn more details about it
+  - I can browse top public lists
+  - I can see more information about a movie
 - As an Admin
   - I can see, edit and delete users
-  - I can see, edit and delete movies
+  - I can see and add movies
   - I can see, edit and delete lists
-  - I can reset likes in movies
-  - I can reset suggestion algorithms for users
+  - I can reset user suggestion lists
 
 ---
 

@@ -1,7 +1,7 @@
 import React from 'react';
-import { JWT_SECRET } from './config';
-import jwt from 'jsonwebtoken';
 import { Link } from 'react-router-dom';
+import { JWT_SECRET } from '../config';
+import jwt from 'jsonwebtoken';
 import './Welcome.css';
 
 class Welcome extends React.Component {

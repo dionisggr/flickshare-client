@@ -2,25 +2,25 @@ import React from 'react';
 import { Route, Switch } from 'react-router-dom';
 import { JWT_SECRET } from './config'
 import jwt from 'jsonwebtoken';
-import Header from './Header';
-import MainMenu from './MainMenu';
-import Footer from './Footer';
-import Welcome from './Welcome';
-import Register from './Register'; 
-import Login from './Login'; 
-import ResetPassword from './ResetPassword'; 
-import User from './User'; 
-import Users from './Users'; 
-import UserEdit from './UserEdit'; 
-import Lists from './Lists';
-import Suggestions from './Suggestions';
-import List from './List';
-import Movie from './Movie';
-import MovieSearch from './MovieSearch';
-import Admin from './Admin'
-import Error from './Error';
+import Header from './Header/Header';
+import MainMenu from './Main/MainMenu';
+import Footer from './Footer/Footer';
+import Welcome from './Main/Welcome';
+import Register from './Access/Register'; 
+import Login from './Access/Login'; 
+import ResetPassword from './Users/ResetPassword'; 
+import User from './Users/User'; 
+import Users from './Admin/Users'; 
+import UserEdit from './Users/UserEdit'; 
+import Lists from './Lists/Lists';
+import Suggestions from './Lists/Suggestions/Suggestions';
+import List from './Lists/List/List';
+import Movie from './Movies/Movie';
+import MovieSearch from './Movies/MovieSearch';
+import Admin from './Admin/Admin'
+import Error from './error-handlers/Error';
 import ErrorBoundary from './error-handlers/error-boundary';
-import api from './api';
+import api from './services/api';
 import './App.css';
 
 

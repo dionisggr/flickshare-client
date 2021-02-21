@@ -1,8 +1,8 @@
 import React from 'react';
-import { JWT_SECRET } from './config';
+import { JWT_SECRET } from '../config';
 import jwt from 'jsonwebtoken';
-import validation from './services/validation';
-import api from './api';
+import validation from '../services/validation';
+import api from '../services/api';
 import './ResetPassword.css';
 
 class ResetPassword extends React.Component {

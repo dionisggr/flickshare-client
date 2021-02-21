@@ -1,8 +1,8 @@
 import React from 'react';
-import { JWT_SECRET } from './config';
+import { JWT_SECRET } from '../config';
 import jwt from 'jsonwebtoken';
-import Error from './Error';
-import api from './api';
+import Error from '../error-handlers/Error';
+import api from '../services/api';
 import './UserEdit.css';
 
 class UserEdit extends React.Component {

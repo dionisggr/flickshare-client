@@ -1,6 +1,6 @@
 import React from 'react';
-import validation from './services/validation';
-import api from './api';
+import validation from '../services/validation';
+import api from '../services/api';
 import './Register.css';
 
 class Register extends React.Component {

@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link, withRouter } from 'react-router-dom';
-import { JWT_SECRET } from './config';
+import { JWT_SECRET } from '../config';
 import jwt from 'jsonwebtoken';
 import './Header.css';
 

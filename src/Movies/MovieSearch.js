@@ -1,8 +1,8 @@
 import React from 'react';
 import Movie from './Movie';
-import Error from './Error';
-import api from './api';
-import MovieService from './services/movie-service';
+import MovieService from '../services/movie-service';
+import Error from '../error-handlers/Error';
+import api from '../services/api';
 import './MovieSearch.css';
 
 class MovieSearch extends React.Component {

@@ -1,5 +1,5 @@
-import { API_URL, API_ADMIN_KEY, TMDB_API_URL, TMDB_API_KEY } from './config';
-import Error from './Error';
+import { API_URL, API_ADMIN_KEY, TMDB_API_URL, TMDB_API_KEY } from '../config';
+import Error from '../error-handlers/Error';
 
 const api = {
   verifyResponse: (res) => {

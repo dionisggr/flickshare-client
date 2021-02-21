@@ -1,13 +1,12 @@
-import { Link } from 'react-router-dom';
-import jwt from 'jsonwebtoken';
-import { JWT_SECRET } from './config';
-import MoviePreview from './MoviePreview';
-import MovieService from './services/movie-service';
-import Error from './Error';
-import './List.css';
-
 import React, { Component } from 'react';
-import api from './api';
+import { Link } from 'react-router-dom';
+import { JWT_SECRET } from '../../config';
+import jwt from 'jsonwebtoken';
+import MoviePreview from '../../Movies/MoviePreview';
+import MovieService from '../../services/movie-service';
+import Error from '../../error-handlers/Error';
+import api from '../../services/api';
+import './List.css';
 
 class ListPreview extends Component {
   static defaultProps = {

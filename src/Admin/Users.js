@@ -1,8 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import Error from './Error';
-import api from './api';
-import UserPreview from './UserPreview';
+import Error from '../error-handlers/Error';
+import api from '../services/api';
+import UserPreview from '../Users/UserPreview';
 import './Users.css';
 
 class Users extends React.Component {

@@ -1,10 +1,9 @@
-import { Link } from 'react-router-dom';
-import MoviePreview from './MoviePreview';
-import Error from './Error';
-import './ListPreview.css';
-
 import React, { Component } from 'react';
-import api from './api';
+import { Link } from 'react-router-dom';
+import MoviePreview from '../../Movies/MoviePreview';
+import Error from '../../error-handlers/Error';
+import api from '../../services/api';
+import './ListPreview.css';
 
 class ListPreview extends Component {
   static defaultProps = {

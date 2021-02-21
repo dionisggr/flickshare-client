@@ -1,8 +1,8 @@
 import React from 'react';
 import jwt from 'jsonwebtoken';
-import { JWT_SECRET } from './config';
-import Error from './Error';
-import api from './api';
+import { JWT_SECRET } from '../config';
+import Error from '../error-handlers/Error';
+import api from '../services/api';
 import './User.css';
 
 class User extends React.Component {

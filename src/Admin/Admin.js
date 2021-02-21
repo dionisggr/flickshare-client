@@ -1,9 +1,9 @@
 import React from 'react';
-import { JWT_SECRET } from './config';
+import { JWT_SECRET } from '../config';
 import jwt from 'jsonwebtoken';
-import ListPreview from './ListPreview';
-import Error from './Error';
-import api from './api';
+import ListPreview from '../Lists/List/ListPreview';
+import Error from '../error-handlers/Error';
+import api from '../services/api';
 import './Admin.css';
 
 class Admin extends React.Component {

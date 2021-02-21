@@ -1,5 +1,5 @@
 import React from 'react';
-import Error from './Error';
+import Error from '../error-handlers/Error';
 import './Movie.css';
 
 class Movie extends React.Component {

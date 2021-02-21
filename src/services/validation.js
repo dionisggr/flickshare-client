@@ -1,5 +1,5 @@
-import Error from '../Error';
-import api from "../api";
+import Error from '../error-handlers/Error';
+import api from "./api";
 
 const validation = {
   validUsername: (user) => {

@@ -1,4 +1,4 @@
-import { JWT_SECRET } from './config';
+import { JWT_SECRET } from '../config';
 import { Link } from 'react-router-dom';
 import jwt from 'jsonwebtoken';
 import './MainMenu.css';

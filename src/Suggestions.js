@@ -7,6 +7,8 @@ import api from './api';
 import './Suggestions.css';
 
 class Suggestions extends React.Component {
+  static defaultProps = { user_id: null };
+
   state = { suggestions: [] };
 
   componentDidMount() {

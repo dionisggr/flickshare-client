@@ -4,6 +4,7 @@ import api from './api';
 import './Register.css';
 
 class Register extends React.Component {
+  static defaultProps = { userLogged: {} };
 
   addUser = async (evt) => {
     evt.preventDefault();

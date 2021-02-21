@@ -8,7 +8,8 @@ import api from './api';
 
 class ListPreview extends Component {
   static defaultProps = {
-    list: { movies: [] }
+    list: { movies: [] },
+    list_id: null
   };
 
   state = {

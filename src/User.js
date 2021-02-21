@@ -6,12 +6,12 @@ import api from './api';
 import './User.css';
 
 class User extends React.Component {
+  static defaultProps = { user_id: null };
+
   state = { user: {} };
 
   deleteUser = async () => {
     const { history, user_id } = this.props;
-
-    console.log(user_id);
 
     await api.deleteUser(user_id)
       .catch(error => <Error message={error} />);

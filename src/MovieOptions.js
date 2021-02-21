@@ -7,6 +7,8 @@ import api from './api';
 import './MovieOptions.css';
 
 class MovieOptions extends React.Component {
+  static defaultProps = { list: {}, setMovies: {} };
+
   state = { lists: null, movieWasAdded: null, list: {} };
 
   getUserLists = () => {

@@ -3,8 +3,9 @@ import { Link } from 'react-router-dom';
 import './Error.css';
 
 class Error extends React.Component {
-  render() {
+  static defaultProps = { message: '' };
 
+  render() {
     const { message } = this.props;
 
     return (

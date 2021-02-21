@@ -18,13 +18,10 @@ class MovieSearch extends React.Component {
     
     const results = MovieService.prepare(response.results);
     
-    console.log(results);
-
     this.setState({ results });
   };
 
   render() {
-    console.log(this.state.results);
     return (
       <div className='movie-search'>
         <form

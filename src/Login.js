@@ -3,6 +3,8 @@ import api from './api';
 import './Login.css';
 
 class Login extends React.Component {
+  static defaultProps = { userLogged: {} };
+
   login = async (evt) => {
     evt.preventDefault();
 

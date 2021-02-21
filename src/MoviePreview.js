@@ -3,6 +3,8 @@ import MovieOptions from './MovieOptions';
 import './MoviePreview.css';
 
 class MoviePreview extends React.Component {
+  static defaultProps = { movie: {}, list: {}, setMovies: {} };
+
   state = { showOptions: false };
 
   render() {

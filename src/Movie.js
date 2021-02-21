@@ -3,7 +3,10 @@ import Error from './Error';
 import './Movie.css';
 
 class Movie extends React.Component {
-  static defaultProps = { history: {}, location: {} };
+  static defaultProps = {
+    history: {}, location: {},
+    movie: {}, movie_id: null
+  };
 
   state = { movie: {} };
 

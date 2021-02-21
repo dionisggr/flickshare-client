@@ -1,22 +1,26 @@
+import React from 'react';
 import { Link } from 'react-router-dom';
 import './UserPreview.css';
 
-function UserPreview(props) {
+class UserPreview extends React.Component {
+  static defaultProps = { user: {} };
 
-  const { user_id, username, first_name, last_name, email } = props.user;
+  render() {
+    const { user_id, username, first_name, last_name, email } = this.props.user;
 
-  return (
+    return (
     
-    <Link
-      to={`/users/${user_id}`}
-      className='user-preview'
-    >
-      <label>{username}</label>
-      <label>{email}</label>
-      <label>{first_name}</label>
-      <label>{last_name}</label>
-    </Link>
-  );
+      <Link
+        to={`/users/${user_id}`}
+        className='user-preview'
+      >
+        <label>{username}</label>
+        <label>{email}</label>
+        <label>{first_name}</label>
+        <label>{last_name}</label>
+      </Link>
+    );
+  };
 };
 
 export default UserPreview;

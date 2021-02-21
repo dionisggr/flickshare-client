@@ -7,7 +7,7 @@ import api from './api';
 import './Lists.css';
 
 class Lists extends React.Component {
-  static defaultProps = { mainLists: [] };
+  static defaultProps = { mainLists: [], user_id: null };
 
   state = { userLists: [] };
 

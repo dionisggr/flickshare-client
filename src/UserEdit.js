@@ -6,6 +6,8 @@ import api from './api';
 import './UserEdit.css';
 
 class UserEdit extends React.Component {
+  static defaultProps = { user_id: null };
+
   state = { user: {} };
 
   changeValue = (evt, property) => {

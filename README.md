@@ -62,6 +62,7 @@ The app's functionality includes:
     * May create, edit and delete any user
   * May see a list of all lists
     * May create, edit and delete any list
+    
 ---
 
 ### Front-End Structure

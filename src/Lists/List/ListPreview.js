@@ -43,6 +43,7 @@ class ListPreview extends Component {
   setMovies = (movies) => {
     const newState = { ...this.state };
 
+    newState.list = this.props.list;
     newState.list.movies = movies || [];
     newState.refresh = true;
 

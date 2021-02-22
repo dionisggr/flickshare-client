@@ -2,6 +2,7 @@ import React from 'react';
 import { Link, withRouter } from 'react-router-dom';
 import { JWT_SECRET } from '../config';
 import jwt from 'jsonwebtoken';
+import MovieService from '../services/movie-service';
 import Error from '../error-handlers/Error';
 import api from '../services/api';
 import './MovieOptions.css';
@@ -49,13 +50,24 @@ class MovieOptions extends React.Component {
       });
   };
 
-  removeMovie = (list_id, movie_id) => {
-    const { list, setMovies } = this.props;
-    const movies = list.movies.filter(movie => movie.movie_id !== movie_id)
+  removeMovie = async (movie) => {
+    const { setMovies } = this.props;
 
-    api.removeMovieFromList(list_id, movie_id)
-      .then(() => setMovies(movies))
-      .catch(error => <Error message={error} />);
+    if (!movie.movie_id) {
+      movie = MovieService.prepare([movie])[0];
+
+      movie = await api.addMovieToDatabase(movie);
+    };
+
+    console.log(movie);
+
+    // api.addMovieToDatabase(movie)
+    //   .then(result => console.log(result))
+    //   .catch(error => console.log({ error }));
+
+    // api.removeMovieFromList(list_id, movie_id)
+    //   .then(list => setMovies(list.movies))
+    //   .catch(error => <Error message={error} />);
   };
 
   componentDidMount = async () => {
@@ -76,7 +88,7 @@ class MovieOptions extends React.Component {
     const { lists, movieWasAdded } = this.state;
     const { movie, list } = this.props;
     const { movie_id } = movie;
-    const list_id = (list)
+    const list_id = (list.list_id)
       ? list.list_id
       : parseInt(this.props.match.params.list);
 
@@ -103,7 +115,7 @@ class MovieOptions extends React.Component {
       || (decoded && list && decoded.user_id === list.user_id))
         ? <button
           className='remove-movie'
-          onClick={() => this.removeMovie(list_id, movie_id)}
+          onClick={() => this.removeMovie(movie)}
         >
           x
           </button>
@@ -135,7 +147,7 @@ class MovieOptions extends React.Component {
                 <li key={idx}>
                   <button
                     type='button'
-                    onClick={() => this.addToList(list.list_id, movie)}
+                    onClick={() => this.addToList(list_id, movie)}
                   >
                     {list.name}
                   </button>

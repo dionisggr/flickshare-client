@@ -72,7 +72,7 @@ class Lists extends React.Component {
       ? <h3>Top Suggestions</h3>
       : <h3>My Lists</h3>
     
-    const lists = (userLists.length > 1)
+    const lists = (userLists.length > 0)
       ? userLists
       : mainLists;
 

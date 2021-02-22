@@ -221,7 +221,11 @@ class List extends Component {
         />
       : <Link to={`/lists/${list.list_id}`}>
           <h4>{list.name}</h4>
-        </Link>
+      </Link>
+    
+    const backPath = (list.user_id)
+      ? `/users/${list.user_id}/lists`
+      : '/home';
 
     return (
       <div className='list'>
@@ -251,7 +255,7 @@ class List extends Component {
 
         <button
           type='button'
-          onClick={() => history.push('/home')}
+          onClick={() => history.push(backPath)}
         >
           BACK
         </button>

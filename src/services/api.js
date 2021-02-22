@@ -86,11 +86,24 @@ const api = {
       .then(api.verifyResponse);
   }
   ,
+  addMovieToDatabase: (movie) => {
+    return fetch(`${API_URL}/movies`, {
+      method: 'POST',
+      headers: {
+        'Authorization': `Bearer ${API_KEY}`,
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(movie)
+    })
+      .then(api.verifyResponse);
+  }
+  ,
   removeMovieFromList: (list_id, movie_id) => {
     return fetch(`${API_URL}/movies/${movie_id}/lists/${list_id}`, {
       method: 'DELETE',
       headers: { 'Authorization': `Bearer ${API_KEY}` }
-    });
+    })
+      .then(api.verifyResponse);
   }
   ,
   getUserInfo: (user_id) => {

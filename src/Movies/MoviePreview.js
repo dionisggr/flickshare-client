@@ -13,9 +13,9 @@ class MoviePreview extends React.Component {
 
     const movieOptions = (this.state.showOptions)
       ? <MovieOptions
-          setMovies={setMovies}
-          list={list}
-          movie={movie}
+            list={list}
+            movie={movie}
+            setMovies={setMovies}
         />
       : null
     

@@ -1,6 +1,8 @@
 import React from 'react';
+import { withRouter } from 'react-router-dom';
 import Error from '../error-handlers/Error';
 import './Movie.css';
+// import api from '../services/api';
 
 class Movie extends React.Component {
   static defaultProps = {
@@ -17,11 +19,11 @@ class Movie extends React.Component {
       window.localStorage.setItem('flickshareMovie', JSON.stringify(movie));
     };
 
-    window.scroll(0, 0);
+    window.scrollTo(0, 0);
   };
 
   render() {
-    let { history, location: { movie } } = this.props;
+    let { location: { movie }, addToList } = this.props;
 
     if (!movie) {
       movie = this.props.movie;
@@ -39,12 +41,12 @@ class Movie extends React.Component {
 
     const vote_count = parseInt(movie.vote_count).toLocaleString('en');
 
-    const { movie_id } = this.props;
+    const { movie_id, location, history } = this.props;
 
-    const button = (!movie_id)
+    const button = (!movie_id && location.pathname !== '/movie/search')
       ? <button
           type='button'
-          onClick={history.goBack}
+          onClick={() => addToList(movie)}
         >
           Add to List
         </button>
@@ -52,7 +54,7 @@ class Movie extends React.Component {
           type='button'
           onClick={history.goBack}
         >
-          BACK
+          Back
         </button>
 
     return (
@@ -71,4 +73,4 @@ class Movie extends React.Component {
   };
 };
 
-export default Movie;
+export default withRouter(Movie);

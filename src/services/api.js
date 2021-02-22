@@ -17,6 +17,11 @@ const api = {
       .then(api.verifyResponse);
   }
   ,
+  searchMovieByTMDB_ID: (tmdb_id) => {
+    return fetch(`https://api.themoviedb.org/3/movie/${tmdb_id}?api_key=${TMDB_API_KEY}&language=en-US`)
+      .then(api.verifyResponse)
+  }
+  ,
   getAllLists: () => {
     return fetch(`${API_URL}/lists`, {
       headers: { 'Authorization': `Bearer ${API_KEY}` }
@@ -48,6 +53,25 @@ const api = {
       body: JSON.stringify(list)
     })
       .then(api.verifyResponse);
+  }
+  ,
+  editList: (list_id, values) => {
+    return fetch(`${API_URL}/lists/${list_id}`, {
+      method: 'PATCH',
+      headers: {
+        'Authorization': `Bearer ${API_KEY}`,
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({ ...values })
+    })
+      .then(api.verifyResponse);
+  }
+  ,
+  deleteList: (list_id) => {
+    return fetch(`${API_URL}/lists/${list_id}`, {
+      method: 'DELETE',
+      headers: { 'Authorization': `Bearer ${API_KEY}` }
+    });
   }
   ,
   addMovieToList: (list_id, movie) => {

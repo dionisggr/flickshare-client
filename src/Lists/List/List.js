@@ -3,18 +3,82 @@ import { Link } from 'react-router-dom';
 import { JWT_SECRET } from '../../config';
 import jwt from 'jsonwebtoken';
 import MoviePreview from '../../Movies/MoviePreview';
+import MovieSearch from '../../Movies/MovieSearch';
 import MovieService from '../../services/movie-service';
 import Error from '../../error-handlers/Error';
 import api from '../../services/api';
 import './List.css';
 
-class ListPreview extends Component {
+class List extends Component {
   static defaultProps = {
     list: { movies: [] },
-    list_id: null
+    list_id: null,
   };
 
-  state = { list: { movies: [] } };
+  state = {
+    list: { movies: [] },
+    showMovieSearch: false,
+    editMode: false,
+  };
+
+  addMovie = (movie) => {
+    const newState = { ...this.state };
+    
+    newState.list.movies.push(movie);
+    
+    this.setState(newState);
+    
+    window.scrollTo(0, 0);
+  };
+
+  renderMovieSearch = () => {
+    const newState = { ...this.state };
+
+    newState.showMovieSearch = true;
+
+    this.setState(newState);
+  }; 
+
+  showEditMode = () => {
+    const newState = { ...this.state };
+
+    newState.editMode = true;
+
+    this.setState(newState);
+  };
+
+  cancelEditMode = () => {
+    const newState = { ...this.state };
+
+    newState.editMode = false;
+
+    this.setState(newState);
+  };
+
+  editList = async (evt, list_id) => {
+    const newState = { ...this.state };
+
+    const name = evt.target.parentElement
+      .querySelector('#list_name').value;
+    
+    const list = await api.getListById(list_id);
+
+    const { user_id } = list;
+    const editedList = { name, user_id };
+
+    newState.list = await api.editList(list_id, editedList);
+    newState.editMode = false;
+
+    this.setState(newState);
+  };
+
+  deleteList = (list_id, user_id) => {
+    const { history } = this.props;
+
+    api.deleteList(list_id)
+      .then(() => history.push(`/users/${user_id}/lists`))
+      .catch(error => console.log({ error }));
+  };
 
   getSuggestions = async (list) => {
     const { history } = this.props;
@@ -83,16 +147,14 @@ class ListPreview extends Component {
     };
 
     if (!list) {
-      return <Error message={`Wow, you're good! No suggestions.`} />;
+      return <Error message={`Wow, you're good! No movies.`} />;
     };
-
-    if (list.movies.length < 1) return null;
 
     if (user_id !== list.user_id && !admin) {
       return <Error message={'Invalid access'} />
     };
 
-    const getSuggestionsButton = (decoded)
+    const getSuggestionsButton = (decoded && list.movies.length > 1)
       ? <button
           type='button'
           onClick={() => this.getSuggestions(list)}
@@ -100,13 +162,78 @@ class ListPreview extends Component {
           Get Suggestions
         </button>
       : null;
+    
+    const addButton = (!this.state.editMode && user_id === list.user_id)
+      ? <button
+          type='button'
+          onClick={this.renderMovieSearch}
+        >
+          Add
+        </button>
+      : null;
+    
+    const editButton = (!this.state.editMode)
+      ? (user_id === list.user_id)
+        ? < button
+            type='button'
+            onClick={this.showEditMode}
+          >
+            Edit
+          </button>
+        : null
+      : <>
+          <button
+            type='button'
+            onClick={(evt) => this.editList(evt, list.list_id)}
+          >
+            Save
+          </button>
+          <button
+            type='button'
+            onClick={this.cancelEditMode}
+          >
+            Cancel
+          </button>
+      </>
+    
+    const deleteButton = (!this.state.editMode && user_id === list.user_id)
+      ? <button
+          type='button'
+          onClick={() => this.deleteList(list.list_id, user_id)}
+        >
+          Delete
+        </button>
+      : null;
+    
+    const movieSearch = (this.state.showMovieSearch)
+      ? <MovieSearch
+          list_id={list.list_id}
+          addMovie={this.addMovie}
+        />
+      : null;
+    
+    const listName = (this.state.editMode)
+      ? <input
+          type='text'
+          id='list_name'
+          name='list_name'
+          defaultValue={list.name}
+        />
+      : <Link to={`/lists/${list.list_id}`}>
+          <h4>{list.name}</h4>
+        </Link>
 
     return (
       <div className='list'>
         <h3>List Details</h3>
-        <Link to={`/lists/${list.list_id}`}>
-          <h4>{list.name}</h4>
-        </Link>
+
+        {listName}
+
+        {editButton}
+
+        {deleteButton}
+
+        {addButton}
         
         <div className='list-movies'>
           {
@@ -119,6 +246,8 @@ class ListPreview extends Component {
         </div>
 
         {getSuggestionsButton}
+        
+        {movieSearch}
 
         <button
           type='button'
@@ -131,4 +260,4 @@ class ListPreview extends Component {
   }
 }
 
-export default ListPreview;
+export default List;

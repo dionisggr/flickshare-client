@@ -1,4 +1,5 @@
 import React from 'react';
+import { withRouter } from 'react-router-dom';
 import Movie from './Movie';
 import MovieService from '../services/movie-service';
 import Error from '../error-handlers/Error';
@@ -19,6 +20,15 @@ class MovieSearch extends React.Component {
     const results = MovieService.prepare(response.results);
     
     this.setState({ results });
+  };
+
+  addToList = (movie) => {
+    const { match, addMovie } = this.props;
+    const list_id = parseInt(match.params.list);
+
+    api.addMovieToList(list_id, movie)
+      .then(() => addMovie(movie))
+      .catch(error => console.log({ error }));
   };
 
   render() {
@@ -43,6 +53,7 @@ class MovieSearch extends React.Component {
               <Movie
                 key={idx}
                 movie={movie}
+                addToList={this.addToList}
               />
             )
           }
@@ -52,4 +63,4 @@ class MovieSearch extends React.Component {
   };
 };
 
-export default MovieSearch;
+export default withRouter(MovieSearch);

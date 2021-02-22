@@ -99,14 +99,15 @@ class MovieOptions extends React.Component {
         </button>
       : null;
     
-    const removeButton = (decoded.admin || (decoded && list && decoded.user_id === list.user_id))
-      ? <button
-        className='remove-movie'
-        onClick={() => this.removeMovie(list_id, movie_id)}
-      >
-        x
-        </button>
-      : null;
+    const removeButton = ((decoded && decoded.admin)
+      || (decoded && list && decoded.user_id === list.user_id))
+        ? <button
+          className='remove-movie'
+          onClick={() => this.removeMovie(list_id, movie_id)}
+        >
+          x
+          </button>
+        : null;
 
     if (movieWasAdded !== null) {
       setTimeout(() => {

@@ -141,6 +141,11 @@ class App extends React.Component {
               />
 
               <Route
+                path='/movie/search'
+                component={MovieSearch}
+              />
+
+              <Route
                 path='/register'
                 render={({ history }) =>
                   <Register
@@ -167,11 +172,6 @@ class App extends React.Component {
                 render={({ history }) =>
                   <ResetPassword history={history} />
                 }
-              />
-
-              <Route
-                path='/movie/search'
-                component={MovieSearch}
               />
 
               <Route

@@ -40,7 +40,7 @@ class Admin extends React.Component {
         })
       : null;
     
-    if (!decoded.admin) {
+    if (decoded && !decoded.admin) {
       return <Error message='Unauthorized access.' />;
     };
     

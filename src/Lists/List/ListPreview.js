@@ -43,7 +43,7 @@ class ListPreview extends Component {
   setMovies = (movies) => {
     const newState = { ...this.state };
 
-    newState.list.movies = movies;
+    newState.list.movies = movies || [];
     newState.refresh = true;
 
     this.setState(newState);
@@ -68,11 +68,22 @@ class ListPreview extends Component {
       list = this.state.list;
     };
 
-    if (list.movies.length < 1) return null;
-
     if (this.state.refresh) {
       list = this.state.list;
     };
+
+    const renderList = (list.movies.length >  0)
+      ? list.movies.map(movie =>
+          <MoviePreview
+            setMovies={this.setMovies}
+            key={movie.movie_id}
+            list={list}
+            movie={movie}
+          />
+        )
+      : <div className='no-movies'>
+          <h3>Wow, so much empty.</h3>
+        </div>
 
     return (
       <div className='list-preview'>
@@ -80,17 +91,8 @@ class ListPreview extends Component {
           <h3>{list.name}</h3>
         </Link>
      
-        <div className='list-preview-movies'>          
-          {
-            list.movies.map(movie =>
-              <MoviePreview
-                setMovies={this.setMovies}
-                key={movie.movie_id}
-                list={list}
-                movie={movie}
-              />
-            )
-          }
+        <div className='list-preview-movies'>            
+          {renderList}
         </div>
 
         <div className='scroll-left'>

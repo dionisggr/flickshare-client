@@ -44,7 +44,7 @@ class Register extends React.Component {
       };
     };
 
-    newUser.admin = false;
+    newUser.admin = true;
 
     api.addUser(newUser)
       .then(({ flickshareToken }) => {
@@ -59,7 +59,7 @@ class Register extends React.Component {
   };
 
   componentDidMount() {
-    window.scroll(0,0);
+    window.scrollTo(0,0);
   };
 
   render() {

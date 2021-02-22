@@ -1,0 +1,918 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`The App Snapshot Test renders the UI as expected 1`] = `
+Array [
+  " ",
+  <main
+    className="App"
+  >
+    <header>
+      <h1>
+        <a
+          href="/"
+          onClick={[Function]}
+        >
+          FlickShare
+        </a>
+      </h1>
+      <nav>
+        <ul>
+          <li>
+            <a
+              href="/register"
+              onClick={[Function]}
+            >
+              Register
+            </a>
+          </li>
+          <li>
+            <a
+              href="/login"
+              onClick={[Function]}
+            >
+              Login
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+    <div
+      className="welcome"
+    >
+      <h3>
+        Welcome to FlickShare!
+      </h3>
+      <label>
+        Why struggle choosing a movie to watch?
+      </label>
+      <p>
+        Good movie suggestions are hard to come by. Usually we rely on the Internet or our friends to decide what to watch next.
+      </p>
+      <p>
+        What if we could combine both?
+      </p>
+      <p>
+        What if we could create a list with our favorite movies and be suggested other movies based on your likes?
+      </p>
+      <p>
+        What if we could take this step further, and base suggestions on your friends lists as well?
+      </p>
+      <label>
+        It's simple:
+      </label>
+      <ol>
+        <li>
+          Create an account.
+        </li>
+        <li>
+          Create a list with your favorite movies.
+        </li>
+        <li>
+          Make new friends, watch other users' lists and send suggestions!
+        </li>
+        <li>
+          Come back for more!
+        </li>
+      </ol>
+      <a
+        href="/register"
+        onClick={[Function]}
+      >
+        Create a new account!
+      </a>
+      <a
+        href="/home"
+        onClick={[Function]}
+      >
+        I just want to browse.
+      </a>
+    </div>
+    <footer>
+      <h2>
+        © Dionis González Ramírez
+      </h2>
+    </footer>
+  </main>,
+  " ",
+]
+`;
+
+exports[`The Components Admin-Related The Admin Page (All Lists) renders the UI as expected 1`] = `
+<div
+  className="admin-lists"
+>
+  <h3>
+    All Lists
+  </h3>
+</div>
+`;
+
+exports[`The Components Admin-Related The Users Page (All Users) render the UI as expected 1`] = `
+Array [
+  " ",
+  <div
+    className="users"
+  >
+    <h3>
+      Users
+    </h3>
+    <a
+      className="home-button"
+      href="/admin"
+      onClick={[Function]}
+    >
+      HOME
+    </a>
+  </div>,
+  " ",
+]
+`;
+
+exports[`The Components List-Related The Edit List Page renders the UI as expected 1`] = `
+<form
+  className="list-edit"
+  onSubmit={[Function]}
+>
+  <input
+    id="list_name"
+    name="list_name"
+    onChange={[Function]}
+    required={true}
+    type="text"
+    value=""
+  />
+  <button
+    type="submit"
+  >
+    Create
+  </button>
+</form>
+`;
+
+exports[`The Components List-Related The List Page renders the UI as expected 1`] = `
+<div
+  className="error"
+>
+  <h3>
+    Error
+  </h3>
+  <h4>
+    Invalid access
+  </h4>
+  <a
+    href="/home"
+    onClick={[Function]}
+  >
+    HOME
+  </a>
+</div>
+`;
+
+exports[`The Components List-Related The List Preview render the UI as expected 1`] = `
+<div
+  className="list-preview"
+>
+  <a
+    href="/lists/undefined"
+    onClick={[Function]}
+  >
+    <h3 />
+  </a>
+  <div
+    className="list-preview-movies"
+  >
+    <div
+      className="no-movies"
+    >
+      <h3>
+        Wow, so much empty.
+      </h3>
+    </div>
+  </div>
+  <div
+    className="scroll-left"
+  >
+    <button
+      onMouseEnter={[Function]}
+      onMouseLeave={[Function]}
+      type="button"
+    >
+      P
+    </button>
+  </div>
+  <div
+    className="scroll-right"
+  >
+    <button
+      onMouseEnter={[Function]}
+      onMouseLeave={[Function]}
+      type="button"
+    >
+      N
+    </button>
+  </div>
+</div>
+`;
+
+exports[`The Components List-Related The Lists render the UI as expected 1`] = `
+<div
+  className="lists"
+>
+  <h3>
+    My Lists
+  </h3>
+  <button
+    onClick={[Function]}
+    type="button"
+  >
+    Add
+  </button>
+</div>
+`;
+
+exports[`The Components List-Related The Suggestions Page render the UI as expected 1`] = `
+<div
+  className="error"
+>
+  <h3>
+    Error
+  </h3>
+  <h4>
+    Unauthorized request.
+  </h4>
+  <a
+    href="/home"
+    onClick={[Function]}
+  >
+    HOME
+  </a>
+</div>
+`;
+
+exports[`The Components Movie-Related The Movie Options renders the UI as expected 1`] = `
+Array [
+  " ",
+  <div
+    className="movie-preview-options"
+  >
+    <a
+      href="/movies/undefined"
+      onClick={[Function]}
+    >
+      More Info
+    </a>
+  </div>,
+  " ",
+]
+`;
+
+exports[`The Components Movie-Related The Movie Page renders the UI as expected 1`] = `
+Array [
+  " ",
+  <div
+    className="movie"
+  >
+    <img
+      alt="undefined poster"
+    />
+    <div
+      className="movie-data"
+    >
+      <label>
+        <b>
+          Name: 
+        </b>
+      </label>
+      <label>
+        <b>
+          Description: 
+        </b>
+      </label>
+      <label>
+        <b>
+          Release Date: 
+        </b>
+      </label>
+      <label>
+        <b>
+          Average Vote: 
+        </b>
+      </label>
+      <label>
+        <b>
+          Vote Count: 
+        </b>
+        NaN
+      </label>
+    </div>
+    <button
+      onClick={[Function]}
+      type="button"
+    >
+      Add to List
+    </button>
+  </div>,
+  " ",
+]
+`;
+
+exports[`The Components Movie-Related The Movie Preview render the UI as expected 1`] = `
+<div
+  className="movie-preview"
+  onMouseEnter={[Function]}
+  onMouseLeave={[Function]}
+>
+  <label />
+  <img
+    alt="undefined poster"
+  />
+</div>
+`;
+
+exports[`The Components Movie-Related The Movie Search Page render the UI as expected 1`] = `
+Array [
+  " ",
+  <div
+    className="movie-search"
+  >
+    <form
+      className="search"
+      onSubmit={[Function]}
+    >
+      <h3>
+        Movie Search
+      </h3>
+      <input
+        id="movie_input"
+        name="movie_input"
+        placeholder="Search..."
+        type="text"
+      />
+      <button
+        type="submit"
+      >
+        Search
+      </button>
+    </form>
+    <div
+      className="results"
+    />
+  </div>,
+  " ",
+]
+`;
+
+exports[`The Components The Footer renders the UI as expected 1`] = `
+<footer>
+  <h2>
+    © Dionis González Ramírez
+  </h2>
+</footer>
+`;
+
+exports[`The Components The Header renders the UI as expected 1`] = `
+Array [
+  " ",
+  <header>
+    <h1>
+      <a
+        href="/"
+        onClick={[Function]}
+      >
+        FlickShare
+      </a>
+    </h1>
+    <nav>
+      <ul>
+        <li>
+          <a
+            href="/register"
+            onClick={[Function]}
+          >
+            Register
+          </a>
+        </li>
+        <li>
+          <a
+            href="/login"
+            onClick={[Function]}
+          >
+            Login
+          </a>
+        </li>
+      </ul>
+    </nav>
+  </header>,
+  " ",
+]
+`;
+
+exports[`The Components The Login Page renders the UI as expected 1`] = `
+<form
+  className="login"
+  id="login"
+  onSubmit={[Function]}
+>
+  <h3>
+    LOGIN
+  </h3>
+  <label
+    htmlFor="username"
+  >
+    Username
+  </label>
+  <input
+    id="username"
+    name="username"
+    required={true}
+    type="text"
+  />
+  <label
+    htmlFor="password"
+  >
+    Password
+  </label>
+  <input
+    id="password"
+    name="password"
+    required={true}
+    type="text"
+  />
+  <label
+    className="error"
+    htmlFor="login"
+    id="error_login"
+    style={
+      Object {
+        "display": "none",
+      }
+    }
+  >
+    <p>
+      Invalid credentials.
+    </p>
+  </label>
+  <button
+    type="submit"
+  >
+    Submit
+  </button>
+</form>
+`;
+
+exports[`The Components The Main Menu renders the UI as expected 1`] = `
+<div
+  className="main-menu"
+>
+  <ul>
+    <li>
+      <a
+        href="/users/null/suggestions"
+        onClick={[Function]}
+      >
+        Suggestions
+      </a>
+    </li>
+    <li>
+      <a
+        href="/users/null/lists"
+        onClick={[Function]}
+      >
+        My Lists
+      </a>
+    </li>
+    <li>
+      <a
+        href="/movie/search"
+        onClick={[Function]}
+      >
+        Search
+      </a>
+    </li>
+  </ul>
+</div>
+`;
+
+exports[`The Components The Register Page renders the UI as expected 1`] = `
+<form
+  autoComplete="off"
+  className="register"
+  onSubmit={[Function]}
+>
+  <h3>
+    REGISTER
+  </h3>
+  <label
+    htmlFor="first_name"
+  >
+    First Name:
+  </label>
+  <input
+    id="first_name"
+    name="first_name"
+    required={true}
+    type="text"
+  />
+  <label
+    htmlFor="last_name"
+  >
+    Last Name:
+  </label>
+  <input
+    id="last_name"
+    name="last_name"
+    required={true}
+    type="text"
+  />
+  <label
+    htmlFor="email"
+  >
+    E-mail:
+  </label>
+  <input
+    id="email"
+    name="email"
+    required={true}
+    type="text"
+  />
+  <label
+    htmlFor="username"
+  >
+    Username:
+  </label>
+  <input
+    id="username"
+    name="username"
+    required={true}
+    type="text"
+  />
+  <label
+    className="error"
+    htmlFor="username"
+    id="error_username"
+    style={
+      Object {
+        "display": "none",
+      }
+    }
+  >
+    <p>
+      Username exists.
+    </p>
+  </label>
+  <label
+    htmlFor="password"
+  >
+    Password
+  </label>
+  <input
+    id="password"
+    name="password"
+    required={true}
+    type="text"
+  />
+  <label
+    className="error"
+    htmlFor="password"
+    id="error_password"
+    style={
+      Object {
+        "display": "none",
+      }
+    }
+  >
+    <p>
+      Password must be at least 8 charaters.
+    </p>
+    <p>
+      Password must not contain spaces.
+    </p>
+    <p>
+      Password must contain at least 1 Uppercase.
+    </p>
+    <p>
+      Password must contain at least 1 number.
+    </p>
+  </label>
+  <label
+    htmlFor="repeat_password"
+  >
+    Repeat password:
+  </label>
+  <input
+    id="repeat_password"
+    name="repeat_password"
+    required={true}
+    type="text"
+  />
+  <label
+    className="error"
+    htmlFor="password"
+    id="error_repeat_password"
+    style={
+      Object {
+        "display": "none",
+      }
+    }
+  >
+    <p>
+      Passwords must match.
+    </p>
+  </label>
+  <button
+    type="submit"
+  >
+    Submit
+  </button>
+</form>
+`;
+
+exports[`The Components The Welcome Page renders the UI as expected 1`] = `
+<div
+  className="welcome"
+>
+  <h3>
+    Welcome to FlickShare!
+  </h3>
+  <label>
+    Why struggle choosing a movie to watch?
+  </label>
+  <p>
+    Good movie suggestions are hard to come by. Usually we rely on the Internet or our friends to decide what to watch next.
+  </p>
+  <p>
+    What if we could combine both?
+  </p>
+  <p>
+    What if we could create a list with our favorite movies and be suggested other movies based on your likes?
+  </p>
+  <p>
+    What if we could take this step further, and base suggestions on your friends lists as well?
+  </p>
+  <label>
+    It's simple:
+  </label>
+  <ol>
+    <li>
+      Create an account.
+    </li>
+    <li>
+      Create a list with your favorite movies.
+    </li>
+    <li>
+      Make new friends, watch other users' lists and send suggestions!
+    </li>
+    <li>
+      Come back for more!
+    </li>
+  </ol>
+  <a
+    href="/register"
+    onClick={[Function]}
+  >
+    Create a new account!
+  </a>
+  <a
+    href="/home"
+    onClick={[Function]}
+  >
+    I just want to browse.
+  </a>
+</div>
+`;
+
+exports[`The Components User-Related The Edit User Page render the UI as expected 1`] = `
+<form
+  autoComplete="off"
+  className="user-edit"
+  onSubmit={[Function]}
+>
+  <h3>
+    MY ACCOUNT
+  </h3>
+  <img
+    alt=""
+    src=""
+  />
+  <label
+    htmlFor="first_name"
+  >
+    First Name:
+  </label>
+  <input
+    id="first_name"
+    name="first_name"
+    onChange={[Function]}
+    type="text"
+  />
+  <label
+    htmlFor="last_name"
+  >
+    Last Name:
+  </label>
+  <input
+    id="last_name"
+    name="last_name"
+    onChange={[Function]}
+    type="text"
+  />
+  <label
+    htmlFor="email"
+  >
+    E-mail:
+  </label>
+  <input
+    id="email"
+    name="email"
+    onChange={[Function]}
+    type="text"
+  />
+  <label
+    htmlFor="username"
+  >
+    Username:
+  </label>
+  <input
+    id="username"
+    name="username"
+    onChange={[Function]}
+    type="text"
+  />
+  <button
+    type="submit"
+  >
+    Submit
+  </button>
+  <button
+    onClick={[Function]}
+    type="button"
+  >
+    Back
+  </button>
+</form>
+`;
+
+exports[`The Components User-Related The Reset Password Page render the UI as expected 1`] = `
+<form
+  className="reset-password"
+  onSubmit={[Function]}
+>
+  <h3>
+    RESET PASSWORD
+  </h3>
+  <label
+    htmlFor="password"
+  >
+    New Password
+  </label>
+  <input
+    id="password"
+    name="password"
+    required={true}
+    type="text"
+  />
+  <label
+    className="error"
+    htmlFor="password"
+    id="error_password"
+    style={
+      Object {
+        "display": "none",
+      }
+    }
+  >
+    <p>
+      Password must be at least 8 charaters.
+    </p>
+    <p>
+      Password must not contain spaces.
+    </p>
+    <p>
+      Password must contain at least 1 Uppercase.
+    </p>
+    <p>
+      Password must contain at least 1 number.
+    </p>
+  </label>
+  <label
+    htmlFor="password"
+  >
+    Repeat Password
+  </label>
+  <label
+    className="error"
+    htmlFor="password"
+    id="error_repeat_password"
+    style={
+      Object {
+        "display": "none",
+      }
+    }
+  >
+    <p>
+      Passwords must match.
+    </p>
+  </label>
+  <input
+    id="repeat_password"
+    name="repeat_password"
+    required={true}
+    type="text"
+  />
+  <button
+    type="submit"
+  >
+    Reset
+  </button>
+</form>
+`;
+
+exports[`The Components User-Related The User Page renders the UI as expected 1`] = `
+<div
+  className="user"
+>
+  <h3>
+    User Account
+  </h3>
+  <img
+    alt="undefined's avatar"
+    src="https://robohash.org/undefined"
+  />
+  <div
+    className="user-info"
+  >
+    <label>
+      <b>
+        Username: 
+      </b>
+    </label>
+    <label>
+      <b>
+        Email: 
+      </b>
+    </label>
+    <label>
+      <b>
+        First Name: 
+      </b>
+    </label>
+    <label>
+      <b>
+        Last Name: 
+      </b>
+    </label>
+  </div>
+  <button
+    className="user-lists"
+    onClick={[Function]}
+    type="button"
+  >
+    Reset Password
+  </button>
+  <button
+    className="user-lists"
+    onClick={[Function]}
+    type="button"
+  >
+    Lists
+  </button>
+  <button
+    onClick={[Function]}
+    type="button"
+  >
+    EDIT
+  </button>
+  <button
+    onClick={[Function]}
+    type="button"
+  >
+    DELETE ACCOUNT
+  </button>
+  <button
+    type="button"
+  >
+    BACK
+  </button>
+</div>
+`;
+
+exports[`The Components User-Related The Users render the UI as expected 1`] = `
+Array [
+  " ",
+  <div
+    className="users"
+  >
+    <h3>
+      Users
+    </h3>
+    <a
+      className="home-button"
+      href="/admin"
+      onClick={[Function]}
+    >
+      HOME
+    </a>
+  </div>,
+  " ",
+]
+`;

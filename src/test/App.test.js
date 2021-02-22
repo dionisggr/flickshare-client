@@ -150,23 +150,23 @@ describe('The Components', () => {
       });
     });
     describe('The Edit User Page', () => {
-      it('render without crashing', () => {
+      it('renders without crashing', () => {
         const div = document.createElement('div');
         ReactDOM.render(<UserEdit />, div);
         ReactDOM.unmountComponentAtNode(div);
       });
-      it('render the UI as expected', () => {
+      it('renders the UI as expected', () => {
         const tree = renderer.create(<UserEdit />).toJSON();
         expect(tree).toMatchSnapshot();
       });
     });
     describe('The Reset Password Page', () => {
-      it('render without crashing', () => {
+      it('renders without crashing', () => {
         const div = document.createElement('div');
         ReactDOM.render(<ResetPassword />, div);
         ReactDOM.unmountComponentAtNode(div);
       });
-      it('render the UI as expected', () => {
+      it('renders the UI as expected', () => {
         const tree = renderer.create(<ResetPassword />).toJSON();
         expect(tree).toMatchSnapshot();
       });
@@ -200,12 +200,12 @@ describe('The Components', () => {
     describe('The List Preview', () => {
     const listPreview = <BrowserRouter><ListPreview /></BrowserRouter>;
 
-      it('render without crashing', () => {
+      it('renders without crashing', () => {
         const div = document.createElement('div');
         ReactDOM.render(listPreview, div);
         ReactDOM.unmountComponentAtNode(div);
       });
-      it('render the UI as expected', () => {
+      it('renders the UI as expected', () => {
         const tree = renderer.create(listPreview).toJSON();
         expect(tree).toMatchSnapshot();
       });
@@ -224,12 +224,12 @@ describe('The Components', () => {
     describe('The Suggestions Page', () => {
       const suggestions = <BrowserRouter><Suggestions /></BrowserRouter>;
 
-      it('render without crashing', () => {
+      it('renders without crashing', () => {
         const div = document.createElement('div');
         ReactDOM.render(suggestions, div);
         ReactDOM.unmountComponentAtNode(div);
       });
-      it('render the UI as expected', () => {
+      it('renders the UI as expected', () => {
         const tree = renderer.create(suggestions).toJSON();
         expect(tree).toMatchSnapshot();
       });
@@ -239,12 +239,12 @@ describe('The Components', () => {
     describe('The Movie Search Page', () => {
       const movieSearch = <BrowserRouter> <MovieSearch /> </BrowserRouter>;
 
-      it('render without crashing', () => {
+      it('renders without crashing', () => {
         const div = document.createElement('div');
         ReactDOM.render(movieSearch, div);
         ReactDOM.unmountComponentAtNode(div);
       });
-      it('render the UI as expected', () => {
+      it('renders the UI as expected', () => {
         const tree = renderer.create(movieSearch).toJSON();
         expect(tree).toMatchSnapshot();
       });
@@ -263,12 +263,12 @@ describe('The Components', () => {
       });
     });
     describe('The Movie Preview', () => {
-      it('render without crashing', () => {
+      it('renders without crashing', () => {
         const div = document.createElement('div');
         ReactDOM.render(<MoviePreview />, div);
         ReactDOM.unmountComponentAtNode(div);
       });
-      it('render the UI as expected', () => {
+      it('renders the UI as expected', () => {
         const tree = renderer.create(<MoviePreview />).toJSON();
         expect(tree).toMatchSnapshot();
       });
@@ -276,12 +276,12 @@ describe('The Components', () => {
     describe('The Movie Options', () => {
       const movieOptions = <BrowserRouter> <MovieOptions movie={{}} /> </BrowserRouter>;
 
-      it('renders without crashing', () => {
+      it('render without crashing', () => {
         const div = document.createElement('div');
         ReactDOM.render(movieOptions, div);
         ReactDOM.unmountComponentAtNode(div);
       });
-      it('renders the UI as expected', () => {
+      it('render the UI as expected', () => {
         const tree = renderer.create(movieOptions).toJSON();
         expect(tree).toMatchSnapshot();
       });
@@ -301,12 +301,12 @@ describe('The Components', () => {
     });
     describe('The Users Page (All Users)', () => {
       const users = <BrowserRouter> <Users /> </BrowserRouter>;
-      it('render without crashing', () => {
+      it('renders without crashing', () => {
         const div = document.createElement('div');
         ReactDOM.render(users, div);
         ReactDOM.unmountComponentAtNode(div);
       });
-      it('render the UI as expected', () => {
+      it('renders the UI as expected', () => {
         const tree = renderer.create(users).toJSON();
         expect(tree).toMatchSnapshot();
       });

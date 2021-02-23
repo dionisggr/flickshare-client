@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
 import { JWT_SECRET } from '../../config';
 import jwt from 'jsonwebtoken';
 import ListPreview from './ListPreview';

@@ -3,7 +3,6 @@ import { Link } from 'react-router-dom';
 import { JWT_SECRET } from '../../config';
 import jwt from 'jsonwebtoken';
 import ListPreview from './ListPreview';
-import MoviePreview from '../../Movies/MoviePreview';
 import MovieSearch from '../../Movies/MovieSearch';
 import MovieService from '../../services/movie-service';
 import Error from '../../error-handlers/Error';
@@ -215,18 +214,7 @@ class List extends Component {
           addMovie={this.addMovie}
         />
       : null;
-    
-    const listName = (this.state.editMode)
-      ? <input
-          type='text'
-          id='list_name'
-          name='list_name'
-          defaultValue={list.name}
-        />
-      : <Link to={`/lists/${list.list_id}`}>
-          <h4>{list.name}</h4>
-        </Link>
-    
+       
     const backPath = (list.user_id)
       ? `/users/${list.user_id}/lists`
       : '/home';

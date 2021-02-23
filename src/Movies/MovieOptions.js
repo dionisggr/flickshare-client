@@ -2,7 +2,6 @@ import React from 'react';
 import { Link, withRouter } from 'react-router-dom';
 import { JWT_SECRET } from '../config';
 import jwt from 'jsonwebtoken';
-import MovieService from '../services/movie-service';
 import Error from '../error-handlers/Error';
 import api from '../services/api';
 import './MovieOptions.css';

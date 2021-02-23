@@ -23,7 +23,7 @@ class MovieSearch extends React.Component {
   };
 
   addToList = (movie) => {
-    const { match, addMovie } = this.props;
+    const { match } = this.props;
     const list_id = parseInt(match.params.list);
 
     api.addMovieToList(list_id, movie)

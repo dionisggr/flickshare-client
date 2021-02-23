@@ -35,7 +35,6 @@ class ListPreview extends Component {
 
     } else {
       clearInterval(newState.autoScroller);
-      newState.list.movies = newState.list.movies;
     };
 
     this.setState(newState);

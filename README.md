@@ -47,6 +47,8 @@ https://github.com/dionisggr/flickshare-api
 Welcome Page
 :-------------------------:
 ![Welcome Page](https://github.com/dionisggr/flickshare-client/blob/main/public/wireframes/welcome.png)
+Login Page
+:-------------------------:
 ![Login Page](https://github.com/dionisggr/flickshare-client/blob/main/public/wireframes/login.png)
 ![Register Page](https://github.com/dionisggr/flickshare-client/blob/main/public/wireframes/register.png)
 ![Home Page](https://github.com/dionisggr/flickshare-client/blob/main/public/wireframes/user-homepage.png)

@@ -43,6 +43,19 @@ https://github.com/dionisggr/flickshare-api
 
 ---
 
+### Wireframes
+:-------------------------:
+![Welcome Page](https://github.com/dionisggr/flickshare-client/blob/main/public/wireframes/welcome.png)
+![Login Page](https://github.com/dionisggr/flickshare-client/blob/main/public/wireframes/login.png)
+![Register Page](https://github.com/dionisggr/flickshare-client/blob/main/public/wireframes/register.png)
+![Home Page](https://github.com/dionisggr/flickshare-client/blob/main/public/wireframes/user-homepage.png)
+![User Lists](https://github.com/dionisggr/flickshare-client/blob/main/public/wireframes/user-lists.png)
+![List Page](https://github.com/dionisggr/flickshare-client/blob/main/public/wireframes/welcome.png)
+![Suggestions Page](https://github.com/dionisggr/flickshare-client/blob/main/public/wireframes/suggestions.png)
+![All Users Page (Admin)](https://github.com/dionisggr/flickshare-client/blob/main/public/wireframes/admin-users.png)
+![All Lists Page (Admin)](https://github.com/dionisggr/flickshare-client/blob/main/public/wireframes/admin-lists.png)
+---
+
 ### Functionality
 The app's functionality includes:
 * Every User
@@ -752,7 +765,7 @@ Each endpoint manipulates information related to all data, only able to be acces
 ---
 
 ### Screenshots
-
+:-------------------------:
 ![Welcome Page](https://github.com/dionisggr/flickshare-client/blob/main/public/screenshots/welcome.png)
 ![Login Page](https://github.com/dionisggr/flickshare-client/blob/main/public/screenshots/login.png)
 ![Register Page](https://github.com/dionisggr/flickshare-client/blob/main/public/screenshots/register.png)

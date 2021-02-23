@@ -102,7 +102,7 @@ Array [
         >
           <i
             aria-hidden="true"
-            class="fa fa-envelope"
+            className="fa fa-envelope"
           />
         </a>
         <a
@@ -112,7 +112,7 @@ Array [
         >
           <i
             aria-hidden="true"
-            class="fa fa-github"
+            className="fa fa-github"
           />
         </a>
         <a
@@ -122,7 +122,7 @@ Array [
         >
           <i
             aria-hidden="true"
-            class="fa fa-linkedin-square"
+            className="fa fa-linkedin-square"
           />
         </a>
       </div>
@@ -417,7 +417,7 @@ exports[`The Components The Footer renders the UI as expected 1`] = `
     >
       <i
         aria-hidden="true"
-        class="fa fa-envelope"
+        className="fa fa-envelope"
       />
     </a>
     <a
@@ -427,7 +427,7 @@ exports[`The Components The Footer renders the UI as expected 1`] = `
     >
       <i
         aria-hidden="true"
-        class="fa fa-github"
+        className="fa fa-github"
       />
     </a>
     <a
@@ -437,7 +437,7 @@ exports[`The Components The Footer renders the UI as expected 1`] = `
     >
       <i
         aria-hidden="true"
-        class="fa fa-linkedin-square"
+        className="fa fa-linkedin-square"
       />
     </a>
   </div>

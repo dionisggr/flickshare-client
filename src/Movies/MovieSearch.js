@@ -27,7 +27,7 @@ class MovieSearch extends React.Component {
     const list_id = parseInt(match.params.list);
 
     api.addMovieToList(list_id, movie)
-      .then(() => addMovie(movie))
+      .then(() => window.location.reload())
       .catch(error => console.log({ error }));
   };
 

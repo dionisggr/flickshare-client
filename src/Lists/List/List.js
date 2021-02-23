@@ -28,7 +28,7 @@ class List extends Component {
     
     this.setState(newState);
     
-    window.scrollTo(0, 0);
+    window.scroll(0, 0);
   };
 
   renderMovieSearch = () => {
@@ -125,6 +125,8 @@ class List extends Component {
         })
         .catch(error => <Error message={error}/>)
     };
+
+    window.scroll(0, 0);
   };
 
   render() {

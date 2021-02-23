@@ -50,24 +50,10 @@ class MovieOptions extends React.Component {
       });
   };
 
-  removeMovie = async (movie) => {
-    const { setMovies } = this.props;
-
-    if (!movie.movie_id) {
-      movie = MovieService.prepare([movie])[0];
-
-      movie = await api.addMovieToDatabase(movie);
-    };
-
-    console.log(movie);
-
-    // api.addMovieToDatabase(movie)
-    //   .then(result => console.log(result))
-    //   .catch(error => console.log({ error }));
-
-    // api.removeMovieFromList(list_id, movie_id)
-    //   .then(list => setMovies(list.movies))
-    //   .catch(error => <Error message={error} />);
+  removeMovie = async (list_id, movie_id) => {
+    api.removeMovieFromList(list_id, movie_id)
+      .then((res) => window.location.reload())
+      .catch(error => <Error message={error} />);
   };
 
   componentDidMount = async () => {
@@ -111,15 +97,16 @@ class MovieOptions extends React.Component {
         </button>
       : null;
     
-    const removeButton = ((decoded && decoded.admin)
-      || (decoded && list && decoded.user_id === list.user_id))
-        ? <button
-          className='remove-movie'
-          onClick={() => this.removeMovie(movie)}
-        >
-          x
-          </button>
-        : null;
+    const removeButton = (
+      decoded && list && decoded.user_id === list.user_id
+    )
+      ? <button
+        className='remove-movie'
+        onClick={() => this.removeMovie(list_id, movie_id)}
+      >
+        x
+        </button>
+      : null;
 
     if (movieWasAdded !== null) {
       setTimeout(() => {

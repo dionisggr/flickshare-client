@@ -19,7 +19,9 @@ class Movie extends React.Component {
       window.localStorage.setItem('flickshareMovie', JSON.stringify(movie));
     };
 
-    window.scrollTo(0, 0);
+    window.onbeforeunload = () => {
+      window.scrollTo(0, 0);
+    };
   };
 
   render() {

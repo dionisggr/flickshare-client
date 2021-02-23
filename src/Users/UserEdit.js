@@ -40,7 +40,7 @@ class UserEdit extends React.Component {
   };
 
   componentDidMount () {
-    window.scrollTo(0, 0);
+    window.scroll(0, 0);
     
     const flickshareToken = JSON.parse(window.localStorage.getItem('flickshareToken'));
 

@@ -39,55 +39,93 @@ Array [
     <div
       className="welcome"
     >
-      <h3>
-        Welcome to FlickShare!
-      </h3>
-      <label>
-        Why struggle choosing a movie to watch?
-      </label>
-      <p>
-        Good movie suggestions are hard to come by. Usually we rely on the Internet or our friends to decide what to watch next.
-      </p>
-      <p>
-        What if we could combine both?
-      </p>
-      <p>
-        What if we could create a list with our favorite movies and be suggested other movies based on your likes?
-      </p>
-      <p>
-        What if we could take this step further, and base suggestions on your friends lists as well?
-      </p>
-      <label>
-        It's simple:
-      </label>
-      <ol>
-        <li>
-          Create an account.
-        </li>
-        <li>
-          Create a list with your favorite movies.
-        </li>
-        <li>
-          Make new friends, watch other users' lists and send suggestions!
-        </li>
-        <li>
-          Come back for more!
-        </li>
-      </ol>
-      <a
-        href="/register"
-        onClick={[Function]}
+      <div
+        className="with-background"
       >
-        Create a new account!
-      </a>
-      <a
-        href="/home"
-        onClick={[Function]}
-      >
-        I just want to browse.
-      </a>
+        <h3>
+          Welcome to FlickShare!
+        </h3>
+        <label>
+          Why struggle choosing a movie to watch?
+        </label>
+        <p>
+          Good movie suggestions are hard to come by. Usually we rely on the Internet or our friends to decide what to watch next.
+        </p>
+        <p>
+          What if we could combine both?
+        </p>
+        <p>
+          What if we could create a list with our favorite movies and be suggested other movies based on your likes?
+        </p>
+        <p>
+          What if we could take this step further, and base suggestions on your friends lists as well?
+        </p>
+        <label>
+          It's simple:
+        </label>
+        <ol>
+          <li>
+            Create an account.
+          </li>
+          <li>
+            Create a list with your favorite movies.
+          </li>
+          <li>
+            Make new friends, watch other users' lists and send suggestions!
+          </li>
+          <li>
+            Come back for more!
+          </li>
+        </ol>
+        <a
+          href="/register"
+          onClick={[Function]}
+        >
+          Create a new account!
+        </a>
+        <a
+          href="/home"
+          onClick={[Function]}
+        >
+          I just want to browse.
+        </a>
+      </div>
     </div>
     <footer>
+      <div
+        className="icons"
+      >
+        <a
+          aria-label="email"
+          href="mailto:dionisggr@gmail.com"
+          target="_blank"
+        >
+          <i
+            aria-hidden="true"
+            class="fa fa-envelope"
+          />
+        </a>
+        <a
+          aria-label="github"
+          href="https://github.com/dionisggr/flickshare-client/"
+          target="_blank"
+        >
+          <i
+            aria-hidden="true"
+            class="fa fa-github"
+          />
+        </a>
+        <a
+          aria-label="linked-in"
+          href="https://www.linkedin.com/in/dionis-gonzalez-ramirez/"
+          target="_blank"
+        >
+          <i
+            aria-hidden="true"
+            class="fa fa-linkedin-square"
+          />
+        </a>
+      </div>
       <h2>
         © Dionis González Ramírez
       </h2>
@@ -107,7 +145,7 @@ exports[`The Components Admin-Related The Admin Page (All Lists) renders the UI 
 </div>
 `;
 
-exports[`The Components Admin-Related The Users Page (All Users) render the UI as expected 1`] = `
+exports[`The Components Admin-Related The Users Page (All Users) renders the UI as expected 1`] = `
 Array [
   " ",
   <div
@@ -133,6 +171,11 @@ exports[`The Components List-Related The Edit List Page renders the UI as expect
   className="list-edit"
   onSubmit={[Function]}
 >
+  <label
+    htmlFor="list_name"
+  >
+    Name:
+  </label>
   <input
     id="list_name"
     name="list_name"
@@ -151,24 +194,46 @@ exports[`The Components List-Related The Edit List Page renders the UI as expect
 
 exports[`The Components List-Related The List Page renders the UI as expected 1`] = `
 <div
-  className="error"
+  className="list"
 >
   <h3>
-    Error
+    List Details
   </h3>
-  <h4>
-    Invalid access
-  </h4>
-  <a
-    href="/home"
-    onClick={[Function]}
+  <div
+    className="list-movies"
   >
-    HOME
-  </a>
+    <div
+      className="list-preview"
+    >
+      <a
+        href="/lists/undefined"
+        onClick={[Function]}
+      >
+        <h3 />
+      </a>
+      <div
+        className="list-preview-movies"
+      >
+        <div
+          className="no-movies"
+        >
+          <h3>
+            Wow, so much empty.
+          </h3>
+        </div>
+      </div>
+    </div>
+  </div>
+  <button
+    onClick={[Function]}
+    type="button"
+  >
+    BACK
+  </button>
 </div>
 `;
 
-exports[`The Components List-Related The List Preview render the UI as expected 1`] = `
+exports[`The Components List-Related The List Preview renders the UI as expected 1`] = `
 <div
   className="list-preview"
 >
@@ -189,28 +254,6 @@ exports[`The Components List-Related The List Preview render the UI as expected 
       </h3>
     </div>
   </div>
-  <div
-    className="scroll-left"
-  >
-    <button
-      onMouseEnter={[Function]}
-      onMouseLeave={[Function]}
-      type="button"
-    >
-      P
-    </button>
-  </div>
-  <div
-    className="scroll-right"
-  >
-    <button
-      onMouseEnter={[Function]}
-      onMouseLeave={[Function]}
-      type="button"
-    >
-      N
-    </button>
-  </div>
 </div>
 `;
 
@@ -230,7 +273,7 @@ exports[`The Components List-Related The Lists render the UI as expected 1`] = `
 </div>
 `;
 
-exports[`The Components List-Related The Suggestions Page render the UI as expected 1`] = `
+exports[`The Components List-Related The Suggestions Page renders the UI as expected 1`] = `
 <div
   className="error"
 >
@@ -249,7 +292,7 @@ exports[`The Components List-Related The Suggestions Page render the UI as expec
 </div>
 `;
 
-exports[`The Components Movie-Related The Movie Options renders the UI as expected 1`] = `
+exports[`The Components Movie-Related The Movie Options render the UI as expected 1`] = `
 Array [
   " ",
   <div
@@ -316,7 +359,7 @@ Array [
 ]
 `;
 
-exports[`The Components Movie-Related The Movie Preview render the UI as expected 1`] = `
+exports[`The Components Movie-Related The Movie Preview renders the UI as expected 1`] = `
 <div
   className="movie-preview"
   onMouseEnter={[Function]}
@@ -329,7 +372,7 @@ exports[`The Components Movie-Related The Movie Preview render the UI as expecte
 </div>
 `;
 
-exports[`The Components Movie-Related The Movie Search Page render the UI as expected 1`] = `
+exports[`The Components Movie-Related The Movie Search Page renders the UI as expected 1`] = `
 Array [
   " ",
   <div
@@ -364,6 +407,40 @@ Array [
 
 exports[`The Components The Footer renders the UI as expected 1`] = `
 <footer>
+  <div
+    className="icons"
+  >
+    <a
+      aria-label="email"
+      href="mailto:dionisggr@gmail.com"
+      target="_blank"
+    >
+      <i
+        aria-hidden="true"
+        class="fa fa-envelope"
+      />
+    </a>
+    <a
+      aria-label="github"
+      href="https://github.com/dionisggr/flickshare-client/"
+      target="_blank"
+    >
+      <i
+        aria-hidden="true"
+        class="fa fa-github"
+      />
+    </a>
+    <a
+      aria-label="linked-in"
+      href="https://www.linkedin.com/in/dionis-gonzalez-ramirez/"
+      target="_blank"
+    >
+      <i
+        aria-hidden="true"
+        class="fa fa-linkedin-square"
+      />
+    </a>
+  </div>
   <h2>
     © Dionis González Ramírez
   </h2>
@@ -422,6 +499,7 @@ exports[`The Components The Login Page renders the UI as expected 1`] = `
     Username
   </label>
   <input
+    autoComplete="off"
     id="username"
     name="username"
     required={true}
@@ -436,7 +514,7 @@ exports[`The Components The Login Page renders the UI as expected 1`] = `
     id="password"
     name="password"
     required={true}
-    type="text"
+    type="password"
   />
   <label
     className="error"
@@ -508,6 +586,7 @@ exports[`The Components The Register Page renders the UI as expected 1`] = `
     First Name:
   </label>
   <input
+    autoComplete="none"
     id="first_name"
     name="first_name"
     required={true}
@@ -519,6 +598,7 @@ exports[`The Components The Register Page renders the UI as expected 1`] = `
     Last Name:
   </label>
   <input
+    autoComplete="none"
     id="last_name"
     name="last_name"
     required={true}
@@ -530,6 +610,7 @@ exports[`The Components The Register Page renders the UI as expected 1`] = `
     E-mail:
   </label>
   <input
+    autoComplete="none"
     id="email"
     name="email"
     required={true}
@@ -541,6 +622,7 @@ exports[`The Components The Register Page renders the UI as expected 1`] = `
     Username:
   </label>
   <input
+    autoComplete="none"
     id="username"
     name="username"
     required={true}
@@ -569,7 +651,7 @@ exports[`The Components The Register Page renders the UI as expected 1`] = `
     id="password"
     name="password"
     required={true}
-    type="text"
+    type="password"
   />
   <label
     className="error"
@@ -603,7 +685,7 @@ exports[`The Components The Register Page renders the UI as expected 1`] = `
     id="repeat_password"
     name="repeat_password"
     required={true}
-    type="text"
+    type="password"
   />
   <label
     className="error"
@@ -631,57 +713,61 @@ exports[`The Components The Welcome Page renders the UI as expected 1`] = `
 <div
   className="welcome"
 >
-  <h3>
-    Welcome to FlickShare!
-  </h3>
-  <label>
-    Why struggle choosing a movie to watch?
-  </label>
-  <p>
-    Good movie suggestions are hard to come by. Usually we rely on the Internet or our friends to decide what to watch next.
-  </p>
-  <p>
-    What if we could combine both?
-  </p>
-  <p>
-    What if we could create a list with our favorite movies and be suggested other movies based on your likes?
-  </p>
-  <p>
-    What if we could take this step further, and base suggestions on your friends lists as well?
-  </p>
-  <label>
-    It's simple:
-  </label>
-  <ol>
-    <li>
-      Create an account.
-    </li>
-    <li>
-      Create a list with your favorite movies.
-    </li>
-    <li>
-      Make new friends, watch other users' lists and send suggestions!
-    </li>
-    <li>
-      Come back for more!
-    </li>
-  </ol>
-  <a
-    href="/register"
-    onClick={[Function]}
+  <div
+    className="with-background"
   >
-    Create a new account!
-  </a>
-  <a
-    href="/home"
-    onClick={[Function]}
-  >
-    I just want to browse.
-  </a>
+    <h3>
+      Welcome to FlickShare!
+    </h3>
+    <label>
+      Why struggle choosing a movie to watch?
+    </label>
+    <p>
+      Good movie suggestions are hard to come by. Usually we rely on the Internet or our friends to decide what to watch next.
+    </p>
+    <p>
+      What if we could combine both?
+    </p>
+    <p>
+      What if we could create a list with our favorite movies and be suggested other movies based on your likes?
+    </p>
+    <p>
+      What if we could take this step further, and base suggestions on your friends lists as well?
+    </p>
+    <label>
+      It's simple:
+    </label>
+    <ol>
+      <li>
+        Create an account.
+      </li>
+      <li>
+        Create a list with your favorite movies.
+      </li>
+      <li>
+        Make new friends, watch other users' lists and send suggestions!
+      </li>
+      <li>
+        Come back for more!
+      </li>
+    </ol>
+    <a
+      href="/register"
+      onClick={[Function]}
+    >
+      Create a new account!
+    </a>
+    <a
+      href="/home"
+      onClick={[Function]}
+    >
+      I just want to browse.
+    </a>
+  </div>
 </div>
 `;
 
-exports[`The Components User-Related The Edit User Page render the UI as expected 1`] = `
+exports[`The Components User-Related The Edit User Page renders the UI as expected 1`] = `
 <form
   autoComplete="off"
   className="user-edit"
@@ -752,7 +838,7 @@ exports[`The Components User-Related The Edit User Page render the UI as expecte
 </form>
 `;
 
-exports[`The Components User-Related The Reset Password Page render the UI as expected 1`] = `
+exports[`The Components User-Related The Reset Password Page renders the UI as expected 1`] = `
 <form
   className="reset-password"
   onSubmit={[Function]}
@@ -769,7 +855,7 @@ exports[`The Components User-Related The Reset Password Page render the UI as ex
     id="password"
     name="password"
     required={true}
-    type="text"
+    type="password"
   />
   <label
     className="error"
@@ -817,7 +903,7 @@ exports[`The Components User-Related The Reset Password Page render the UI as ex
     id="repeat_password"
     name="repeat_password"
     required={true}
-    type="text"
+    type="password"
   />
   <button
     type="submit"
@@ -863,18 +949,18 @@ exports[`The Components User-Related The User Page renders the UI as expected 1`
     </label>
   </div>
   <button
-    className="user-lists"
+    className="lists-button"
     onClick={[Function]}
     type="button"
   >
-    Reset Password
+    LISTS
   </button>
   <button
-    className="user-lists"
+    className="reset-password-button"
     onClick={[Function]}
     type="button"
   >
-    Lists
+    RESET PASSWORD
   </button>
   <button
     onClick={[Function]}

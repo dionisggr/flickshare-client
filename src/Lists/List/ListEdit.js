@@ -27,7 +27,7 @@ class ListEdit extends React.Component {
         className='list-edit'
         onSubmit={this.addName}
       >
-        <label for='list_name'>Name:</label>
+        <label htmlFor='list_name'>Name:</label>
         <input
           type='text'
           id='list_name'

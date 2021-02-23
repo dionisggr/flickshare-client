@@ -26,6 +26,7 @@ import App from '../App';
 
 describe('The App', () => {
   const app = <BrowserRouter> <App /> </BrowserRouter>;
+  global.scroll = jest.fn();
 
   describe('Smoke Test', () => {
     it('renders learn react link', () => {

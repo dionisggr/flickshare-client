@@ -105,8 +105,6 @@ class Lists extends React.Component {
       ? <ListEdit addList={this.addList} />
       : null;
     
-    console.log(userLists, mainLists);
-
     return (
       <div className='lists'>
         {header}

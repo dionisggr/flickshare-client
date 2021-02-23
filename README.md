@@ -4,14 +4,14 @@ The Flickshare App is directed for anyone who really has a hard time finding sug
 This API stop represents a way for the app to communicate with the list of users, movie lists and movies. The user data contains full name, email, username, password and admin privileges. The list data contains a name and an associated user.
 
 ---
-
-### Client Live:
+### Working Prototype
+#### Client Live:
 https://flickshare-client.vercel.app
 
-### API URL
+#### API URL
 https://cryptic-badlands-24275.herokuapp.com
 
-### API GitHub:
+#### API GitHub:
 https://github.com/dionisggr/flickshare-api
 
 ---

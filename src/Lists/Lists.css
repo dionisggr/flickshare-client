@@ -1,4 +1,6 @@
 .lists {
+  display: flex;
+  flex-direction: column;
   height: calc(100% - 110px);
   margin-bottom: 100px;
 }
@@ -10,4 +12,28 @@
 .scroll-left, .scroll-right {
   position: absolute;
   margin-top: 140px;
+}
+
+.lists button {
+  align-self: flex-end;
+  background-color: rgba(2, 214, 2, 0.842);
+  outline: none;
+  border: solid 1px rgba(0, 0, 0, 0.712);
+  border-radius: 5px;
+  margin-top: 15px;
+  padding: 5px 35px;
+  font-weight: bold;
+  color: white;
+  min-width: fit-content;
+  line-height: 2em;
+  width: 100px;
+  margin-right: 8%;
+}
+
+.lists button:hover {
+  background-color: rgb(25, 231, 25);
+}
+
+.lists button:active {
+  transform: scale(0.95);
 }

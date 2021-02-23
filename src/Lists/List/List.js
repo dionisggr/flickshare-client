@@ -156,31 +156,32 @@ class List extends Component {
       return <Error message={'Invalid access'} />
     };
 
-    const getSuggestionsButton = (decoded && list.movies.length > 1)
+    const getSuggestionsButton = (decoded && list.movies.length > 0)
       ? <button
           type='button'
+          className='get-suggestions'
           onClick={() => this.getSuggestions(list)}
         >
           Get Suggestions
         </button>
       : null;
     
-    const addButton = (!this.state.editMode && user_id === list.user_id)
+    const addButton = (decoded && !this.state.editMode && user_id === list.user_id)
       ? <button
           type='button'
           onClick={this.renderMovieSearch}
         >
-          Add
+          ADD
         </button>
       : null;
     
     const editButton = (!this.state.editMode)
-      ? (user_id === list.user_id)
+      ? (decoded && user_id === list.user_id)
         ? < button
             type='button'
             onClick={this.showEditMode}
           >
-            Edit
+            EDIT
           </button>
         : null
       : <>
@@ -188,22 +189,22 @@ class List extends Component {
             type='button'
             onClick={(evt) => this.editList(evt, list.list_id)}
           >
-            Save
+            SAVE
           </button>
           <button
             type='button'
             onClick={this.cancelEditMode}
           >
-            Cancel
+            CANCEL
           </button>
       </>
     
-    const deleteButton = (!this.state.editMode && user_id === list.user_id)
+    const deleteButton = (decoded && !this.state.editMode && user_id === list.user_id)
       ? <button
           type='button'
           onClick={() => this.deleteList(list.list_id, user_id)}
         >
-          Delete
+          DELETE
         </button>
       : null;
     
@@ -223,7 +224,7 @@ class List extends Component {
         />
       : <Link to={`/lists/${list.list_id}`}>
           <h4>{list.name}</h4>
-      </Link>
+        </Link>
     
     const backPath = (list.user_id)
       ? `/users/${list.user_id}/lists`
@@ -238,9 +239,7 @@ class List extends Component {
         {editButton}
 
         {deleteButton}
-
-        {addButton}
-        
+       
         <div className='list-movies'>
           {
             list.movies.map(movie =>
@@ -252,6 +251,8 @@ class List extends Component {
         </div>
 
         {getSuggestionsButton}
+
+        {addButton}
         
         {movieSearch}
 

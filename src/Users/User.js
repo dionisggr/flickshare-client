@@ -64,17 +64,17 @@ class User extends React.Component {
         </div>
         <button 
           type='button'
-          className='user-lists'
-          onClick={() => history.push(`/users/${user_id}/resetpassword`)}
+          className='lists-button'
+          onClick={() => history.push(`/users/${user_id}/lists`)}
         >
-          Reset Password
+          LISTS
         </button>
         <button 
           type='button'
-          className='user-lists'
-          onClick={() => history.push(`/users/${user_id}/lists`)}
+          className='reset-password-button'
+          onClick={() => history.push(`/users/${user_id}/resetpassword`)}
         >
-          Lists
+          RESET PASSWORD
         </button>
         <button 
           type='button'

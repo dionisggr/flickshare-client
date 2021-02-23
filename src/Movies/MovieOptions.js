@@ -61,7 +61,7 @@ class MovieOptions extends React.Component {
     const { list, match } = this.props;
     const list_id = parseInt(match.params.list);
 
-    if (!list) {
+    if (!list.list_id) {
       const list = await api.getListById(list_id);
 
       newState.list = list;
@@ -72,7 +72,7 @@ class MovieOptions extends React.Component {
 
   render() {
     const { lists, movieWasAdded } = this.state;
-    const { movie, list } = this.props;
+    let { movie, list } = this.props;
     const { movie_id } = movie;
     const list_id = (list.list_id)
       ? list.list_id
@@ -96,6 +96,10 @@ class MovieOptions extends React.Component {
         +
         </button>
       : null;
+    
+    if (!list.list_id) {
+      list = this.state.list;
+    };    
     
     const removeButton = (
       decoded && list && decoded.user_id === list.user_id

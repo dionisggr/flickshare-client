@@ -24,3 +24,11 @@
   font-size: 14px;
   font-weight: bold;
 }
+
+#error_login {
+  color: red;
+  padding: 0;
+  margin: 0;
+  height: fit-content;
+  font-size: 14px;
+}

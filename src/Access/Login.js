@@ -47,14 +47,16 @@ class Login extends React.Component {
         <input
           type='text' required
           name='username' id='username'
+          autoComplete='off'
         />
 
         <label htmlFor='password'>Password</label>
 
         <input
-          type='text' required
+          type='password' required
           name='password' id='password'
         />
+
         <label
           htmlFor='login'
           id='error_login'

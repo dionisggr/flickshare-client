@@ -52,6 +52,18 @@ class Lists extends React.Component {
       .catch(error => console.log(error))
   };
 
+  componentDidUpdate = () => {
+    const user_id = parseInt(this.props.user_id);
+
+    if (user_id && this.state.userLists.length < 1) {
+      api.getUserLists(user_id)
+        .then(userLists => {
+          this.setState({ userLists });
+        })
+        .catch(error => <Error message={error} />)
+    };
+  }
+
   componentDidMount() {
     const user_id = parseInt(this.props.user_id);
 
@@ -67,7 +79,7 @@ class Lists extends React.Component {
   render() {
     const { mainLists } = this.props;
     const { userLists, showListField } = this.state;
-  
+
     const header = (mainLists.length > 0)
       ? <h3>Top Suggestions</h3>
       : <h3>My Lists</h3>

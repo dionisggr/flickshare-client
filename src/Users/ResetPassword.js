@@ -48,7 +48,7 @@ class ResetPassword extends React.Component {
         <label htmlFor='password'>New Password</label>
 
         <input
-          type='text' required
+          type='password' required
           name='password' id='password'
         />
         <label
@@ -74,7 +74,7 @@ class ResetPassword extends React.Component {
         </label>
 
         <input
-          type='text' required
+          type='password' required
           name='repeat_password' id='repeat_password'
         />
 

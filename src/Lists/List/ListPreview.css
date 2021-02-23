@@ -3,11 +3,16 @@
   flex-direction: column;
   align-items: center;
   overflow: hidden;
+  margin-top: 15px;
 }
 
 .list-preview a {
-  text-decoration: none;
   color: white;
+  text-decoration: none;
+}
+
+.list-preview a h3 {
+  text-decoration: underline;
 }
 
 .list-preview h3 {

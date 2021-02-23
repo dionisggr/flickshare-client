@@ -75,24 +75,28 @@ class Register extends React.Component {
         <input
           type='text' required
           name='first_name' id='first_name'
+          autoComplete='none'
         />
 
         <label htmlFor='last_name'>Last Name:</label>
         <input 
           type='text' required
           name='last_name' id='last_name'
+          autoComplete='none'
         />
 
         <label htmlFor='email'>E-mail:</label>
         <input 
           type='text' required
           name='email' id='email'
+          autoComplete='none'
         />
 
         <label htmlFor='username'>Username:</label>
         <input 
           type='text' required
           name='username' id='username'
+          autoComplete='none'
         />
         <label
           htmlFor='username'
@@ -105,7 +109,7 @@ class Register extends React.Component {
 
         <label htmlFor='password'>Password</label>
         <input 
-          type='text' required
+          type='password' required
           name='password' id='password'
         />
         <label
@@ -122,7 +126,7 @@ class Register extends React.Component {
       
         <label htmlFor='repeat_password'>Repeat password:</label>
         <input 
-          type='text' required
+          type='password' required
           name='repeat_password' id='repeat_password'
         />
         <label

@@ -28,7 +28,7 @@
   background-color: rgb(255, 55, 55) !important;
 }
 
-.movie-preview-options button {
+.movie-preview-options button:not(button.add) {
   height: 60px;
   width: 60px;
   border-radius: 50% !important;
@@ -80,7 +80,6 @@
 
 .movie-list-options li {
   border-bottom: solid 1px rgba(255, 255, 255, 0.384);
-  /* text-indent: 10px; */
 }
 
 .movie-list-options li button {
@@ -93,4 +92,12 @@
 
 .movie-list-options li button:hover {
   background: rgba(0, 0, 0, 0.253);
+}
+
+button.add {
+  align-self: center;
+  width: 65px;
+  height: 65px;
+  border-radius: 50% !important;
+  font-size: 25px;
 }

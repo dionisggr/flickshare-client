@@ -8,3 +8,9 @@
 .list-edit input {
   line-height: 2em;
 }
+
+.list-edit label {
+  font-weight: bold;
+  margin-bottom: 10px;
+  font-size: 20px;
+}

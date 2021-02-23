@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import { JWT_SECRET } from '../../config';
 import jwt from 'jsonwebtoken';
+import ListPreview from './ListPreview';
 import MoviePreview from '../../Movies/MoviePreview';
 import MovieSearch from '../../Movies/MovieSearch';
 import MovieService from '../../services/movie-service';
@@ -152,7 +153,7 @@ class List extends Component {
       return <Error message={`Wow, you're good! No movies.`} />;
     };
 
-    if (user_id !== list.user_id && !admin) {
+    if (list.user_id && user_id !== list.user_id && !admin) {
       return <Error message={'Invalid access'} />
     };
 
@@ -234,19 +235,16 @@ class List extends Component {
       <div className='list'>
         <h3>List Details</h3>
 
-        {listName}
-
         {editButton}
 
         {deleteButton}
        
         <div className='list-movies'>
           {
-            list.movies.map(movie =>
-              <MoviePreview
-                key={movie.movie_id}
-                movie={movie} />
-            )
+            <ListPreview
+              key={list.list_id}
+              list={list}
+            />
           }
         </div>
 

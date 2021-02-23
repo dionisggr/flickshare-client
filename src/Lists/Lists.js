@@ -13,6 +13,7 @@ class Lists extends React.Component {
   state = { userLists: [], showListField: false };
 
   showEdit = () => {
+    console.log('works')
     const newState = { ...this.state };
 
     newState.showListField = true;
@@ -55,17 +56,16 @@ class Lists extends React.Component {
   componentDidUpdate = () => {
     const user_id = parseInt(this.props.user_id);
 
-    const { pathname } = this.props.location;
+    const { mainLists } = this.props;
+    const { userLists, refreshed } = this.state;
 
-    console.log(this.props.mainLists)
-
-    if (user_id && this.state.userLists.length < 1 && pathname !== '/home') {
+    if (!refreshed && mainLists.length < 1 && userLists.length < 1) {
       api.getUserLists(user_id)
-        .then(userLists => {
-          this.setState({ userLists });
-        })
-        .catch(error => <Error message={error} />)
-    };
+      .then(userLists => {
+        this.setState({ userLists, refreshed: true });
+      })
+      .catch(error => <Error message={error} />)
+    }
   }
 
   componentDidMount() {
@@ -91,8 +91,8 @@ class Lists extends React.Component {
     const lists = (mainLists.length < 1)
       ? userLists
       : mainLists;
-
-    const button = (mainLists.length < 1)
+    
+    const button = (this.state.showListField || mainLists.length < 1)
       ? <button
         type='button'
         onClick={this.showEdit}
@@ -104,6 +104,8 @@ class Lists extends React.Component {
     const listEdit = (showListField)
       ? <ListEdit addList={this.addList} />
       : null;
+    
+    console.log(userLists, mainLists);
 
     return (
       <div className='lists'>

@@ -1,7 +1,7 @@
 .lists {
   display: flex;
   flex-direction: column;
-  height: calc(100% - 110px);
+  min-height: calc(100vh - 335px);
   margin-bottom: 100px;
   margin-top: 5%;
 }
@@ -15,7 +15,7 @@
   margin-top: 120px;
 }
 
-.lists button {
+.lists button:not(button.add, button.remove-movie, .scroll-left button, .scroll-right button) {
   align-self: flex-end;
   background-color: rgba(2, 214, 2, 0.842);
   outline: none;
@@ -38,4 +38,11 @@
 
 .lists button:active {
   transform: scale(0.95);
+}
+
+.lists .remove-movie {
+  position: relative;
+  align-self: flex-end;
+  margin-right: -5px;
+  margin-top: -30px;
 }

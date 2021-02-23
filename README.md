@@ -6,13 +6,13 @@ This API stop represents a way for the app to communicate with the list of users
 ---
 
 ### Client Live:
-https://flickshare-client.vercel.app/
+https://flickshare-client.vercel.app
 
 ### API URL
-https://cryptic-badlands-24275.herokuapp.com/
+https://cryptic-badlands-24275.herokuapp.com
 
 ### API GitHub:
-https://github.com/dionisggr/flickshare-api/
+https://github.com/dionisggr/flickshare-api
 
 ---
 

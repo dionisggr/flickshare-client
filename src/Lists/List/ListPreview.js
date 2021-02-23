@@ -74,18 +74,43 @@ class ListPreview extends Component {
       list = this.state.list;
     };
 
-    const renderList = (list.movies.length >  0)
+    const renderList = (list.movies.length > 0)
       ? list.movies.map(movie =>
-          <MoviePreview
-            setMovies={this.setMovies}
-            key={movie.movie_id}
-            list={list}
-            movie={movie}
-          />
-        )
+        <MoviePreview
+          setMovies={this.setMovies}
+          key={movie.movie_id}
+          list={list}
+          movie={movie}
+        />
+      )
       : <div className='no-movies'>
           <h3>Wow, so much empty.</h3>
         </div>
+    
+    const leftArrow = (list.movies.length > 2)
+      ? <div className='scroll-left'>
+          <button
+            type='button'
+            onMouseEnter={(evt) => this.scroll(evt, 'left')}
+            onMouseLeave={(evt) => this.scroll(evt, 'stop')}
+          >
+            <i class="fa fa-arrow-left" aria-hidden="true"></i>
+          </button>
+        </div>
+      : null;
+    
+    const rightArrow = (list.movies.length > 2)
+      ? <div className='scroll-right'>
+          <button
+            type='button'
+            onMouseEnter={(evt) => this.scroll(evt, 'right')}
+            onMouseLeave={(evt) => this.scroll(evt, 'stop')}
+          >
+            <i class="fa fa-arrow-right" aria-hidden="true"></i>
+          </button>
+        </div>
+      : null;
+
 
     return (
       <div className='list-preview'>
@@ -97,25 +122,8 @@ class ListPreview extends Component {
           {renderList}
         </div>
 
-        <div className='scroll-left'>
-          <button
-            type='button'
-            onMouseEnter={(evt) => this.scroll(evt, 'left')}
-            onMouseLeave={(evt) => this.scroll(evt, 'stop')}
-          >
-            <i class="fa fa-arrow-left" aria-hidden="true"></i>
-          </button>
-        </div>
-
-        <div className='scroll-right'>
-          <button
-            type='button'
-            onMouseEnter={(evt) => this.scroll(evt, 'right')}
-            onMouseLeave={(evt) => this.scroll(evt, 'stop')}
-          >
-            <i class="fa fa-arrow-right" aria-hidden="true"></i>
-          </button>
-        </div>
+        {leftArrow}
+        {rightArrow}
       </div>
     );
   }

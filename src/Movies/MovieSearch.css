@@ -1,7 +1,7 @@
 .movie-search {
   display: flex;
   flex-direction: column;
-  min-height: calc(100vh - 155px);
+  min-height: calc(100vh - 235px);
   margin-top: 5%;
 }
 
@@ -55,4 +55,5 @@
 .movie-search .results {
   width: 100%;
   margin-top: 50px;
+  max-width: 400px;
 }

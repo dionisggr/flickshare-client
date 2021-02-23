@@ -1,5 +1,9 @@
 .welcome {
-  height: calc(100vh - 150px);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-height: calc(100vh - 150px);
+  margin-bottom: 50px;
 }
 
 .with-background {
@@ -24,4 +28,10 @@
   background-color: rgba(2, 214, 2, 0.507);
   border-radius: 15px;
   margin-top: 25px;  
+}
+
+@media only screen and (min-width: 600px) {
+  .with-background {
+    margin: 0 10%;
+  }
 }

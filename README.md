@@ -753,7 +753,19 @@ Each endpoint manipulates information related to all data, only able to be acces
 
 ### Screenshots
 
-![Landing Page](https://github.com/dionisggr/flickshare-api/blob/main/public/img/landing.png)
+![Welcome Page](https://github.com/dionisggr/flickshare-client/blob/main/public/screenshots/welcome.png)
+![Login Page](https://github.com/dionisggr/flickshare-client/blob/main/public/screenshots/login.png)
+![Register Page](https://github.com/dionisggr/flickshare-client/blob/main/public/screenshots/register.png)
+![Home Page](https://github.com/dionisggr/flickshare-client/blob/main/public/screenshots/home.png)
+![User Lists](https://github.com/dionisggr/flickshare-client/blob/main/public/screenshots/user-lists.png)
+![User List](https://github.com/dionisggr/flickshare-client/blob/main/public/screenshots/user-list.png)
+![List Edit](https://github.com/dionisggr/flickshare-client/blob/main/public/screenshots/user-list-edit.png)
+![List Page](https://github.com/dionisggr/flickshare-client/blob/main/public/screenshots/list.png)
+![Suggestions Page](https://github.com/dionisggr/flickshare-client/blob/main/public/screenshots/suggestions.png)
+![Movie Search Page](https://github.com/dionisggr/flickshare-client/blob/main/public/screenshots/movie-search.png)
+![Welcome Page](https://github.com/dionisggr/flickshare-client/blob/main/public/screenshots/welcome.png)
+![All Users Page (Admin)](https://github.com/dionisggr/flickshare-client/blob/main/public/screenshots/admin-all-users.png)
+![All Lists Page (Admin)](https://github.com/dionisggr/flickshare-client/blob/main/public/screenshots/admin-all-lists.png)
 
 ---
 

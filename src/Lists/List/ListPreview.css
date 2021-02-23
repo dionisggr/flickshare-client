@@ -6,6 +6,10 @@
   margin-top: 15px;
 }
 
+.list-preview + .list-preview { 
+  margin-top: 5%;
+}
+
 .list-preview a {
   color: white;
   text-decoration: none;
@@ -85,7 +89,6 @@
 .scroll-left, .scroll-right {
   display: none;
   position: absolute;
-  margin-top: 105px;
 }
 
 .scroll-left {
@@ -97,15 +100,26 @@
 }
 
 .scroll-left button, .scroll-right button {
-  width: 6vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   height: 110px;
-  background-color: rgba(0, 0, 0, 0.616);
   border: none;
   cursor: pointer;
+  max-width: 20px !important;
+
 }
 
 .scroll-left button:hover, .scroll-right button:hover {
   background-color: rgba(124, 124, 124, 0.678);
+}
+
+.scroll-left i, .scroll-right i {
+  display: flex;
+  align-items: center;
+  height: 75px;
+  font-size: 35px;
+  width: 25px;
 }
 
 .no-movies h3 {
@@ -115,6 +129,10 @@
 }
 
 @media only screen and (min-width: 768px) {
+  .list-preview {
+    margin: 0 3%;
+  }
+  
   .scroll-left, .scroll-right {
     display: block;
   }

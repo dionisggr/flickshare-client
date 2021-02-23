@@ -6,8 +6,3 @@
 .admin-lists h3 {
   text-align: center;
 }
-
-.scroll-left, .scroll-right {
-  position: absolute;
-  margin-top: 140px;
-}

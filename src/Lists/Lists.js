@@ -55,7 +55,11 @@ class Lists extends React.Component {
   componentDidUpdate = () => {
     const user_id = parseInt(this.props.user_id);
 
-    if (user_id && this.state.userLists.length < 1) {
+    const { pathname } = this.props.location;
+
+    console.log(this.props.mainLists)
+
+    if (user_id && this.state.userLists.length < 1 && pathname !== '/home') {
       api.getUserLists(user_id)
         .then(userLists => {
           this.setState({ userLists });
@@ -84,7 +88,7 @@ class Lists extends React.Component {
       ? <h3>Top Suggestions</h3>
       : <h3>My Lists</h3>
     
-    const lists = (userLists.length > 0)
+    const lists = (mainLists.length < 1)
       ? userLists
       : mainLists;
 

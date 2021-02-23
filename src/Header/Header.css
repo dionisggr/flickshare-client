@@ -49,14 +49,19 @@ nav a {
     padding: 0 50px 0 15px;
   }
 
-  header nav {
+  nav {
+    align-self: flex-end;
     border-bottom: none;
+    padding: 0;
+    margin-bottom: 10px;
+    width: 50%;
+    max-width: 300px;
   }
   
   nav ul {
     justify-content: space-between;
     width: 75%;
     margin: 0;
-    border: solid red;
+    width: 100%;
   }
 }

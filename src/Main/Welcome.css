@@ -1,4 +1,8 @@
 .welcome {
+  height: calc(100vh - 150px);
+}
+
+.with-background {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -9,11 +13,11 @@
   margin-bottom: 100px;
 }
 
-.welcome p, .welcome label {
+.with-background p, .with-background label {
   text-align: center;
 }
 
-.welcome a {
+.with-background a {
   padding: 15px 35px;
   text-decoration: none;
   color: white;

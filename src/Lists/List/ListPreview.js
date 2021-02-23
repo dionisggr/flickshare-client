@@ -18,7 +18,7 @@ class ListPreview extends Component {
   };
 
   scroll = (evt, direction) => {
-    const movieList = evt.target.parentElement.parentElement
+    const movieList = evt.target.parentElement.parentElement.parentElement
       .querySelector('div.list-preview-movies');
     
     const newState = { ...this.state };
@@ -35,6 +35,7 @@ class ListPreview extends Component {
 
     } else {
       clearInterval(newState.autoScroller);
+      newState.list.movies = newState.list.movies;
     };
 
     this.setState(newState);
@@ -102,7 +103,7 @@ class ListPreview extends Component {
             onMouseEnter={(evt) => this.scroll(evt, 'left')}
             onMouseLeave={(evt) => this.scroll(evt, 'stop')}
           >
-            P
+            <i class="fa fa-arrow-left" aria-hidden="true"></i>
           </button>
         </div>
 
@@ -112,7 +113,7 @@ class ListPreview extends Component {
             onMouseEnter={(evt) => this.scroll(evt, 'right')}
             onMouseLeave={(evt) => this.scroll(evt, 'stop')}
           >
-            N
+            <i class="fa fa-arrow-right" aria-hidden="true"></i>
           </button>
         </div>
       </div>

@@ -3,6 +3,7 @@
   flex-direction: column;
   height: calc(100% - 110px);
   margin-bottom: 100px;
+  margin-top: 5%;
 }
 
 .lists h3 {
@@ -11,7 +12,7 @@
 
 .scroll-left, .scroll-right {
   position: absolute;
-  margin-top: 140px;
+  margin-top: 120px;
 }
 
 .lists button {
@@ -32,6 +33,7 @@
 
 .lists button:hover {
   background-color: rgb(25, 231, 25);
+  overflow: visible;
 }
 
 .lists button:active {

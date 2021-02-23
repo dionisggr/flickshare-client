@@ -28,6 +28,8 @@ class Welcome extends React.Component {
 
     return (
       <div className='welcome'>
+        <div className='with-background'>
+          
         <h3>Welcome to FlickShare!</h3>
 
         <label>Why struggle choosing a movie to watch?</label>
@@ -46,8 +48,9 @@ class Welcome extends React.Component {
           <li>Come back for more!</li>
         </ol>
 
-        {buttons}
-
+          {buttons}
+          
+        </div>
       </div>
     );
   }

@@ -3,8 +3,8 @@
   flex-direction: column;
   justify-content: space-around;
   align-items: center;
-  position: absolute;
   margin-top: 21px;
+  margin-top: -225px;
   width: 150px;
   height: 226px;
   background-color: rgba(73, 73, 73, 0.884);
@@ -32,7 +32,7 @@
   height: 60px;
   width: 60px;
   border-radius: 50% !important;
-  background-color: rgba(2, 214, 2, 0.507);
+  background-color: rgba(2, 214, 2, 0.842);
   border: solid 1px rgba(0, 0, 0, 0.384);
   font-size: 25px;
   color: white;

@@ -176,8 +176,9 @@ class App extends React.Component {
 
               <Route
                 path='/home'
-                render={({ history }) =>
+                render={({ history, location }) =>
                   <Lists
+                    location={location}
                     history={history}
                     mainLists={mainLists}
                   />
@@ -196,8 +197,9 @@ class App extends React.Component {
 
               <Route
                 path='/users/:user/lists'
-                render={({ match, history }) =>
+                render={({ match, history, location }) =>
                   <Lists
+                    location={location}
                     history={history}
                     user_id={match.params.user}
                   />

@@ -67,7 +67,7 @@ User Lists
 
 List Page
 :-------------------------:
-![List Page](https://github.com/dionisggr/flickshare-client/blob/main/public/wireframes/welcome.png)
+![List Page](https://github.com/dionisggr/flickshare-client/blob/main/public/wireframes/list.png)
 
 Suggestions Page
 :-------------------------:

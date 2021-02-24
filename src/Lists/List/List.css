@@ -5,6 +5,7 @@
   min-height: calc(100vh - 155px);
   margin-bottom: 100px;
   margin-top: 5%;
+  width: 100%;
 }
 
 .list a {
@@ -25,6 +26,7 @@
 
 .list-movies {
   display: flex;
+  justify-content: center;
   margin-bottom: 50px;
 }
 
@@ -64,4 +66,12 @@ button.get-suggestions {
   width: 75px;
 }
 
+.list img {
+  max-width: 800px;
+  width: 100%;
+}
+
+.remove-movie {
+  border: solid green;
+}
 

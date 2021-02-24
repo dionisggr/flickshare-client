@@ -13,11 +13,17 @@ class Movie extends React.Component {
   state = { movie: {} };
 
   componentDidMount() {
-    const { location: { movie } } = this.props;
+    let { location: { movie } } = this.props;
+
+    if (!movie || !movie.movie_id) {
+      movie = this.state.movie;
+    };
 
     if (movie) {
       window.localStorage.setItem('flickshareMovie', JSON.stringify(movie));
     };
+
+    console.log(movie)
 
     window.onbeforeunload = () => {
       window.scrollTo(0, 0);

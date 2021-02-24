@@ -32,6 +32,7 @@ class MovieSearch extends React.Component {
   };
 
   render() {
+    console.log(this.state.results);
     return (
       <div className='movie-search'>
         <form
@@ -49,13 +50,15 @@ class MovieSearch extends React.Component {
         </form>
         <div className='results'>
           {
-            this.state.results.map((movie, idx) => 
-              <Movie
-                key={idx}
-                movie={movie}
-                addToList={this.addToList}
-              />
-            )
+            this.state.results
+              .filter(movie => movie.poster)
+              .map((movie, idx) => 
+                <Movie
+                  key={idx}
+                  movie={movie}
+                  addToList={this.addToList}
+                />
+              )
           }
         </div>
       </div>

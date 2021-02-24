@@ -13,7 +13,6 @@ class Lists extends React.Component {
   state = { userLists: [], showListField: false };
 
   showEdit = () => {
-    console.log('works')
     const newState = { ...this.state };
 
     newState.showListField = true;

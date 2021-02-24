@@ -111,6 +111,7 @@ class Register extends React.Component {
         <input 
           type='password' required
           name='password' id='password'
+          autoComplete='new-password'
         />
         <label
           htmlFor='password'
@@ -128,6 +129,7 @@ class Register extends React.Component {
         <input 
           type='password' required
           name='repeat_password' id='repeat_password'
+          autoComplete='new-password'
         />
         <label
           htmlFor='password'

@@ -70,10 +70,6 @@ class App extends React.Component {
     this.setState(newState);
   };
 
-  componentWillUnmount() {
-    window.localStorage.removeItem('flickshareMovie');
-  };
-
   setIdleTimer = () => {
     const newState = { ...this.state };
 

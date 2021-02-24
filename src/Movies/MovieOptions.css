@@ -10,11 +10,11 @@
   background-color: rgba(73, 73, 73, 0.884);
 }
 
-.remove-movie {
+.remove-movie:not(.list) {
   display: flex;
   justify-content: center;
   align-items: center;
-  position: absolute;
+  /* position: absolute; */
   top: 0;
   right: 0;
   max-width: 25px;
@@ -22,6 +22,11 @@
   font-size: 16px !important;
   padding: 0 !important;
   background-color: red !important;
+
+  position: relative;
+  align-self: flex-end;
+  margin-right: -5px;
+  margin-top: -28px;
 }
 
 .remove-movie:hover {
@@ -92,6 +97,7 @@
 
 .movie-list-options li button:hover {
   background: rgba(0, 0, 0, 0.253);
+  
 }
 
 button.add {

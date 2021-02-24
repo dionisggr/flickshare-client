@@ -17,6 +17,13 @@ const api = {
       .then(api.verifyResponse);
   }
   ,
+  getMovieByID: (id) => {
+    return fetch(`${API_URL}/movies/${id}`, {
+      headers: { 'Authorization': `Bearer ${API_KEY}` }
+    })
+      .then(api.verifyResponse);
+  }
+  ,
   searchMovieByTMDB_ID: (tmdb_id) => {
     return fetch(`https://api.themoviedb.org/3/movie/${tmdb_id}?api_key=${TMDB_API_KEY}&language=en-US`)
       .then(api.verifyResponse)

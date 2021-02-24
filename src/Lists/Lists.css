@@ -15,7 +15,7 @@
   margin-top: 120px;
 }
 
-.lists button:not(button.add, button.remove-movie, .scroll-left button, .scroll-right button) {
+.lists button:not(.movie-list-options button, button.add, button.remove-movie, .scroll-left button, .scroll-right button) {
   align-self: flex-end;
   background-color: rgba(2, 214, 2, 0.842);
   outline: none;

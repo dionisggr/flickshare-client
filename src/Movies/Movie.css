@@ -2,6 +2,10 @@
   padding: 8px;
   text-align: center;
   margin-bottom: 100px;
+  padding: 0 10%;
+  max-width: 800px;
+  width: 100%;
+  margin-top: 50px;
 }
 
 .movie img {
@@ -9,6 +13,7 @@
   width: 100%;
   min-height: 150px;
   border: solid rgba(255, 255, 255, 0.137);
+  max-width: 400px;
 }
 
 .movie label {

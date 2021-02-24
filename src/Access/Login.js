@@ -55,6 +55,7 @@ class Login extends React.Component {
         <input
           type='password' required
           name='password' id='password'
+          autoComplete='new-password'
         />
 
         <label

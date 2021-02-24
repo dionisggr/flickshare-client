@@ -4,6 +4,7 @@
   align-items: center;
   overflow: hidden;
   margin-top: 15px;
+  min-width: calc(100vw - 150px);
 }
 
 .list-preview + .list-preview { 

@@ -32,7 +32,6 @@ class MovieSearch extends React.Component {
   };
 
   render() {
-    console.log(this.state.results);
     return (
       <div className='movie-search'>
         <form

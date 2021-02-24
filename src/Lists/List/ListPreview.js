@@ -93,7 +93,7 @@ class ListPreview extends Component {
             onMouseEnter={(evt) => this.scroll(evt, 'left')}
             onMouseLeave={(evt) => this.scroll(evt, 'stop')}
           >
-            <i class="fa fa-arrow-left" aria-hidden="true"></i>
+            <i className="fa fa-arrow-left" aria-hidden="true"></i>
           </button>
         </div>
       : null;
@@ -105,7 +105,7 @@ class ListPreview extends Component {
             onMouseEnter={(evt) => this.scroll(evt, 'right')}
             onMouseLeave={(evt) => this.scroll(evt, 'stop')}
           >
-            <i class="fa fa-arrow-right" aria-hidden="true"></i>
+            <i className="fa fa-arrow-right" aria-hidden="true"></i>
           </button>
         </div>
       : null;

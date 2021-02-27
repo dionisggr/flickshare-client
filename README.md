@@ -1,7 +1,5 @@
 # Flickshare App
-The Flickshare App is directed for anyone who really has a hard time finding suggestions on what to watch next! The app allows users to create an account and custom lists of movie interests, which may then be used to generated a list of suggestions and store them for coming back to it later.
-
-This API stop represents a way for the app to communicate with the list of users, movie lists and movies. The user data contains full name, email, username, password and admin privileges. The list data contains a name and an associated user.
+The Flickshare App is directed for anyone who really has a hard time finding suggestions on what to watch next! The app allows users to create an account and custom lists of movie interests, which may then be used to generated a list of movie suggestions and store them for coming back to it later.
 
 ---
 ### Working Prototype
@@ -39,7 +37,7 @@ https://github.com/dionisggr/flickshare-api
 ### Technology
 * **Front-End:** React.js, CSS3, HTML5, Javascript, API fetch
 * **Back-End:** Javascript, Node.js, Express.js, Knex.js, PostgreSQL, Mocha, Chai, Supertest, Nodemon, Postgrator, Dotenv, JWT, Bcrypt, Morgan, XSS, CORS, Helmet, HTML5, CI scripts
-* **Development Environment:** Heroku, DBeaver, Postman
+* **Development Environment:** Vercel, Heroku, DBeaver, Postman
 
 ---
 

@@ -19,10 +19,10 @@ Array [
         <ul>
           <li>
             <a
-              href="/register"
+              href="/signup"
               onClick={[Function]}
             >
-              Register
+              Signup
             </a>
           </li>
           <li>
@@ -75,7 +75,7 @@ Array [
           </li>
         </ol>
         <a
-          href="/register"
+          href="/signup"
           onClick={[Function]}
         >
           Create a new account!
@@ -466,7 +466,7 @@ Array [
       <ul>
         <li>
           <a
-            href="/register"
+            href="/signup"
             onClick={[Function]}
           >
             Register
@@ -755,7 +755,7 @@ exports[`The Components The Welcome Page renders the UI as expected 1`] = `
       </li>
     </ol>
     <a
-      href="/register"
+      href="/signup"
       onClick={[Function]}
     >
       Create a new account!

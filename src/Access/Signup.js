@@ -1,9 +1,9 @@
 import React from 'react';
 import validation from '../services/validation';
 import api from '../services/api';
-import './Register.css';
+import './Signup.css';
 
-class Register extends React.Component {
+class Signup extends React.Component {
   static defaultProps = { userLogged: {} };
 
   addUser = async (evt) => {
@@ -65,11 +65,11 @@ class Register extends React.Component {
   render() {
     return (
       <form
-        className='register'
+        className='signup'
         autoComplete='off'
         onSubmit={this.addUser}
       >
-        <h3>REGISTER</h3>
+        <h3>Sign-Up</h3>
 
         <label htmlFor='first_name'>First Name:</label>
         <input
@@ -146,4 +146,4 @@ class Register extends React.Component {
   };
 };
 
-export default Register;
+export default Signup;

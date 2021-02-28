@@ -3,11 +3,7 @@
   flex-direction: column;
   align-items: center;
   overflow: hidden;
-  margin-top: 15px;
   min-width: calc(100vw - 150px);
-}
-
-.list-preview + .list-preview { 
   margin-top: 5%;
 }
 
@@ -25,7 +21,7 @@
   font-size: 20px;
   width: 100%;
   margin: 0;
-  margin-bottom: 25px;
+  margin-bottom: 15px;
 }
 
 .list-preview-movies {
@@ -108,7 +104,6 @@
   border: none;
   cursor: pointer;
   max-width: 20px !important;
-
 }
 
 .scroll-left button:hover, .scroll-right button:hover {
@@ -131,7 +126,7 @@
 
 @media only screen and (min-width: 768px) {
   .list-preview {
-    margin: 0 3%;
+    margin: 2% 3%;
   }
   
   .scroll-left, .scroll-right {

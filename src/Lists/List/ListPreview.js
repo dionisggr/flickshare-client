@@ -18,7 +18,7 @@ class ListPreview extends Component {
   };
 
   scroll = (evt, direction) => {
-    const movieList = evt.target.parentElement.parentElement.parentElement
+    const movieList = evt.target.parentElement.parentElement
       .querySelector('div.list-preview-movies');
     
     const newState = { ...this.state };

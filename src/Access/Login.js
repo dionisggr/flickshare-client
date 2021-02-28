@@ -40,7 +40,7 @@ class Login extends React.Component {
         className='login'
         onSubmit={this.login}>
 
-        <h3>LOGIN</h3>
+        <h3>Login</h3>
 
         <label htmlFor='username'>Username</label>
 

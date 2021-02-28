@@ -22,7 +22,7 @@ class Welcome extends React.Component {
     const buttons = (decoded)
       ? <Link to='/home'>Home</Link>
       : <>
-          <Link to='/register'>Create a new account!</Link>
+          <Link to='/signup'>Create a new account!</Link>
           <Link to='/home'>I just want to browse.</Link>
         </>
 

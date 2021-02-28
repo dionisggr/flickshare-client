@@ -19,15 +19,26 @@
 }
 
 .movie-search input {
-  line-height: 1.5em;
-  background: none;
-  border: none;
-  border-bottom: solid 2px rgba(255, 255, 255, 0.199);
-  font-size: 20px;
-  width: 60%;
+  line-height: 2.5em;
+  width: 80%;
   max-width: 400px;
-  color: white;
+  border-radius: 20px;
+  border: solid 2px rgb(61, 0, 61);
   padding-left: 15px;
+  font-size: 15px;
+  outline: none;
+}
+
+.list .movie-search .results {
+  margin-top: 0;
+}
+
+.list .movie-search .movie {
+  margin-bottom: 0;
+}
+
+.list .movie-search h3 {
+  margin-top: 0;
 }
 
 .movie-search button {
@@ -38,9 +49,8 @@
   font-weight: bold;
   color: white;
   cursor: pointer;
-  line-height: 2.5em;
+  line-height: 2em;
   margin-top: 35px;
-  width: 125px;
   padding: 1px 35px;
 }
 

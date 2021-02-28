@@ -5,7 +5,7 @@ import ReactDOM from 'react-dom';
 import Header from '../Header/Header';
 import Footer from '../Footer/Footer';
 import Welcome from '../Main/Welcome';
-import Register from '../Access/Register'; 
+import Signup from '../Access/Signup'; 
 import Login from '../Access/Login'; 
 import MainMenu from '../Main/MainMenu';
 import Lists from '../Lists/Lists';
@@ -86,16 +86,16 @@ describe('The Components', () => {
       expect(tree).toMatchSnapshot();
     });
   });
-  describe('The Register Page', () => {
-    const register = <BrowserRouter><Register /></BrowserRouter>;
+  describe('The Signup Page', () => {
+    const signup = <BrowserRouter><Signup /></BrowserRouter>;
 
     it('renders without crashing', () => {
       const div = document.createElement('div');
-      ReactDOM.render(register, div);
+      ReactDOM.render(signup, div);
       ReactDOM.unmountComponentAtNode(div);
     });
     it('renders the UI as expected', () => {
-      const tree = renderer.create(register).toJSON();
+      const tree = renderer.create(signup).toJSON();
       expect(tree).toMatchSnapshot();
     });
   });

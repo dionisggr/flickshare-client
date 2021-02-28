@@ -34,7 +34,7 @@ class Users extends React.Component {
         <Link
           to='/admin'
           className='home-button'
-        >HOME</Link>
+        >Home</Link>
       </div>
     );
   };

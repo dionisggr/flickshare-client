@@ -2,11 +2,11 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin: 50px 0;
 }
 
 .list-edit input {
   line-height: 2em;
+  margin-bottom: 25px;
 }
 
 .list-edit label {

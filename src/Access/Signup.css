@@ -1,25 +1,33 @@
-.register {
+.signup {
   display: flex;
   flex-direction: column;
   align-items: center;
   min-height: calc(100vh - 110px);
-  margin-top: 5%;
 }
 
-.register label {
-  margin-top: 15px;
+.signup label {
+  margin: 15px 0 3px 0;
+  width: 70%;
+  max-width: 300px;
+  padding: 0 25px;
 }
 
-.register input {
-  line-height: 2em;
-  margin-top: 5px;
+.signup input {
+  line-height: 2.5em;
+  width: 70%;
+  max-width: 300px;
+  border-radius: 20px;
+  border: solid 2px rgb(61, 0, 61);
+  padding-left: 15px;
+  font-size: 15px;
+  outline: none;
 }
 
 #error_username, #error_password, #error_repeat_password {
   color: red;
 }
 
-.register button {
+.signup button {
   background-color: rgba(2, 214, 2, 0.842);
   outline: none;
   border: solid 1px rgba(0, 0, 0, 0.712);
@@ -30,14 +38,14 @@
   font-weight: bold;
   color: white;
   min-width: fit-content;
-  line-height: 2em;
+  line-height: 1.5em;
 }
 
-.register button:hover {
+.signup button:hover {
   background-color: rgb(25, 231, 25);
 }
 
-.register button:active {
+.signup button:active {
   transform: scale(0.95);
 }
 

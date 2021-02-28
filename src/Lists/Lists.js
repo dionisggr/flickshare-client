@@ -15,7 +15,7 @@ class Lists extends React.Component {
   showEdit = () => {
     const newState = { ...this.state };
 
-    newState.showListField = true;
+    newState.showListField = !this.state.showListField;
 
     this.setState(newState);
   };
@@ -91,7 +91,7 @@ class Lists extends React.Component {
       ? userLists
       : mainLists;
     
-    const button = (this.state.showListField || mainLists.length < 1)
+    const button = (!showListField && mainLists.length < 1)
       ? <button
         type='button'
         onClick={this.showEdit}
@@ -101,7 +101,10 @@ class Lists extends React.Component {
       : null;
     
     const listEdit = (showListField)
-      ? <ListEdit addList={this.addList} />
+      ? <ListEdit
+          addList={this.addList}
+          showEdit={this.showEdit}
+        />
       : null;
     
     return (

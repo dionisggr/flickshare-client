@@ -51,9 +51,9 @@ Login Page
 :-------------------------:
 ![Login Page](https://github.com/dionisggr/flickshare-client/blob/main/public/wireframes/login.png)
 
-Register Page
+Signup Page
 :-------------------------:
-![Register Page](https://github.com/dionisggr/flickshare-client/blob/main/public/wireframes/register.png)
+![Signup Page](https://github.com/dionisggr/flickshare-client/blob/main/public/wireframes/signup.png)
 
 Home Page
 :-------------------------:
@@ -799,9 +799,9 @@ Login Page
 :-------------------------:
 ![Login Page](https://github.com/dionisggr/flickshare-client/blob/main/public/screenshots/login.png)
 
-Register Page
+Signup Page
 :-------------------------:
-![Register Page](https://github.com/dionisggr/flickshare-client/blob/main/public/screenshots/register.png)
+![Signup Page](https://github.com/dionisggr/flickshare-client/blob/main/public/screenshots/signup.png)
 
 Home Page
 :-------------------------:

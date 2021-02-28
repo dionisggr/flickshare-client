@@ -4,6 +4,12 @@ import './ListEdit.css';
 class ListEdit extends React.Component {
   state = { input: '', listName: null };
 
+  hideListField = () => {
+    const { showEdit } = this.props;
+
+    showEdit();
+  }
+
   addName = (evt) => {
     evt.preventDefault();
 
@@ -37,6 +43,12 @@ class ListEdit extends React.Component {
           required
         />
         <button type='submit'>Create</button>
+        <button
+          type='button'
+          onClick={this.hideListField}
+        >
+          Cancel
+        </button>
       </form>
     );
   };

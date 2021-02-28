@@ -1,7 +1,7 @@
 .welcome {
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  align-items: center;
   min-height: calc(100vh - 150px);
   margin-bottom: 50px;
 }
@@ -10,11 +10,14 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-color: rgba(128, 128, 128, 0.5);
+  background-color: rgba(128, 128, 128, 0.418);
   border-radius: 2px;
-  margin: 10px;
-  padding: 15px 5px 50px 5px;
-  margin-bottom: 100px;
+  /* margin: 10px; */
+  padding: 25px;
+  padding-bottom: 75px;
+  margin: 5%;
+  margin-bottom: 50px;
+  border-radius: 3px;
 }
 
 .with-background p, .with-background label {
@@ -25,13 +28,14 @@
   padding: 15px 35px;
   text-decoration: none;
   color: white;
-  background-color: rgba(2, 214, 2, 0.507);
+  background-color: rgb(2, 158, 2);
+  border: solid 1px rgb(0, 128, 0);
   border-radius: 15px;
   margin-top: 25px;  
 }
 
-@media only screen and (min-width: 600px) {
+@media only screen and (min-width: 1000px) {
   .with-background {
-    margin: 0 10%;
+    margin-top: 45px;
   }
 }

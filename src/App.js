@@ -6,7 +6,7 @@ import Header from './Header/Header';
 import MainMenu from './Main/MainMenu';
 import Footer from './Footer/Footer';
 import Welcome from './Main/Welcome';
-import Register from './Access/Register'; 
+import Signup from './Access/Signup'; 
 import Login from './Access/Login'; 
 import ResetPassword from './Users/ResetPassword'; 
 import User from './Users/User'; 
@@ -142,9 +142,9 @@ class App extends React.Component {
               />
 
               <Route
-                path='/register'
+                path='/signup'
                 render={({ history }) =>
-                  <Register
+                  <Signup
                     history={history}
                     userLogged={this.userLogged}
                     setIdleTimer={this.setIdleTimer}

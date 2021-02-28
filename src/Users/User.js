@@ -52,10 +52,6 @@ class User extends React.Component {
     return (
       <div className='user'>
         <h3>User Account</h3>
-        <img
-          src={`https://robohash.org/${username}`}
-          alt={`${first_name}'s avatar`}
-        />
         <div className='user-info'>
           <label><b>Username: </b>{username}</label>
           <label><b>Email: </b>{email}</label>
@@ -67,32 +63,32 @@ class User extends React.Component {
           className='lists-button'
           onClick={() => history.push(`/users/${user_id}/lists`)}
         >
-          LISTS
+          Lists
         </button>
         <button 
           type='button'
           className='reset-password-button'
           onClick={() => history.push(`/users/${user_id}/resetpassword`)}
         >
-          RESET PASSWORD
+          Reset Password
         </button>
         <button 
           type='button'
           onClick={() => history.push(`/edit/users/${user_id}`)}
         >
-          EDIT
+          Edit Account
         </button>
         <button 
           type='button'
           onClick={this.deleteUser}
         >
-          DELETE ACCOUNT
+          Delete Account
         </button>
         <button 
           type='button'
           onClick={history.goBack}
         >
-          BACK
+          Back
         </button>
       </div>
     );

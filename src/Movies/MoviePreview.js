@@ -13,17 +13,17 @@ class MoviePreview extends React.Component {
 
     const movieOptions = (this.state.showOptions)
       ? <MovieOptions
-            list={list}
-            movie={movie}
-            setMovies={setMovies}
+          list={list}
+          movie={movie}
+          setMovies={setMovies}
         />
       : null
     
     return (
       <div
         className='movie-preview'
-        onMouseEnter={() => this.setState({ showOptions: true })}
-        onMouseLeave={() => this.setState({ showOptions: false })}
+        onMouseEnter={(evt) => this.setState({ showOptions: !this.state.showOptions })}
+        onMouseLeave={(evt) => this.setState({ showOptions: false })}
       >
         <label>{name}</label>
 

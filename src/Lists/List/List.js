@@ -170,7 +170,7 @@ class List extends Component {
           type='button'
           onClick={this.renderMovieSearch}
         >
-          ADD
+          Add Movie
         </button>
       : null;
     
@@ -180,7 +180,7 @@ class List extends Component {
             type='button'
             onClick={this.showEditMode}
           >
-            EDIT
+            Edit
           </button>
         : null
       : <>
@@ -188,13 +188,13 @@ class List extends Component {
             type='button'
             onClick={(evt) => this.editList(evt, list.list_id)}
           >
-            SAVE
+            Save
           </button>
           <button
             type='button'
             onClick={this.cancelEditMode}
           >
-            CANCEL
+            Cancel
           </button>
       </>
     
@@ -203,7 +203,7 @@ class List extends Component {
           type='button'
           onClick={() => this.deleteList(list.list_id, user_id)}
         >
-          DELETE
+          Delete
         </button>
       : null;
     
@@ -245,7 +245,7 @@ class List extends Component {
           type='button'
           onClick={() => history.push(backPath)}
         >
-          BACK
+          Back
         </button>
       </div>
     );

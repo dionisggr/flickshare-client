@@ -212,13 +212,15 @@ describe('The Components', () => {
       });
     });
     describe('The Edit List Page', () => {
+      const listEdit = <BrowserRouter><ListEdit /></BrowserRouter>;
+
       it('renders without crashing', () => {
         const div = document.createElement('div');
-        ReactDOM.render(<ListEdit />, div);
+        ReactDOM.render(listEdit, div);
         ReactDOM.unmountComponentAtNode(div);
       });
       it('renders the UI as expected', () => {
-        const tree = renderer.create(<ListEdit />).toJSON();
+        const tree = renderer.create(listEdit).toJSON();
         expect(tree).toMatchSnapshot();
       });
     });

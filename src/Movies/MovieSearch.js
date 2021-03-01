@@ -34,7 +34,9 @@ class MovieSearch extends React.Component {
   componentDidMount() {
     const movieInput = document.querySelector('#movie_input');
 
-    movieInput.focus();
+    if (movieInput) {
+      movieInput.focus()
+    };
 
     window.scroll(0, 25);
   }

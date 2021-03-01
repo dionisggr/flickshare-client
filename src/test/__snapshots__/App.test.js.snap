@@ -159,7 +159,7 @@ Array [
       href="/admin"
       onClick={[Function]}
     >
-      HOME
+      Home
     </a>
   </div>,
   " ",
@@ -187,7 +187,13 @@ exports[`The Components List-Related The Edit List Page renders the UI as expect
   <button
     type="submit"
   >
-    Create
+    Save
+  </button>
+  <button
+    onClick={[Function]}
+    type="button"
+  >
+    Cancel
   </button>
 </form>
 `;
@@ -228,7 +234,7 @@ exports[`The Components List-Related The List Page renders the UI as expected 1`
     onClick={[Function]}
     type="button"
   >
-    BACK
+    Back
   </button>
 </div>
 `;
@@ -469,7 +475,7 @@ Array [
             href="/signup"
             onClick={[Function]}
           >
-            Register
+            Signup
           </a>
         </li>
         <li>
@@ -494,7 +500,7 @@ exports[`The Components The Login Page renders the UI as expected 1`] = `
   onSubmit={[Function]}
 >
   <h3>
-    LOGIN
+    Login
   </h3>
   <label
     htmlFor="username"
@@ -575,14 +581,14 @@ exports[`The Components The Main Menu renders the UI as expected 1`] = `
 </div>
 `;
 
-exports[`The Components The Register Page renders the UI as expected 1`] = `
+exports[`The Components The Signup Page renders the UI as expected 1`] = `
 <form
   autoComplete="off"
-  className="register"
+  className="signup"
   onSubmit={[Function]}
 >
   <h3>
-    REGISTER
+    Sign-Up
   </h3>
   <label
     htmlFor="first_name"
@@ -923,10 +929,6 @@ exports[`The Components User-Related The User Page renders the UI as expected 1`
   <h3>
     User Account
   </h3>
-  <img
-    alt="undefined's avatar"
-    src="https://robohash.org/undefined"
-  />
   <div
     className="user-info"
   >
@@ -956,31 +958,31 @@ exports[`The Components User-Related The User Page renders the UI as expected 1`
     onClick={[Function]}
     type="button"
   >
-    LISTS
+    Lists
   </button>
   <button
     className="reset-password-button"
     onClick={[Function]}
     type="button"
   >
-    RESET PASSWORD
+    Reset Password
   </button>
   <button
     onClick={[Function]}
     type="button"
   >
-    EDIT
+    Edit Account
   </button>
   <button
     onClick={[Function]}
     type="button"
   >
-    DELETE ACCOUNT
+    Delete Account
   </button>
   <button
     type="button"
   >
-    BACK
+    Back
   </button>
 </div>
 `;
@@ -999,7 +1001,7 @@ Array [
       href="/admin"
       onClick={[Function]}
     >
-      HOME
+      Home
     </a>
   </div>,
   " ",

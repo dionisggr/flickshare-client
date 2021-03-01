@@ -184,17 +184,21 @@ exports[`The Components List-Related The Edit List Page renders the UI as expect
     type="text"
     value=""
   />
-  <button
-    type="submit"
+  <div
+    className="edit-movie-buttons"
   >
-    Save
-  </button>
-  <button
-    onClick={[Function]}
-    type="button"
-  >
-    Cancel
-  </button>
+    <button
+      type="submit"
+    >
+      Save
+    </button>
+    <button
+      onClick={[Function]}
+      type="button"
+    >
+      Cancel
+    </button>
+  </div>
 </form>
 `;
 

@@ -10,10 +10,10 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-color: rgba(128, 128, 128, 0.418);
+  background-color: rgba(128, 128, 128, 0.5);
   border-radius: 2px;
-  /* margin: 10px; */
   padding: 25px;
+  padding: 0 5%;
   padding-bottom: 75px;
   margin: 5%;
   margin-bottom: 50px;

@@ -117,11 +117,15 @@ class ListPreview extends Component {
         </div>
       : null;
     
-    return (
-      <div className='list-preview'>
-        <Link to={`/lists/${list.list_id}`}>
+    const listName = (editMovieButtons)
+      ? <Link to={`/lists/${list.list_id}`}>
           <h3>{list.name}</h3>
         </Link>
+      : null;
+    
+    return (
+      <div className='list-preview'>
+        {listName}
 
         {editMovieButtons}
      

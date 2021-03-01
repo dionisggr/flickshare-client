@@ -181,27 +181,15 @@ class List extends Component {
             onClick={this.showEditMode}
           >
             Edit
-          </button>
-        : null
-      : <>
-          <button
-            type='button'
-            onClick={(evt) => this.editList(evt, list.list_id)}
-          >
-            Save
-          </button>
-          <button
-            type='button'
-            onClick={this.cancelEditMode}
-          >
-            Cancel
-          </button>
-      </>
+            </button>
+          : null
+      : null;
     
     const editField = (this.state.editMode)
       ? <ListEdit
+          list={list}
           showEditMode={this.showEditMode}
-          editList={(evt) => this.editList(list.list_id)}
+          editList={() => this.editList(list.list_id)}
           />
       : null;
     

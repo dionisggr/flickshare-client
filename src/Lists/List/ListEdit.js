@@ -27,11 +27,11 @@ class ListEdit extends React.Component {
   };
 
   componentDidMount() {
-    const { listName } = this.props;
+    const { listName, list } = this.props;
     const newState = { ...this.state };
 
-    if (listName) {
-      newState.listName = listName;
+    if (list) {
+      newState.input = list.name;
     } else {
       newState.newList = true;
     };
@@ -54,13 +54,15 @@ class ListEdit extends React.Component {
           onChange={(evt) => this.setState({ input: evt.target.value})}
           required
         />
-        <button type='submit'>Save</button>
-        <button
-          type='button'
-          onClick={this.hideListField}
-        >
-          Cancel
-        </button>
+        <div className='edit-movie-buttons'>
+          <button type='submit'>Save</button>
+          <button
+            type='button'
+            onClick={this.hideListField}
+          >
+              Cancel
+          </button>
+        </div>
       </form>
     );
   };

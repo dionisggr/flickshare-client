@@ -7,12 +7,11 @@
 
 .lists h3:not(.list-preview h3) {
   text-align: center;
-  /* margin-bottom: 40px; */
 }
 
 .scroll-left, .scroll-right {
   position: absolute;
-  margin-top: 145px;
+  margin-top: 120px;
 }
 
 .lists button:not(.movie-list-options button, button.add, button.remove-movie, .scroll-left button, .scroll-right button) {

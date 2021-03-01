@@ -26,6 +26,7 @@
   min-width: 125px;
   line-height: 1.5em;
   width: 100px;
+  margin-top: 35px;
 }
 
 .lists button + button {

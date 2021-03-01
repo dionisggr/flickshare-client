@@ -117,7 +117,7 @@ class ListPreview extends Component {
         </div>
       : null;
     
-    const listName = (editMovieButtons)
+    const listName = (!this.props.editMode)
       ? <Link to={`/lists/${list.list_id}`}>
           <h3>{list.name}</h3>
         </Link>

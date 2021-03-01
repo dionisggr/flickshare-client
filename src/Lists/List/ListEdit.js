@@ -19,7 +19,7 @@ class ListEdit extends React.Component {
     const { addList, editList, location } = this.props;
     const name = evt.target.list_name.value;
 
-    if (!location.pathname) {
+    if (addList) {
       addList(name);
     } else {
       editList(name);

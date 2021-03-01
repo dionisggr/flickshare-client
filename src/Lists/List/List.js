@@ -226,6 +226,7 @@ class List extends Component {
               deleteButton={deleteButton}
               key={list.list_id}
               list={list}
+              editMode={this.state.editMode}
             />
           }
         </div>

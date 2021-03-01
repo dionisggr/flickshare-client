@@ -315,7 +315,7 @@ All values will be necessary in Update due to previous empty field validation
 **Auth required:** Yes
 - `Bearer my-secret-key`
 - `Bearer my-secret-admin`
-- `Bearer <JSON Web Token>` *(Generated at Login. See above for instructions)*
+- `Bearer <JSON Web Token>`
 
 | Name            | Type    | In     | Description      |
 | ----------------| ------- | ------ | ---------------- |

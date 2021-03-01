@@ -48,7 +48,7 @@ class Header extends React.Component {
         ? <li><Link to='/admin'>Admin</Link></li>
         : (pathname === '/admin')
           ? <li><Link to='/admin/users'>Users</Link></li>
-          : <li><Link to='/admin/users'>Lists</Link></li>
+          : <li><Link to='/admin/'>Lists</Link></li>
         : null;
     
     return (

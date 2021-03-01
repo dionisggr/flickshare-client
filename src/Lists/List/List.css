@@ -25,7 +25,7 @@
   width: 100%;
 }
 
-.list button:not(.remove-movie, button.add, .movie-list-options button, .scroll-left button, .scroll-right button, button.get-suggestions) {
+.list button:not(.remove-movie, button.add, .movie-list-options button, .scroll-left button, .scroll-right button, button.get-suggestions, .edit-movie-buttons button) {
   background-color: rgba(2, 214, 2, 0.842);
   outline: none;
   border: solid 1px rgba(0, 0, 0, 0.712);
@@ -51,6 +51,8 @@
 
 .list .movie-search {
   min-height: fit-content;
+  margin-top: 25px;
+  width: 100%;
 }
 
 button.get-suggestions {

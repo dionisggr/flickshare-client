@@ -64,6 +64,21 @@
   transform: scale(0.95);
 }
 
+.edit-movie-buttons {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  margin: 10px 0 25px 0;
+}
+
+.edit-movie-buttons button {
+  width: 100px;
+}
+
+.edit-movie-buttons button + button {
+  margin-left: 5px;
+}
+
 .list-preview button {
   background-color: rgba(2, 214, 2, 0.842);
   outline: none;

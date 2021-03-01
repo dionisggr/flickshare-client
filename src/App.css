@@ -11,6 +11,10 @@ body {
   color: white;
 }
 
+main > *:not(header, footer, .main-menu) {
+  min-height: calc(100vh - 140px);
+}
+
 h3 {
   font-size: 24px;
   text-align: center;

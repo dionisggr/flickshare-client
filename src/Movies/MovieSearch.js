@@ -31,6 +31,14 @@ class MovieSearch extends React.Component {
       .catch(error => console.log({ error }));
   };
 
+  componentDidMount() {
+    const movieInput = document.querySelector('#movie_input');
+
+    movieInput.focus();
+
+    window.scroll(0, 25);
+  }
+
   render() {
     return (
       <div className='movie-search'>

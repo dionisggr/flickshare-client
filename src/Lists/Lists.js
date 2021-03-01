@@ -102,6 +102,7 @@ class Lists extends React.Component {
     
     const listEdit = (showListField)
       ? <ListEdit
+          pathname={this.props.location.pathname}
           addList={this.addList}
           showEdit={this.showEdit}
         />

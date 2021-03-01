@@ -63,7 +63,7 @@ class ListPreview extends Component {
   };
 
   render() {
-    let { list } = this.props;
+    let { list, editButton, deleteButton } = this.props;
 
     if (!list.list_id) {
       list = this.state.list;
@@ -116,6 +116,11 @@ class ListPreview extends Component {
         <Link to={`/lists/${list.list_id}`}>
           <h3>{list.name}</h3>
         </Link>
+
+        <div className='edit-movie-buttons'>
+          {editButton}
+          {deleteButton}
+        </div>
      
         <div className='list-preview-movies'>            
           {renderList}

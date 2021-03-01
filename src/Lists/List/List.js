@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { JWT_SECRET } from '../../config';
 import jwt from 'jsonwebtoken';
 import ListPreview from './ListPreview';
+import ListEdit from './ListEdit';
 import MovieSearch from '../../Movies/MovieSearch';
 import MovieService from '../../services/movie-service';
 import Error from '../../error-handlers/Error';
@@ -41,7 +42,7 @@ class List extends Component {
   showEditMode = () => {
     const newState = { ...this.state };
 
-    newState.editMode = true;
+    newState.editMode = !this.state.editMode;
 
     this.setState(newState);
   };
@@ -54,11 +55,10 @@ class List extends Component {
     this.setState(newState);
   };
 
-  editList = async (evt, list_id) => {
+  editList = async (list_id) => {
     const newState = { ...this.state };
 
-    const name = evt.target.parentElement
-      .querySelector('#list_name').value;
+    const name = document.querySelector('#list_name').value;
     
     const list = await api.getListById(list_id);
 
@@ -198,6 +198,13 @@ class List extends Component {
           </button>
       </>
     
+    const editField = (this.state.editMode)
+      ? <ListEdit
+          showEditMode={this.showEditMode}
+          editList={(evt) => this.editList(list.list_id)}
+          />
+      : null;
+    
     const deleteButton = (decoded && !this.state.editMode && user_id === list.user_id)
       ? <button
           type='button'
@@ -222,13 +229,13 @@ class List extends Component {
       <div className='list'>
         <h3>List Details</h3>
 
-        {editButton}
-
-        {deleteButton}
+        {editField}
        
         <div className='list-movies'>
           {
             <ListPreview
+              editButton={editButton}
+              deleteButton={deleteButton}
               key={list.list_id}
               list={list}
             />

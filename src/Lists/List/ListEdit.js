@@ -1,37 +1,49 @@
 import React from 'react';
+import { withRouter } from 'react-router-dom';
 import './ListEdit.css';
 
 class ListEdit extends React.Component {
-  state = { input: '', listName: null };
+  state = { input: '', listName: null, newList: false };
 
   hideListField = () => {
-    const { showEdit } = this.props;
+    const { showEdit, showEditMode } = this.props;
 
-    showEdit();
+    const edit = showEdit || showEditMode;
+
+    edit();
   }
 
-  addName = (evt) => {
+  saveName = (evt) => {
     evt.preventDefault();
 
-    const { addList } = this.props;
+    const { addList, editList, location } = this.props;
     const name = evt.target.list_name.value;
 
-    addList(name);
+    if (!location.pathname) {
+      addList(name);
+    } else {
+      editList(name);
+    };
   };
 
   componentDidMount() {
     const { listName } = this.props;
+    const newState = { ...this.state };
 
     if (listName) {
-      this.setState({ listName });
+      newState.listName = listName;
+    } else {
+      newState.newList = true;
     };
+
+    this.setState(newState);
   };
 
   render() {
     return (
       <form
         className='list-edit'
-        onSubmit={this.addName}
+        onSubmit={this.saveName}
       >
         <label htmlFor='list_name'>Name:</label>
         <input
@@ -42,7 +54,7 @@ class ListEdit extends React.Component {
           onChange={(evt) => this.setState({ input: evt.target.value})}
           required
         />
-        <button type='submit'>Create</button>
+        <button type='submit'>Save</button>
         <button
           type='button'
           onClick={this.hideListField}
@@ -54,4 +66,4 @@ class ListEdit extends React.Component {
   };
 };
 
-export default ListEdit;
+export default withRouter(ListEdit);

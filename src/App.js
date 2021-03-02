@@ -174,6 +174,7 @@ class App extends React.Component {
                 path='/home'
                 render={({ history, location }) =>
                   <Lists
+                    key={window.location.pathname}
                     location={location}
                     history={history}
                     mainLists={mainLists}
@@ -192,6 +193,7 @@ class App extends React.Component {
               />
 
               <Route
+                key={window.location.pathname}
                 path='/users/:user/lists'
                 render={({ match, history, location }) =>
                   <Lists

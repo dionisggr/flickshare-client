@@ -8,7 +8,7 @@ import './MovieOptions.css';
 
 class MovieOptions extends React.Component {
   static defaultProps = { list: {}, setMovies: {} };
-
+  
   state = { lists: null, movieWasAdded: null, list: {} };
 
   getUserLists = () => {
@@ -137,7 +137,7 @@ class MovieOptions extends React.Component {
                 <li key={idx}>
                   <button
                     type='button'
-                    onClick={() => this.addToList(list_id, movie)}
+                    onClick={() => this.addToList(list.list_id, movie)}
                   >
                     {list.name}
                   </button>

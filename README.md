@@ -2,6 +2,7 @@
 The Flickshare App is directed for anyone who really has a hard time finding suggestions on what to watch next! The app allows users to create an account and custom lists of movie interests, which may then be used to generated a list of movie suggestions and store them for coming back to it later.
 
 ---
+
 ### Working Prototype
 #### Client Live:
 https://flickshare-client.vercel.app

@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
+import Loader from 'react-loaders';
 import MoviePreview from '../../Movies/MoviePreview';
 import Error from '../../error-handlers/Error';
 import api from '../../services/api';
@@ -48,6 +49,11 @@ class ListPreview extends Component {
     newState.refresh = true;
 
     this.setState(newState);
+  };
+
+  onHover = (evt) => {
+    console.log(evt.target.querySelector('.scroll-left'))
+    // evt.target.querySelector('.scroll-left').style.opacity = 1;
   };
 
   componentDidMount() {
@@ -124,7 +130,10 @@ class ListPreview extends Component {
       : null;
     
     return (
-      <div className='list-preview'>
+      <div
+        className='list-preview'
+        onHover={this.onHover}
+      >
         {listName}
 
         {editMovieButtons}

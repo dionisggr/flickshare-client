@@ -29,6 +29,7 @@ class Welcome extends React.Component {
     return (
       <div className='welcome'>
         <div className='with-background'>
+          <img src='src/img/welcome-background.jpeg' alt='welcome-background' />
           
           <h3>Welcome to FlickShare!</h3>
 

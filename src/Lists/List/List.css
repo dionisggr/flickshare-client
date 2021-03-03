@@ -73,6 +73,7 @@ button.get-suggestions {
 
 .scroll-left, .scroll-right {
   width: 75px;
+  opacity: 0.75;
 }
 
 .list img {

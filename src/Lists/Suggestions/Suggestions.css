@@ -63,7 +63,8 @@
 }
 
 .scroll-left button:hover, .scroll-right button:hover {
-  background-color: rgba(124, 124, 124, 0.678);
+  background-color: rgba(255, 255, 255, 0.884);
+  color: rgba(0, 0, 0, 0.767);
 }
 
 .suggestions .remove-movie {

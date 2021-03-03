@@ -1,4 +1,5 @@
 import React from 'react';
+import Loader from 'react-loaders';
 import MovieOptions from './MovieOptions';
 import './MoviePreview.css';
 
@@ -19,11 +20,15 @@ class MoviePreview extends React.Component {
         />
       : null
     
+    if (!movie.movie_id) {
+      return <Loader type="ball-spin-fade-loader" />;
+    };
+    
     return (
       <div
         className='movie-preview'
-        onMouseEnter={(evt) => this.setState({ showOptions: !this.state.showOptions })}
-        onMouseLeave={(evt) => this.setState({ showOptions: false })}
+        onMouseEnter={() => this.setState({ showOptions: !this.state.showOptions })}
+        onMouseLeave={() => this.setState({ showOptions: false })}
       >
         <label>{name}</label>
 

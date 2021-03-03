@@ -1,6 +1,7 @@
 import React from 'react';
 import { JWT_SECRET } from '../config';
 import jwt from 'jsonwebtoken';
+import Loader from '../Main/Loader/Loader';
 import ListPreview from './List/ListPreview';
 import ListEdit from './List/ListEdit';
 import Error from '../error-handlers/Error';
@@ -87,10 +88,14 @@ class Lists extends React.Component {
       ? <h3>Top Suggestions</h3>
       : <h3>My Lists</h3>
     
-    const lists = (mainLists.length < 1)
+    let lists = (mainLists.length < 1)
       ? userLists
       : mainLists;
     
+    if (!lists.length) {
+      return <Loader type="line-spin-fade-loader" />;
+    }
+
     const button = (!showListField && mainLists.length < 1)
       ? <button
         type='button'

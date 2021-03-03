@@ -52,3 +52,12 @@
   margin-right: -5px;
   margin-top: -30px;
 }
+
+.loader-hidden {
+  display: none;
+}
+
+.loader-active {
+  display: block;
+  color: white;
+}

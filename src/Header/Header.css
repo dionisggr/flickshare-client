@@ -4,6 +4,7 @@ header {
   align-items: center;
   justify-content: space-between;
   height: 90px;
+  background-color: rgba(0, 0, 0, 0.822);
 }
 
 header h1 {

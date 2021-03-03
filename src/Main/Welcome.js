@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { JWT_SECRET } from '../config';
 import jwt from 'jsonwebtoken';
+import welcomeBackground from '../img/welcome-background.jpeg';
 import './Welcome.css';
 
 class Welcome extends React.Component {
@@ -29,7 +30,7 @@ class Welcome extends React.Component {
     return (
       <div className='welcome'>
         <div className='with-background'>
-          <img src='src/img/welcome-background.jpeg' alt='welcome-background' />
+          <img src={welcomeBackground} alt='welcome-background' />
           
           <h3>Welcome to FlickShare!</h3>
 

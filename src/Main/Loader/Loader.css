@@ -5,7 +5,7 @@
 }
 
 .loading h3 {
-  font-size: 5vmax;
+  font-size: 5vmin;
   align-self: center;
   margin-top: 15vmin;
 }
@@ -14,11 +14,9 @@
   border: 16px solid #f3f3f3;
   border-top: 16px solid #3498db;
   border-radius: 50%;
-  /* width: 120px; */
   width: 20vmin;
   min-width: 75px;
   max-width: 16vw;
-  /* height: 120px; */
   min-height: 75px;
   height: 20vmin;
   max-height: 16vw;

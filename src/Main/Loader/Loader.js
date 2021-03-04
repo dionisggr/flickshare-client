@@ -7,10 +7,10 @@ class Loader extends React.Component {
   render() {
     setTimeout(() => {
       this.setState({ noMovies: true});
-    }, 3000);
+    }, 15000);
 
     const message = (this.state.noMovies)
-      ? <h3>No movies!</h3>
+      ? <h3>All empty!</h3>
       : <h3>Loading...</h3>
     
     const loader = (!this.state.noMovies)

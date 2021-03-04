@@ -92,8 +92,6 @@ class Lists extends React.Component {
       ? userLists
       : mainLists;
     
-    const loader = <Loader type="line-spin-fade-loader" />;
-
     const button = (!showListField && mainLists.length < 1)
       ? <button
         type='button'
@@ -113,7 +111,11 @@ class Lists extends React.Component {
     
     if (!lists.length) {
       lists = [];
-    }
+    };
+
+    const loader = (lists.length < 1)
+      ? < Loader type="line-spin-fade-loader" />
+      : null;
     
     return (
       <div className='lists'>

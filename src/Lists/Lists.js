@@ -92,14 +92,15 @@ class Lists extends React.Component {
       ? userLists
       : mainLists;
     
-    const button = (!showListField && mainLists.length < 1)
-      ? <button
-        type='button'
-        onClick={this.showEdit}
-      >
-        Add
-      </button>
-      : null;
+    const button = (location.pathname !== '/home' &&
+      (!showListField && mainLists.length < 1))
+        ? <button
+          type='button'
+          onClick={this.showEdit}
+        >
+          Add
+        </button>
+        : null;
     
     const listEdit = (showListField)
       ? <ListEdit

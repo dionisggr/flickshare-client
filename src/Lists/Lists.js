@@ -81,10 +81,10 @@ class Lists extends React.Component {
   };
 
   render() {
-    const { mainLists } = this.props;
+    const { mainLists, location } = this.props;
     const { userLists, showListField } = this.state;
 
-    const header = (mainLists.length > 0)
+    const header = (location.pathname === '/home')
       ? <h3>Top Suggestions</h3>
       : <h3>My Lists</h3>
     
@@ -92,9 +92,7 @@ class Lists extends React.Component {
       ? userLists
       : mainLists;
     
-    if (!lists.length) {
-      return <Loader type="line-spin-fade-loader" />;
-    }
+    const loader = <Loader type="line-spin-fade-loader" />;
 
     const button = (!showListField && mainLists.length < 1)
       ? <button
@@ -113,6 +111,10 @@ class Lists extends React.Component {
         />
       : null;
     
+    if (!lists.length) {
+      lists = [];
+    }
+    
     return (
       <div className='lists'>
         {header}
@@ -126,6 +128,7 @@ class Lists extends React.Component {
             />
           )
         }
+        {loader}
       </div>
     );
   };

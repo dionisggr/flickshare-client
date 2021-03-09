@@ -15,13 +15,11 @@ class Movie extends React.Component {
   componentDidMount() {
     let { location: { movie } } = this.props;
 
-    if (!movie || !movie.movie_id) {
-      movie = this.state.movie;
+    if (!movie) {
+      movie = this.props.movie;
     };
 
-    if (movie) {
-      window.localStorage.setItem('flickshareMovie', JSON.stringify(movie));
-    };
+    this.setState({ movie });
 
     window.onbeforeunload = () => {
       window.scrollTo(0, 0);
@@ -29,19 +27,18 @@ class Movie extends React.Component {
   };
 
   render() {
-    let { location: { movie }, addToList } = this.props;
+    let { addToList } = this.props;
+    let { movie } = this.state;
 
-    if (!movie) {
-      movie = this.props.movie;
-    };
-
-    if (!movie) {
+    if (!movie.name) {
       movie = JSON.parse(window.localStorage.getItem('flickshareMovie'));
     };
 
-    if (!movie) {
+    if (!movie.name) {
       return <Error message='Something went wrong.' />
     };
+
+    window.localStorage.setItem('flickshareMovie', JSON.stringify(movie));
 
     const { name, description, poster, release_date, avg_vote } = movie;
 

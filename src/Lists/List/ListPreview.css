@@ -4,7 +4,7 @@
   align-items: center;
   overflow: hidden;
   min-width: calc(100vw - 150px);
-  margin-top:10%;
+  margin-top: 5%;
 }
 
 .list-preview a {

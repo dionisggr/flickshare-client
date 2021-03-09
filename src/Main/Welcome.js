@@ -29,23 +29,23 @@ class Welcome extends React.Component {
 
     return (
       <div className='welcome'>
+        <img src={welcomeBackground} alt='background' />
         <div className='with-background'>
-          <img src={welcomeBackground} alt='welcome-background' />
-          
+
           <h3>Welcome to FlickShare!</h3>
 
-          <label>Why struggle choosing a movie to watch?</label>
+          <label>Never struggle again looking for what to watch.</label>
 
           <p>Good movie suggestions are hard to come by. Usually we rely on the Internet or our friends to decide what to watch next.</p>
-          <p>What if we could just get some ideas from our own interests?</p>
-          <p>What if we could save these lists and edit them in the future for different results?</p>
+          <p>What if we could get some ideas from our own interests?</p>
+          <p>What if we could create lists of interests and edit them in the future for different results?</p>
 
           <label>It's simple:</label>
 
           <ol>
             <li>Create an account.</li>
-            <li>Create a list (or many!) with your favorite movies.</li>
-            <li>Hit the Get Suggestions! button</li>
+            <li>Create a list (or many) with your favorite movies.</li>
+            <li>Hit the <b>Get Suggestions!</b> button</li>
             <li>Come back for more!</li>
           </ol>
 

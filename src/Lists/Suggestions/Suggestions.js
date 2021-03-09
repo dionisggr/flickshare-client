@@ -59,7 +59,7 @@ class Suggestions extends React.Component {
           type='button'
           onClick={() => history.push('/home')}
         >
-          BACK
+          Back
         </button>
       </div>
     );

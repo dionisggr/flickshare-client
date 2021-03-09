@@ -38,7 +38,9 @@ class MovieSearch extends React.Component {
       movieInput.focus()
     };
 
-    window.scroll(0, 25);
+    if (this.props.location.pathname !== '/movie/search') {
+      window.scroll(0, movieInput.offsetTop);
+    };
   }
 
   render() {

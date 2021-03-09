@@ -2,15 +2,14 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  min-height: calc(100vh - 150px);
-  margin-bottom: 50px;
+  position: relative;
 }
 
 .with-background {
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-color: rgba(56, 56, 56, 0.952);
+  background-color: rgba(15, 15, 15, 0.884);
   border-radius: 2px;
   padding: 25px;
   padding: 0 5%;
@@ -28,19 +27,20 @@
   padding: 15px 35px;
   text-decoration: none;
   color: white;
-  background-color: rgb(2, 158, 2);
+  background-color: rgb(0, 184, 0);
   border: solid 1px rgb(0, 128, 0);
   border-radius: 15px;
-  margin-top: 25px;  
+  margin-top: 25px;
+  font-weight: 500;
 }
 
 .welcome img {
   position: absolute;
   top: 0;
-  height: 100%;
   z-index: -1;
+  max-height: 100%;
+  max-width: 100%;
 }
-
 
 @media only screen and (min-width: 1000px) {
   .with-background {

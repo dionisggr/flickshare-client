@@ -2,9 +2,11 @@ header {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: space-between;
-  height: 90px;
+  justify-content: space-around;
+  height: 100px;
   background-color: rgba(0, 0, 0, 0.822);
+  border-bottom: solid 1px rgba(255, 255, 255, 0.301);
+  padding-bottom: 5px;
 }
 
 header h1 {
@@ -20,8 +22,7 @@ nav {
   display: flex;
   justify-content: center;
   width: 100%;
-  border-bottom: solid 1px rgba(255, 255, 255, 0.301);
-  padding-bottom: 10px;
+  min-width: 250px;
 }
 
 nav ul {
@@ -31,7 +32,7 @@ nav ul {
   font-size: 20px;
   margin: 0;
   padding-left: 0;
-  width: 100%;
+  min-width: 100%;
   max-width: 600px;
   padding: 0 6%;
 }
@@ -47,25 +48,19 @@ nav a {
     justify-content: space-between;
     height: 75px;
     border-bottom: solid 1px rgba(255, 255, 255, 0.329);
-    padding: 0 50px 0 15px;
+    padding: 0 4vw 0 15px;
   }
 
   nav {
-    align-self: flex-end;
     border-bottom: none;
     padding: 0;
-    margin-bottom: 10px;
-    width: 55%;
+    width: 40%;
+    max-width: 500px;
+    margin-top: 1vw;
   }
   
   nav ul {
-    justify-content: flex-end;
     margin: 0;
-    min-width: 100%;
     padding: 0;
-  }
-
-  nav ul li {
-    margin-left: 4vw;
   }
 }

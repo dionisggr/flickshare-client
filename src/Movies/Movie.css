@@ -1,10 +1,13 @@
 .movie {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   padding: 8px;
   text-align: center;
   padding: 0 10%;
   max-width: 800px;
   width: 100%;
-  margin-top: 50px;
+  margin: 50px 0 100px 0;
 }
 
 .movie img {
@@ -19,6 +22,7 @@
   display: inline-block;
   margin: 8px 0;
   width: 100%;
+  max-width: 600px;
 }
 
 .movie label b {
@@ -37,6 +41,7 @@
   font-weight: bold;
   color: white;
   min-width: fit-content;
+  line-height: 2em;
 }
 
 .movie button:hover {
@@ -45,4 +50,9 @@
 
 .movie button:active {
   transform: scale(0.95);
+}
+
+.movie-data {
+  display: flex;
+  flex-direction: column;
 }

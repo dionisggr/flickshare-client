@@ -13,14 +13,22 @@ body {
 
 main > *:not(header, footer, .main-menu) {
   min-height: calc(100vh - 140px);
+  height: fit-content;
+  min-width: 100%;
 }
 
 h3 {
-  font-size: 24px;
+  font-size: 28px;
   text-align: center;
-  margin: 4vw 0 2vw 0;
+  margin: 8vmin 0 6vmin 0;
 }
 
 button {
   cursor: pointer;
+}
+
+@media only screen and (min-width: 400px) {
+  h3 {
+    font-size: 36px;
+  }
 }

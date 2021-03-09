@@ -16,11 +16,11 @@
   border-radius: 50%;
   width: 20vmin;
   min-width: 75px;
-  max-width: 16vw;
+  max-width: 16vmin;
   min-height: 75px;
   height: 20vmin;
-  max-height: 16vw;
-  margin-top: 5vmin;
+  max-height: 16vmin;
+  margin-top: 3vmin;
   animation: spin 2s linear infinite;
   align-self: center;
 }

@@ -62,10 +62,6 @@
   color: white;
 }
 
-.lists + .loader-active {
-  border: solid red;
-}
-
 .lists .loading h3 {
   margin-top: 35px;
 }

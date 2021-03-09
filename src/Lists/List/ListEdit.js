@@ -16,7 +16,7 @@ class ListEdit extends React.Component {
   saveName = (evt) => {
     evt.preventDefault();
 
-    const { addList, editList, location } = this.props;
+    const { addList, editList } = this.props;
     const name = evt.target.list_name.value;
 
     if (addList) {
@@ -27,7 +27,7 @@ class ListEdit extends React.Component {
   };
 
   componentDidMount() {
-    const { listName, list } = this.props;
+    const { list } = this.props;
     const newState = { ...this.state };
 
     if (list) {

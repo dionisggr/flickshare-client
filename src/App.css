@@ -20,7 +20,7 @@ main > *:not(header, footer, .main-menu) {
 h3 {
   font-size: 28px;
   text-align: center;
-  margin: 8vmin 0 6vmin 0;
+  margin: 8vmin 0 5vmin 0;
 }
 
 button {

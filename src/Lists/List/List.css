@@ -40,7 +40,7 @@
   min-width: 150px;
 }
 
-.list button:hover {
+.list button:hover:not(.scroll-left button, .scroll-right button) {
   background-color: rgb(25, 231, 25);
 }
 

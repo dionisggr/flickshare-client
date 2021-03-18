@@ -99,10 +99,6 @@ class App extends React.Component {
 
   render() {
     const { mainLists, loggedIn } = this.state;
-
-    const mainMenu = (loggedIn)
-      ? <MainMenu />
-      : null;
     
     return (
       <TokenContext.Provider
@@ -115,7 +111,7 @@ class App extends React.Component {
           />
 
           <ErrorBoundary>
-            {mainMenu}
+            <MainMenu />
           </ErrorBoundary>
 
           <ErrorBoundary>

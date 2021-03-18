@@ -2,25 +2,32 @@ import React from 'react';
 import './Loader.css';
 
 class Loader extends React.Component {
-  state = { noMovies: false };
+  state = { message: 'Searching...' };
 
-  render() {
+  componentDidMount() {
     setTimeout(() => {
-      this.setState({ noMovies: true});
-    }, 15000);
+      this.setState({ message: 'Still working here...'});
+    }, 4000);
 
-    const message = (this.state.noMovies)
-      ? <h3>All empty!</h3>
-      : <h3>Loading...</h3>
-    
-    const loader = (!this.state.noMovies)
-      ? <div className='loader' />
-      : null;
+    setTimeout(() => {
+      this.setState({ message: 'I refuse to give up...' })
+    }, 8000);
+
+    setTimeout(() => {
+      this.setState({ message: 'Guess what...' })
+    }, 12000);
+
+    setTimeout(() => {
+      this.setState({ message: 'All empty!' })
+    }, 15000);
+  }
+
+  render() { 
+    const { message } = this.state;
 
     return (
       <div className='loading'>
-        {message}
-        {loader}
+        <h3>{message}</h3>
       </div>
     );
   };

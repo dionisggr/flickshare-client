@@ -7,7 +7,6 @@
 .loading h3 {
   font-size: 5vmin;
   align-self: center;
-  margin-top: 15vmin;
 }
 
 .loader {
@@ -25,7 +24,19 @@
   align-self: center;
 }
 
+
+.lists .loading h3 {
+  margin-top: 55px;
+}
+
 @keyframes spin {
   0% { transform: rotate(0deg); }
   100% { transform: rotate(360deg); }
+}
+
+
+@media only screen and (min-width: 768px) {
+  .loading h3 {
+    font-size: 30px;
+  }
 }

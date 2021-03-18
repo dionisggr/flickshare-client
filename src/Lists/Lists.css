@@ -11,7 +11,7 @@
 
 .scroll-left, .scroll-right {
   position: absolute;
-  margin-top: 135px;
+  margin-top: 95px;
 }
 
 .lists button:not(.movie-list-options button, button.add, button.remove-movie, .scroll-left button, .scroll-right button) {
@@ -60,8 +60,4 @@
 .loader-active {
   display: block;
   color: white;
-}
-
-.lists .loading h3 {
-  margin-top: 35px;
 }

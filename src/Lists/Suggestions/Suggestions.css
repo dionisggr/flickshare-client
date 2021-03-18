@@ -49,21 +49,20 @@
 
 .suggestions .scroll-left, .suggestions .scroll-right {
   min-width: 75px;
-  margin-top: 80px;
+  margin-top: 60px;
 }
 
 .scroll-left button, .scroll-right button {
   width: 6vw;
   min-width: 100%;
-  height: 110x;
   background-color: rgba(0, 0, 0, 0.616);
   border: none;
   cursor: pointer;
 }
 
 .scroll-left button:hover, .scroll-right button:hover {
-  background-color: rgba(255, 255, 255, 0.884);
-  color: rgba(0, 0, 0, 0.767);
+  background-color: rgba(255, 255, 255, 0.322);
+  color: rgb(0, 0, 0);
 }
 
 .suggestions .remove-movie {

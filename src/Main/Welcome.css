@@ -32,6 +32,10 @@
   border-radius: 15px;
   margin-top: 25px;
   font-weight: 500;
+  width: 35%;
+  min-width: 240px;
+  text-align: center;
+  max-width: 250px;
 }
 
 .welcome img {

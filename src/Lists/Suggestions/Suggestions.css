@@ -48,7 +48,7 @@
 }
 
 .suggestions .scroll-left, .suggestions .scroll-right {
-  min-width: 75px;
+  min-width: 5vw;
   margin-top: 60px;
 }
 

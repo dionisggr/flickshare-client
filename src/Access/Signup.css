@@ -3,14 +3,18 @@
   flex-direction: column;
   align-items: center;
   min-height: calc(100vh - 110px);
-  margin-bottom: 100px;
+  margin-bottom: 150px;
+}
+
+.signup h4:nth-of-type(2) {
+  margin-top: 50px;
 }
 
 .signup label {
   margin: 15px 0 3px 0;
   width: 70%;
   max-width: 300px;
-  padding: 0 25px;
+  text-align: center;
 }
 
 .signup input {

@@ -5,11 +5,19 @@ import './Login.css';
 class Login extends React.Component {
   static defaultProps = { userLogged: {} };
 
+  demo = (evt) => {
+    evt.stopPropagation();
+    const form = evt.target.parentElement;
+
+    form.username.value = 'admin';
+    form.password.value = 'password';
+  };
+
   login = async (evt) => {
     evt.preventDefault();
 
-    const username = evt.target.username.value;
-    const password = evt.target.password.value;
+    let username = evt.target.username.value;
+    let password = evt.target.password.value;
 
     const { history, userLogged, setIdleTimer } = this.props;
 
@@ -41,6 +49,10 @@ class Login extends React.Component {
         onSubmit={this.login}>
 
         <h3>Login</h3>
+
+        <button type='submit' onClick={this.demo}>
+          Demo
+        </button>
 
         <label htmlFor='username'>Username</label>
 

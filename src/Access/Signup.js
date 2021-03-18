@@ -71,6 +71,8 @@ class Signup extends React.Component {
       >
         <h3>Sign-Up</h3>
 
+        <h4>User Information</h4>
+
         <label htmlFor='first_name'>First Name:</label>
         <input
           type='text' required
@@ -91,6 +93,8 @@ class Signup extends React.Component {
           name='email' id='email'
           autoComplete='none'
         />
+
+        <h4>Account Information</h4>
 
         <label htmlFor='username'>Username:</label>
         <input 

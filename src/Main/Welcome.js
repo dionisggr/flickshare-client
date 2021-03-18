@@ -24,6 +24,7 @@ class Welcome extends React.Component {
       ? <Link to='/home'>Home</Link>
       : <>
           <Link to='/signup'>Create a new account!</Link>
+          <Link to='/login'>Login | Demo</Link>
           <Link to='/home'>I just want to browse.</Link>
         </>
 

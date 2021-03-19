@@ -239,6 +239,7 @@ class List extends Component {
 
         <button
           type='button'
+          className='back'
           onClick={() => history.push(backPath)}
         >
           Back

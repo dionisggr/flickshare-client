@@ -29,7 +29,7 @@ class MoviePreview extends React.Component {
         className='movie-preview'
         onMouseEnter={() => this.setState({ showOptions: !this.state.showOptions })}
         onMouseLeave={() => this.setState({ showOptions: false })}
-        onClick={() => this.setState({ showOptions: !this.state.showOptions})}
+        onClick={(evt) => evt.stopPropagation() && this.setState({ showOptions: !this.state.showOptions})}
       >
         <label>{name}</label>
 
